@@ -25,7 +25,7 @@
 }}
 body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:14px;line-height:1.5;height:100vh;overflow:hidden}
 .app{display:flex;height:100vh;overflow:hidden}
- 
+
 /* LOGIN */
 .login-screen{display:flex;align-items:center;justify-content:center;height:100vh;background:var(--bg3)}
 .login-card{background:var(--bg);border:0.5px solid var(--border2);border-radius:var(--rl);padding:36px 40px;width:100%;max-width:360px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
@@ -42,7 +42,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .field input:focus{outline:none;border-color:var(--green)}
 .login-error{background:var(--rbg);color:var(--red);font-size:12px;padding:8px 12px;border-radius:var(--r);margin-bottom:14px;display:none}
 .btn-full{width:100%;justify-content:center;padding:10px;font-size:13px;font-weight:500}
- 
+
 /* SIDEBAR */
 .sb{width:210px;background:var(--bg2);border-right:0.5px solid var(--border);display:flex;flex-direction:column;flex-shrink:0}
 .sb-logo{padding:14px 16px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px}
@@ -61,7 +61,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .sb-foot button{display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;font-size:11px;color:var(--text3);font-family:var(--font);padding:4px 6px;border-radius:var(--r);width:100%;margin-bottom:2px}
 .sb-foot button:hover{background:var(--bg3);color:var(--text2)}
 .sb-foot button svg{width:13px;height:13px;stroke-width:1.8}
- 
+
 /* MAIN */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;background:var(--bg)}
 .view{display:none;flex-direction:column;height:100%;overflow:hidden}
@@ -70,7 +70,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .topbar-title{font-size:14px;font-weight:600}
 .topbar-right{display:flex;gap:7px;align-items:center}
 .content{flex:1;overflow-y:auto;padding:18px}
- 
+
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--r);border:0.5px solid var(--border2);background:transparent;color:var(--text);font-size:12px;font-family:var(--font);cursor:pointer;transition:background .1s;white-space:nowrap}
 .btn:hover{background:var(--bg2)}
@@ -78,7 +78,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .btn-primary{background:var(--green);border-color:var(--green);color:#fff}
 .btn-primary:hover{background:var(--gtx);border-color:var(--gtx)}
 .btn-sm{padding:4px 9px;font-size:11px}
- 
+
 /* STATS */
 .stats{display:grid;gap:10px;margin-bottom:16px}
 .s4{grid-template-columns:repeat(4,1fr)}
@@ -88,7 +88,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .stat-val{font-size:21px;font-weight:700;line-height:1}
 .stat-sub{font-size:10px;color:var(--text3);margin-top:2px}
 .cg{color:var(--green)}.cr{color:var(--red)}.ca{color:#BA7517}.cb{color:#185FA5}
- 
+
 /* TABLE */
 .tw{border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden}
 table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
@@ -102,7 +102,7 @@ tr:hover .ra{opacity:1}
 .ib{background:transparent;border:none;cursor:pointer;padding:3px;border-radius:var(--r);color:var(--text2);display:flex}
 .ib:hover{background:var(--border);color:var(--text)}
 .ib svg{width:13px;height:13px;stroke-width:1.8}
- 
+
 /* BADGES */
 .badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
 .bg-g{background:var(--gbg);color:var(--gtx)}
@@ -110,7 +110,7 @@ tr:hover .ra{opacity:1}
 .bg-a{background:var(--abg);color:var(--atx)}
 .bg-b{background:var(--bbg);color:var(--btx)}
 .bg-gr{background:var(--bg3);color:var(--text2)}
- 
+
 /* SEARCH & CHIPS */
 .sr{display:flex;gap:8px;margin-bottom:11px}
 .si{flex:1;padding:6px 11px;border:0.5px solid var(--border2);border-radius:var(--r);font-size:12px;background:var(--bg2);color:var(--text);font-family:var(--font)}
@@ -118,7 +118,7 @@ tr:hover .ra{opacity:1}
 .chips{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap}
 .chip{padding:3px 10px;border-radius:20px;border:0.5px solid var(--border2);font-size:11px;cursor:pointer;background:transparent;color:var(--text2);font-family:var(--font)}
 .chip.active{background:var(--gbg);border-color:var(--green);color:var(--gtx);font-weight:600}
- 
+
 /* MODAL */
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-start;justify-content:center;z-index:200;padding:36px 16px;overflow-y:auto}
 .ov.open{display:flex}
@@ -136,7 +136,7 @@ tr:hover .ra{opacity:1}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
 .field textarea{resize:vertical;min-height:56px}
 .sens{color:#A32D2D!important}
- 
+
 /* DETAIL */
 .dv{display:none;flex-direction:column;height:100%;overflow:hidden}
 .dv.open{display:flex}
@@ -153,7 +153,7 @@ tr:hover .ra{opacity:1}
 .il:nth-last-child(2),.iv:last-child{border-bottom:none}
 .sl{font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin:15px 0 8px}
 .lbtn{background:transparent;border:none;cursor:pointer;color:var(--green);font-size:12px;font-family:var(--font);text-decoration:underline;padding:0;text-align:left}
- 
+
 /* DASHBOARD */
 .dg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .dc{background:var(--bg2);border-radius:var(--rl);padding:13px 15px}
@@ -168,11 +168,11 @@ tr:hover .ra{opacity:1}
 .kpi{margin-bottom:11px}
 .kpi-l{font-size:11px;color:var(--text3);margin-bottom:2px}
 .kpi-v{font-size:24px;font-weight:700;line-height:1}
- 
+
 /* REPORTS */
 .rs{margin-bottom:20px}
 .rt{font-size:13px;font-weight:600;margin-bottom:9px;padding-bottom:7px;border-bottom:0.5px solid var(--border)}
- 
+
 /* MISC */
 .loading{text-align:center;padding:36px;color:var(--text3);font-size:12px}
 .empty{text-align:center;padding:30px;color:var(--text3);font-size:12px}
@@ -184,8 +184,9 @@ tr:hover .ra{opacity:1}
 </style>
 </head>
 <body>
- 
+
 <!-- LOGIN -->
+<iframe id="jsonp-frame" style="display:none"></iframe>
 <div id="login-screen" class="login-screen">
   <div class="login-card">
     <div class="login-logo">
@@ -200,7 +201,7 @@ tr:hover .ra{opacity:1}
     <button class="btn btn-primary btn-full" onclick="doLogin()">Entrar</button>
   </div>
 </div>
- 
+
 <!-- APP -->
 <div id="app" class="app" style="display:none">
   <div class="sb">
@@ -255,7 +256,7 @@ tr:hover .ra{opacity:1}
       <button onclick="doLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Sair</button>
     </div>
   </div>
- 
+
   <div class="main">
     <!-- DASHBOARD -->
     <div class="view active" id="view-dashboard">
@@ -265,7 +266,7 @@ tr:hover .ra{opacity:1}
         <div class="dg" id="dash-grid"></div>
       </div>
     </div>
- 
+
     <!-- EMPRESAS -->
     <div class="view" id="view-empresas">
       <div class="topbar"><div class="topbar-title">Empresas</div><div class="topbar-right">
@@ -294,7 +295,7 @@ tr:hover .ra{opacity:1}
       <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span></div>
       <div class="db" id="dv-e-body"></div>
     </div>
- 
+
     <!-- PLANOS -->
     <div class="view" id="view-planos">
       <div class="topbar"><div class="topbar-title">Planos</div><div class="topbar-right">
@@ -305,7 +306,7 @@ tr:hover .ra{opacity:1}
         <tbody id="tb-p"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
     </div>
- 
+
     <!-- TITULARES -->
     <div class="view" id="view-titulares">
       <div class="topbar"><div class="topbar-title">Titulares</div><div class="topbar-right">
@@ -323,7 +324,7 @@ tr:hover .ra{opacity:1}
       <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button></div>
       <div class="db" id="dv-t-body"></div>
     </div>
- 
+
     <!-- DEPENDENTES -->
     <div class="view" id="view-dependentes">
       <div class="topbar"><div class="topbar-title">Dependentes</div><div class="topbar-right">
@@ -334,7 +335,7 @@ tr:hover .ra{opacity:1}
         <tbody id="tb-d"><tr><td colspan="7" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
     </div>
- 
+
     <!-- HISTORICO -->
     <div class="view" id="view-historico">
       <div class="topbar"><div class="topbar-title">Histórico de alterações</div><div class="topbar-right">
@@ -345,7 +346,7 @@ tr:hover .ra{opacity:1}
         <tbody id="tb-h"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
     </div>
- 
+
     <!-- REL ANIVERSÁRIOS -->
     <div class="view" id="view-rel-aniv">
       <div class="topbar"><div class="topbar-title">Relatório — Aniversários de contrato</div><div class="topbar-right"><button class="btn" onclick="exportCSV('aniv')">CSV</button></div></div>
@@ -357,13 +358,13 @@ tr:hover .ra{opacity:1}
         </table></div>
       </div>
     </div>
- 
+
     <!-- REL CANAL -->
     <div class="view" id="view-rel-canal">
       <div class="topbar"><div class="topbar-title">Relatório — Por canal de aquisição</div><div class="topbar-right"><button class="btn" onclick="exportCSV('canal')">CSV</button></div></div>
       <div class="content" id="c-canal"></div>
     </div>
- 
+
     <!-- REL VIDAS -->
     <div class="view" id="view-rel-vidas">
       <div class="topbar"><div class="topbar-title">Relatório — Vidas ativas e canceladas</div><div class="topbar-right"><button class="btn" onclick="exportCSV('vidas')">CSV</button></div></div>
@@ -371,7 +372,7 @@ tr:hover .ra{opacity:1}
     </div>
   </div>
 </div>
- 
+
 <!-- MODAL -->
 <div class="ov" id="ov" onclick="closeBg(event)">
   <div class="modal">
@@ -380,12 +381,12 @@ tr:hover .ra{opacity:1}
     <div class="mf"><button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveForm()" id="btn-save">Salvar</button></div>
   </div>
 </div>
- 
+
 <script>
 // ── CREDENCIAIS ─────────────────────────────────────────────────
 const USERS = { "CX Seguros": "Hero@2026*" };
 const API_URL = "https://script.google.com/macros/s/AKfycbwqfke6RJ1zZcW5nnj2avEQUjJHTHuDSuLOurTG54jkahnU5FNluj5VXP2hd8fyt2Wshw/exec";
- 
+
 // ── LOGIN ───────────────────────────────────────────────────────
 function doLogin() {
   const user = document.getElementById("l-user").value.trim();
@@ -403,53 +404,55 @@ function doLogin() {
     document.getElementById("l-pass").focus();
   }
 }
- 
+
 function doLogout() {
   sessionStorage.removeItem("cx_auth");
   location.reload();
 }
- 
+
 // ── GOOGLE SHEETS API ───────────────────────────────────────────
-async function apiGet(sheet) {
-  const r = await fetch(API_URL, {
-    method: "POST",
-    body: JSON.stringify({ action: "get", sheet })
+function jsonp(url) {
+  return new Promise((resolve, reject) => {
+    const cb = "cb_" + Math.random().toString(36).slice(2);
+    window[cb] = data => { delete window[cb]; document.getElementById("jsonp-frame").src = "about:blank"; resolve(data); };
+    const s = document.createElement("script");
+    s.src = url + "&callback=" + cb;
+    s.onerror = () => reject(new Error("Erro de rede"));
+    document.body.appendChild(s);
+    setTimeout(() => { delete window[cb]; s.remove(); reject(new Error("Timeout")); }, 10000);
   });
-  if (!r.ok) throw new Error("Erro ao buscar dados (" + r.status + ")");
-  const d = await r.json();
+}
+
+async function apiGet(sheet) {
+  const d = await jsonp(API_URL + "?sheet=" + encodeURIComponent(sheet));
   if (!d.ok) throw new Error(d.error || "Erro desconhecido");
   return d.data;
 }
- 
+
 async function apiCreate(sheet, row) {
-  const r = await fetch(API_URL, {
-    method: "POST",
-    body: JSON.stringify({ action: "create", sheet, row })
-  });
-  if (!r.ok) throw new Error("Erro ao salvar (" + r.status + ")");
-  const d = await r.json();
+  const d = await jsonp(API_URL + "?action=create&sheet=" + encodeURIComponent(sheet) + "&row=" + encodeURIComponent(JSON.stringify(row)));
   if (!d.ok) throw new Error(d.error || "Erro ao criar registro");
   return d.id;
 }
- 
+
 // ── HELPER: ler campo de objeto simples ─────────────────────────
 function gp(obj, key) {
   if (!obj) return "";
   const v = obj[key];
   return v !== undefined && v !== null ? v : "";
 }
- 
+
 // ── CACHE ───────────────────────────────────────────────────────
 let DATA = { e:[], p:[], t:[], d:[], h:[] };
 let eFilter="", eChip="", tFilter="";
- 
+
 const empById   = id => DATA.e.find(x=>x["ID"]===id);
 const titById   = id => DATA.t.find(x=>x["ID"]===id);
 const pByEmp    = eid => DATA.p.find(x=>gp(x,"Empresa ID")===eid);
 const titsByEmp = eid => DATA.t.filter(x=>gp(x,"Empresa ID")===eid);
 const depsByTit = tid => DATA.d.filter(x=>gp(x,"Titular ID")===tid);
 const depsByEmp = eid => titsByEmp(eid).flatMap(t=>depsByTit(t["ID"]));
- 
+
 async function loadAll() {
   try {
     const [e,p,t,d,h] = await Promise.all([
@@ -461,7 +464,7 @@ async function loadAll() {
     renderCurrent();
   } catch(err) { toast(err.message, "err"); }
 }
- 
+
 function updateBadges() {
   document.getElementById("b-e").textContent = DATA.e.length;
   document.getElementById("b-p").textContent = DATA.p.length;
@@ -469,7 +472,7 @@ function updateBadges() {
   document.getElementById("b-d").textContent = DATA.d.length;
   document.getElementById("b-h").textContent = DATA.h.length;
 }
- 
+
 // ── NAVIGATION ──────────────────────────────────────────────────
 let current = "dashboard";
 function go(v) {
@@ -491,13 +494,13 @@ function renderCurrent() {
   else if(current==="rel-canal")   rRelCanal();
   else if(current==="rel-vidas")   rRelVidas();
 }
- 
+
 // ── HELPERS ─────────────────────────────────────────────────────
 const fmt = d => { if(!d) return "—"; const[y,m,dd]=d.split("-"); return dd+"/"+m+"/"+y; };
 const cur = v => v!==""&&v!=null ? "R$ "+Number(v).toLocaleString("pt-BR",{minimumFractionDigits:2}) : "—";
 const badge = s => { const m={Ativo:"bg-g",Cancelado:"bg-r",Inclusão:"bg-b",Exclusão:"bg-r",Reajuste:"bg-a"}; return'<span class="badge '+(m[s]||"bg-gr")+'">'+(s||"—")+"</span>"; };
 const fimVig = ini => { if(!ini) return "—"; const d=new Date(ini); d.setFullYear(d.getFullYear()+1); return fmt(d.toISOString().slice(0,10)); };
- 
+
 // ── DASHBOARD ───────────────────────────────────────────────────
 function rDash() {
   const tAt=DATA.t.filter(x=>gp(x,"Status")==="Ativo").length;
@@ -533,7 +536,7 @@ function rDash() {
     .map(([l,v,m,c])=>'<div class="br"><span class="bl">'+l+'</span><div class="bt"><div class="bf" style="width:'+( Math.round(v/m*100)||0)+'%;background:'+c+'"></div></div><span class="bv">'+v+'</span></div>').join("")+
     '</div><div class="dc"><div class="dct">Indicadores</div><div class="kpi"><div class="kpi-l">Churn de vidas</div><div class="kpi-v cr">'+churn+'%</div></div><div class="kpi"><div class="kpi-l">ARR estimado</div><div class="kpi-v cg" style="font-size:17px">'+cur(arr)+'</div></div></div>';
 }
- 
+
 // ── EMPRESAS ────────────────────────────────────────────────────
 function fE(v){eFilter=v;rEmpresas()}
 function cE(el,v){el.closest(".chips").querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));el.classList.add("active");eChip=v;rEmpresas()}
@@ -575,7 +578,7 @@ function openEmpDetail(id){
   document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
   document.getElementById("dv-e").classList.add("open");
 }
- 
+
 // ── PLANOS ──────────────────────────────────────────────────────
 function rPlanos(){
   document.getElementById("tb-p").innerHTML=DATA.p.map(pl=>{
@@ -583,7 +586,7 @@ function rPlanos(){
     return'<tr><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+( gp(pl,"Seguradora")||"—")+'</td><td>'+( gp(pl,"Plano contratado")||"—")+'</td><td class="mono">'+( gp(pl,"Apólice")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td><td>'+fimVig(gp(pl,"Início vigência"))+'</td><td>'+cur(gp(pl,"Valor do boleto"))+'</td><td>'+badge(gp(pl,"Status"))+'</td></tr>';
   }).join("")||"<tr><td colspan=8 class=empty>Sem planos.</td></tr>";
 }
- 
+
 // ── TITULARES ───────────────────────────────────────────────────
 function fT(v){tFilter=v;rTitulares()}
 function rTitulares(){
@@ -616,7 +619,7 @@ function openTitDetail(id){
   document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
   document.getElementById("dv-t").classList.add("open");
 }
- 
+
 // ── DEPENDENTES ─────────────────────────────────────────────────
 function rDependentes(){
   document.getElementById("tb-d").innerHTML=DATA.d.map(d=>{
@@ -629,7 +632,7 @@ function rDependentes(){
     '<td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>';
   }).join("")||"<tr><td colspan=7 class=empty>Sem dependentes.</td></tr>";
 }
- 
+
 // ── HISTÓRICO ───────────────────────────────────────────────────
 function rHistorico(){
   document.getElementById("tb-h").innerHTML=DATA.h.map(h=>{
@@ -643,7 +646,7 @@ function rHistorico(){
     '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td></tr>';
   }).join("")||"<tr><td colspan=8 class=empty>Sem registros.</td></tr>";
 }
- 
+
 // ── RELATÓRIOS ──────────────────────────────────────────────────
 function rRelAniv(){
   const today=new Date();
@@ -688,7 +691,7 @@ function rRelVidas(){
     tCa.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td></tr>';}).join("")+
     "</tbody></table></div></div>";
 }
- 
+
 // ── EXPORT CSV ──────────────────────────────────────────────────
 function exportCSV(type){
   let headers=[],rows=[];
@@ -699,7 +702,7 @@ function exportCSV(type){
   const csv=[headers,...rows].map(r=>r.map(c=>'"'+String(c||"").replace(/"/g,'""')+'"').join(",")).join("\n");
   const a=document.createElement("a");a.href="data:text/csv;charset=utf-8,\uFEFF"+encodeURIComponent(csv);a.download="relatorio-"+type+".csv";a.click();
 }
- 
+
 // ── FORMULÁRIOS ─────────────────────────────────────────────────
 let currentModal="";
 const FORMS={
@@ -709,7 +712,7 @@ const FORMS={
   dependente:{title:"Novo dependente",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nomd"></div><div class="field"><label>CPF (se houver)</label><input id="f-cpfd"></div><div class="field"><label>Nascimento</label><input id="f-nasd" type="date"></div><div class="field"><label>RG</label><input id="f-rgd"></div><div class="field"><label>Nome da mãe</label><input id="f-maed"></div><div class="field"><label>Nome do pai</label><input id="f-paid"></div><div class="field"><label>Peso</label><input id="f-pesd" type="number"></div><div class="field"><label>Altura</label><input id="f-altd" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ecd"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option></select></div><div class="field"><label>Profissão</label><input id="f-prod"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doed"></textarea></div></div></div><div class="fs"><div class="ft">Vínculo</div><div class="fg"><div class="field"><label class="req">Titular</label><select id="f-td"></select></div><div class="field"><label class="req">Parentesco</label><select id="f-pard"><option>Cônjuge</option><option>Filho</option><option>Pai/Mãe</option><option>Irmão</option><option>Outro</option></select></div><div class="field"><label>Data de inclusão</label><input id="f-incd" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-crtd"></div><div class="field"><label>Status</label><select id="f-std"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
   historico:{title:"Registrar alteração",html:'<div class="fs"><div class="ft">Evento</div><div class="fg"><div class="field"><label class="req">Tipo</label><select id="f-tiph"><option>Inclusão</option><option>Exclusão</option><option>Reajuste</option></select></div><div class="field"><label class="req">Data</label><input id="f-dath" type="date"></div><div class="field ff"><label class="req">Titular relacionado</label><select id="f-vidh"></select></div><div class="field ff"><label class="req">Vida afetada (nome)</label><input id="f-vidan"></div><div class="field"><label>CPF da vida afetada</label><input id="f-cpfh"></div><div class="field"><label>Reajuste (%)</label><input id="f-rejh" type="number" step="0.01"></div><div class="field"><label>Valor atualizado (R$)</label><input id="f-valh" type="number" step="0.01"></div><div class="field"><label class="req">Responsável</label><input id="f-resh"></div><div class="field"><label>Motivo</label><input id="f-moth"></div><div class="field ff"><label>Observações</label><textarea id="f-obsh"></textarea></div></div></div>'}
 };
- 
+
 function openModal(type){
   currentModal=type;
   document.getElementById("m-title").textContent=FORMS[type].title;
@@ -723,7 +726,7 @@ function openModal(type){
 function closeModal(){document.getElementById("ov").classList.remove("open")}
 function closeBg(e){if(e.target===document.getElementById("ov"))closeModal()}
 const g=id=>(document.getElementById(id)||{}).value||"";
- 
+
 async function saveForm(){
   document.getElementById("btn-save").textContent="Salvando…";
   try{
@@ -743,7 +746,7 @@ async function saveForm(){
   }catch(err){toast("Erro: "+err.message,"err");}
   finally{document.getElementById("btn-save").textContent="Salvar";}
 }
- 
+
 // ── TOAST ───────────────────────────────────────────────────────
 function toast(msg,type){
   const el=document.createElement("div");
@@ -752,7 +755,7 @@ function toast(msg,type){
   document.body.appendChild(el);
   setTimeout(()=>el.remove(),4000);
 }
- 
+
 // ── INIT ────────────────────────────────────────────────────────
 if(sessionStorage.getItem("cx_auth")==="1"){
   document.getElementById("login-screen").style.display="none";
