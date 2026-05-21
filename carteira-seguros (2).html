@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CX Seguros — Carteira</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;--bg2:#f7f7f5;--bg3:#f0efe9;
+  --text:#1a1a18;--text2:#6b6b66;--text3:#9e9d97;
+  --border:rgba(0,0,0,.10);--border2:rgba(0,0,0,.18);
+  --green:#1D9E75;--gbg:#E1F5EE;--gtx:#0F6E56;
+  --red:#A32D2D;--rbg:#FCEBEB;
+  --abg:#FAEEDA;--atx:#854F0B;
+  --bbg:#E6F1FB;--btx:#185FA5;
+  --r:8px;--rl:12px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono","Fira Code",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1c1c1a;--bg2:#242422;--bg3:#2c2c29;
+  --text:#eeeee8;--text2:#9e9d97;--text3:#6b6b66;
+  --border:rgba(255,255,255,.10);--border2:rgba(255,255,255,.18);
+}}
+body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:14px;line-height:1.5;height:100vh;overflow:hidden}
+.app{display:flex;height:100vh;overflow:hidden}
+
+/* LOGIN */
+.login-screen{display:flex;align-items:center;justify-content:center;height:100vh;background:var(--bg3)}
+.login-card{background:var(--bg);border:0.5px solid var(--border2);border-radius:var(--rl);padding:36px 40px;width:100%;max-width:360px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.login-logo{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.login-logo-icon{width:36px;height:36px;background:var(--green);border-radius:var(--r);display:flex;align-items:center;justify-content:center}
+.login-logo-icon svg{width:18px;height:18px;stroke:#fff;stroke-width:2;fill:none}
+.login-logo-text strong{display:block;font-size:14px;font-weight:700}
+.login-logo-text span{font-size:11px;color:var(--text3)}
+.login-title{font-size:16px;font-weight:700;margin-bottom:4px}
+.login-sub{font-size:12px;color:var(--text2);margin-bottom:24px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11px;color:var(--text2);margin-bottom:4px;font-weight:500}
+.field input{width:100%;padding:9px 12px;border:0.5px solid var(--border2);border-radius:var(--r);font-size:13px;background:var(--bg);color:var(--text);font-family:var(--font);transition:border-color .15s}
+.field input:focus{outline:none;border-color:var(--green)}
+.login-error{background:var(--rbg);color:var(--red);font-size:12px;padding:8px 12px;border-radius:var(--r);margin-bottom:14px;display:none}
+.btn-full{width:100%;justify-content:center;padding:10px;font-size:13px;font-weight:500}
+
+/* SIDEBAR */
+.sb{width:210px;background:var(--bg2);border-right:0.5px solid var(--border);display:flex;flex-direction:column;flex-shrink:0}
+.sb-logo{padding:14px 16px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px}
+.sb-logo-icon{width:28px;height:28px;background:var(--green);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-logo-icon svg{width:14px;height:14px;stroke:#fff;stroke-width:2;fill:none}
+.sb-logo-text strong{display:block;font-size:12px;font-weight:700}
+.sb-logo-text span{font-size:10px;color:var(--text3)}
+.nav{padding:6px;flex:1;overflow-y:auto}
+.nav-lbl{font-size:10px;color:var(--text3);padding:10px 8px 3px;text-transform:uppercase;letter-spacing:.07em}
+.nb{display:flex;align-items:center;gap:7px;width:100%;padding:6px 9px;border-radius:var(--r);border:none;background:transparent;color:var(--text2);font-size:12px;font-family:var(--font);cursor:pointer;text-align:left;transition:background .1s}
+.nb:hover{background:var(--bg3);color:var(--text)}
+.nb.active{background:var(--bg);color:var(--text);font-weight:600;box-shadow:0 0 0 0.5px var(--border2)}
+.nb svg{width:15px;height:15px;flex-shrink:0;stroke-width:1.8}
+.nb-badge{margin-left:auto;background:var(--bg3);color:var(--text3);font-size:10px;padding:1px 5px;border-radius:20px}
+.sb-foot{padding:10px 12px;border-top:0.5px solid var(--border)}
+.sb-foot button{display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;font-size:11px;color:var(--text3);font-family:var(--font);padding:4px 6px;border-radius:var(--r);width:100%;margin-bottom:2px}
+.sb-foot button:hover{background:var(--bg3);color:var(--text2)}
+.sb-foot button svg{width:13px;height:13px;stroke-width:1.8}
+
+/* MAIN */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;background:var(--bg)}
+.view{display:none;flex-direction:column;height:100%;overflow:hidden}
+.view.active{display:flex}
+.topbar{padding:12px 18px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.topbar-title{font-size:14px;font-weight:600}
+.topbar-right{display:flex;gap:7px;align-items:center}
+.content{flex:1;overflow-y:auto;padding:18px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--r);border:0.5px solid var(--border2);background:transparent;color:var(--text);font-size:12px;font-family:var(--font);cursor:pointer;transition:background .1s;white-space:nowrap}
+.btn:hover{background:var(--bg2)}
+.btn svg{width:13px;height:13px}
+.btn-primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn-primary:hover{background:var(--gtx);border-color:var(--gtx)}
+.btn-sm{padding:4px 9px;font-size:11px}
+
+/* STATS */
+.stats{display:grid;gap:10px;margin-bottom:16px}
+.s4{grid-template-columns:repeat(4,1fr)}
+.s3{grid-template-columns:repeat(3,1fr)}
+.stat{background:var(--bg2);border-radius:var(--r);padding:11px 13px}
+.stat-lbl{font-size:11px;color:var(--text3);margin-bottom:3px}
+.stat-val{font-size:21px;font-weight:700;line-height:1}
+.stat-sub{font-size:10px;color:var(--text3);margin-top:2px}
+.cg{color:var(--green)}.cr{color:var(--red)}.ca{color:#BA7517}.cb{color:#185FA5}
+
+/* TABLE */
+.tw{border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
+thead{background:var(--bg2)}
+th{padding:8px 10px;text-align:left;font-weight:500;font-size:11px;color:var(--text2);border-bottom:0.5px solid var(--border)}
+td{padding:9px 10px;border-bottom:0.5px solid var(--border);vertical-align:middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg2)}
+.ra{display:flex;gap:3px;opacity:0}
+tr:hover .ra{opacity:1}
+.ib{background:transparent;border:none;cursor:pointer;padding:3px;border-radius:var(--r);color:var(--text2);display:flex}
+.ib:hover{background:var(--border);color:var(--text)}
+.ib svg{width:13px;height:13px;stroke-width:1.8}
+
+/* BADGES */
+.badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
+.bg-g{background:var(--gbg);color:var(--gtx)}
+.bg-r{background:var(--rbg);color:#791F1F}
+.bg-a{background:var(--abg);color:var(--atx)}
+.bg-b{background:var(--bbg);color:var(--btx)}
+.bg-gr{background:var(--bg3);color:var(--text2)}
+
+/* SEARCH & CHIPS */
+.sr{display:flex;gap:8px;margin-bottom:11px}
+.si{flex:1;padding:6px 11px;border:0.5px solid var(--border2);border-radius:var(--r);font-size:12px;background:var(--bg2);color:var(--text);font-family:var(--font)}
+.si:focus{outline:none;border-color:var(--green)}
+.chips{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap}
+.chip{padding:3px 10px;border-radius:20px;border:0.5px solid var(--border2);font-size:11px;cursor:pointer;background:transparent;color:var(--text2);font-family:var(--font)}
+.chip.active{background:var(--gbg);border-color:var(--green);color:var(--gtx);font-weight:600}
+
+/* MODAL */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-start;justify-content:center;z-index:200;padding:36px 16px;overflow-y:auto}
+.ov.open{display:flex}
+.modal{background:var(--bg);border-radius:var(--rl);border:0.5px solid var(--border2);width:620px;max-width:100%}
+.mh{padding:14px 18px;border-bottom:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.mt{font-size:14px;font-weight:600}
+.mb{padding:18px;max-height:500px;overflow-y:auto}
+.mf{padding:12px 18px;border-top:0.5px solid var(--border);display:flex;justify-content:flex-end;gap:7px}
+.fs{margin-bottom:16px}
+.ft{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:9px;padding-bottom:6px;border-bottom:0.5px solid var(--border)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.ff{grid-column:1/-1}
+.field label.req::after{content:" *";color:var(--red)}
+.field input,.field select,.field textarea{width:100%;padding:6px 9px;border:0.5px solid var(--border2);border-radius:var(--r);font-size:12px;background:var(--bg);color:var(--text);font-family:var(--font)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
+.field textarea{resize:vertical;min-height:56px}
+.sens{color:#A32D2D!important}
+
+/* DETAIL */
+.dv{display:none;flex-direction:column;height:100%;overflow:hidden}
+.dv.open{display:flex}
+.dtb{padding:11px 18px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px;flex-shrink:0}
+.bbtn{display:flex;align-items:center;gap:4px;background:transparent;border:none;cursor:pointer;font-size:12px;color:var(--text2);font-family:var(--font);padding:4px 7px;border-radius:var(--r)}
+.bbtn:hover{background:var(--bg2);color:var(--text)}
+.bbtn svg{width:13px;height:13px;stroke-width:2}
+.db{flex:1;overflow-y:auto;padding:18px}
+.dt{font-size:18px;font-weight:700;margin-bottom:2px}
+.ds{font-size:12px;color:var(--text2);margin-bottom:14px}
+.ig{display:grid;grid-template-columns:1fr 1fr;border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:13px}
+.il{font-size:11px;color:var(--text2);padding:8px 10px;background:var(--bg2);border-bottom:0.5px solid var(--border)}
+.iv{font-size:12px;padding:8px 10px;border-bottom:0.5px solid var(--border);overflow:hidden;text-overflow:ellipsis}
+.il:nth-last-child(2),.iv:last-child{border-bottom:none}
+.sl{font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin:15px 0 8px}
+.lbtn{background:transparent;border:none;cursor:pointer;color:var(--green);font-size:12px;font-family:var(--font);text-decoration:underline;padding:0;text-align:left}
+
+/* DASHBOARD */
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dc{background:var(--bg2);border-radius:var(--rl);padding:13px 15px}
+.dct{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px}
+.br{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.bl{font-size:11px;color:var(--text2);width:90px;text-align:right;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bt{flex:1;height:6px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.bf{height:100%;border-radius:4px}
+.bv{font-size:11px;font-weight:600;width:22px;text-align:right}
+.ar{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:0.5px solid var(--border);font-size:12px}
+.ar:last-child{border-bottom:none}
+.kpi{margin-bottom:11px}
+.kpi-l{font-size:11px;color:var(--text3);margin-bottom:2px}
+.kpi-v{font-size:24px;font-weight:700;line-height:1}
+
+/* REPORTS */
+.rs{margin-bottom:20px}
+.rt{font-size:13px;font-weight:600;margin-bottom:9px;padding-bottom:7px;border-bottom:0.5px solid var(--border)}
+
+/* MISC */
+.loading{text-align:center;padding:36px;color:var(--text3);font-size:12px}
+.empty{text-align:center;padding:30px;color:var(--text3);font-size:12px}
+.mono{font-family:var(--mono);font-size:11px}
+.toast{position:fixed;bottom:22px;right:22px;padding:9px 14px;border-radius:var(--r);font-size:12px;z-index:999;animation:fadeIn .2s ease}
+.tok{background:var(--gbg);color:var(--gtx);border:0.5px solid var(--green)}
+.terr{background:var(--rbg);color:var(--red);border:0.5px solid var(--red)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <div class="login-logo-text"><strong>CX Seguros</strong><span>Gestão de Carteira</span></div>
+    </div>
+    <div class="login-title">Bem-vindo</div>
+    <div class="login-sub">Entre com suas credenciais para acessar o sistema.</div>
+    <div class="login-error" id="login-error">Usuário ou senha incorretos.</div>
+    <div class="field"><label>Usuário</label><input id="l-user" placeholder="Login" autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <div class="field"><label>Senha</label><input id="l-pass" type="password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="btn btn-primary btn-full" onclick="doLogin()">Entrar</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="app" style="display:none">
+  <div class="sb">
+    <div class="sb-logo">
+      <div class="sb-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <div class="sb-logo-text"><strong>CX Seguros</strong><span>Carteira de Contratos</span></div>
+    </div>
+    <div class="nav">
+      <div class="nav-lbl">Visão geral</div>
+      <button class="nb active" onclick="go('dashboard')" id="nav-dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </button>
+      <div class="nav-lbl">Cadastros</div>
+      <button class="nb" onclick="go('empresas')" id="nav-empresas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21v-4a3 3 0 016 0v4"/></svg>
+        Empresas<span class="nb-badge" id="b-e">—</span>
+      </button>
+      <button class="nb" onclick="go('planos')" id="nav-planos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Planos<span class="nb-badge" id="b-p">—</span>
+      </button>
+      <button class="nb" onclick="go('titulares')" id="nav-titulares">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Titulares<span class="nb-badge" id="b-t">—</span>
+      </button>
+      <button class="nb" onclick="go('dependentes')" id="nav-dependentes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6M15 14c3.9 0 7 2.7 7 6"/></svg>
+        Dependentes<span class="nb-badge" id="b-d">—</span>
+      </button>
+      <div class="nav-lbl">Auditoria</div>
+      <button class="nb" onclick="go('historico')" id="nav-historico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Histórico<span class="nb-badge" id="b-h">—</span>
+      </button>
+      <div class="nav-lbl">Relatórios</div>
+      <button class="nb" onclick="go('rel-aniv')" id="nav-rel-aniv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Aniversários
+      </button>
+      <button class="nb" onclick="go('rel-canal')" id="nav-rel-canal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 20h18M5 20V12M9 20V8M13 20V4M17 20v-6"/></svg>
+        Por canal
+      </button>
+      <button class="nb" onclick="go('rel-vidas')" id="nav-rel-vidas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg>
+        Vidas
+      </button>
+    </div>
+    <div class="sb-foot">
+      <button onclick="loadAll()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>Atualizar dados</button>
+      <button onclick="doLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Sair</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- DASHBOARD -->
+    <div class="view active" id="view-dashboard">
+      <div class="topbar"><div class="topbar-title">Dashboard</div></div>
+      <div class="content">
+        <div class="stats s4" id="dash-stats"><div class="loading">Carregando…</div></div>
+        <div class="dg" id="dash-grid"></div>
+      </div>
+    </div>
+
+    <!-- EMPRESAS -->
+    <div class="view" id="view-empresas">
+      <div class="topbar"><div class="topbar-title">Empresas</div><div class="topbar-right">
+        <button class="btn" onclick="exportCSV('empresas')">CSV</button>
+        <button class="btn btn-primary" onclick="openModal('empresa')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Nova empresa</button>
+      </div></div>
+      <div class="content">
+        <div class="stats s3">
+          <div class="stat"><div class="stat-lbl">Total</div><div class="stat-val" id="s-e-t">—</div></div>
+          <div class="stat"><div class="stat-lbl">Ativas</div><div class="stat-val cg" id="s-e-a">—</div></div>
+          <div class="stat"><div class="stat-lbl">Canceladas</div><div class="stat-val cr" id="s-e-c">—</div></div>
+        </div>
+        <div class="sr"><input class="si" placeholder="Buscar empresa, CNPJ, canal…" oninput="fE(this.value)"></div>
+        <div class="chips">
+          <button class="chip active" onclick="cE(this,'')">Todas</button>
+          <button class="chip" onclick="cE(this,'Ativo')">Ativas</button>
+          <button class="chip" onclick="cE(this,'Cancelado')">Canceladas</button>
+        </div>
+        <div class="tw"><table>
+          <thead><tr><th style="width:27%">Razão social</th><th style="width:15%">CNPJ</th><th style="width:13%">Canal</th><th style="width:14%">Responsável RH</th><th style="width:8%">Tit.</th><th style="width:8%">Dep.</th><th style="width:9%">Status</th><th style="width:6%"></th></tr></thead>
+          <tbody id="tb-e"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="dv" id="dv-e">
+      <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span></div>
+      <div class="db" id="dv-e-body"></div>
+    </div>
+
+    <!-- PLANOS -->
+    <div class="view" id="view-planos">
+      <div class="topbar"><div class="topbar-title">Planos</div><div class="topbar-right">
+        <button class="btn btn-primary" onclick="openModal('plano')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Novo plano</button>
+      </div></div>
+      <div class="content"><div class="tw"><table>
+        <thead><tr><th style="width:22%">Empresa</th><th style="width:16%">Seguradora</th><th style="width:14%">Plano</th><th style="width:11%">Apólice</th><th style="width:10%">Início</th><th style="width:10%">Fim</th><th style="width:9%">Boleto</th><th style="width:8%">Status</th></tr></thead>
+        <tbody id="tb-p"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
+      </table></div></div>
+    </div>
+
+    <!-- TITULARES -->
+    <div class="view" id="view-titulares">
+      <div class="topbar"><div class="topbar-title">Titulares</div><div class="topbar-right">
+        <button class="btn btn-primary" onclick="openModal('titular')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Novo titular</button>
+      </div></div>
+      <div class="content">
+        <div class="sr"><input class="si" placeholder="Buscar nome, CPF…" oninput="fT(this.value)"></div>
+        <div class="tw"><table>
+          <thead><tr><th style="width:22%">Nome</th><th style="width:13%">CPF</th><th style="width:19%">Empresa</th><th style="width:10%">Nascimento</th><th style="width:12%">Carteirinha</th><th style="width:7%">Dep.</th><th style="width:9%">Status</th><th style="width:8%"></th></tr></thead>
+          <tbody id="tb-t"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="dv" id="dv-t">
+      <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button></div>
+      <div class="db" id="dv-t-body"></div>
+    </div>
+
+    <!-- DEPENDENTES -->
+    <div class="view" id="view-dependentes">
+      <div class="topbar"><div class="topbar-title">Dependentes</div><div class="topbar-right">
+        <button class="btn btn-primary" onclick="openModal('dependente')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Novo dependente</button>
+      </div></div>
+      <div class="content"><div class="tw"><table>
+        <thead><tr><th style="width:22%">Nome</th><th style="width:12%">CPF</th><th style="width:20%">Titular</th><th style="width:18%">Empresa</th><th style="width:12%">Parentesco</th><th style="width:10%">Carteirinha</th><th style="width:6%">Status</th></tr></thead>
+        <tbody id="tb-d"><tr><td colspan="7" class="loading">Carregando…</td></tr></tbody>
+      </table></div></div>
+    </div>
+
+    <!-- HISTORICO -->
+    <div class="view" id="view-historico">
+      <div class="topbar"><div class="topbar-title">Histórico de alterações</div><div class="topbar-right">
+        <button class="btn btn-primary" onclick="openModal('historico')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Registrar alteração</button>
+      </div></div>
+      <div class="content"><div class="tw"><table>
+        <thead><tr><th style="width:10%">Tipo</th><th style="width:17%">Vida afetada</th><th style="width:12%">CPF</th><th style="width:9%">Data</th><th style="width:15%">Responsável</th><th style="width:13%">Motivo</th><th style="width:8%">Reajuste</th><th style="width:16%">Empresa</th></tr></thead>
+        <tbody id="tb-h"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
+      </table></div></div>
+    </div>
+
+    <!-- REL ANIVERSÁRIOS -->
+    <div class="view" id="view-rel-aniv">
+      <div class="topbar"><div class="topbar-title">Relatório — Aniversários de contrato</div><div class="topbar-right"><button class="btn" onclick="exportCSV('aniv')">CSV</button></div></div>
+      <div class="content">
+        <p style="font-size:12px;color:var(--text2);margin-bottom:12px">Contratos ordenados pela data de aniversário mais próxima.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Empresa</th><th>Seguradora</th><th>Plano</th><th>Início vigência</th><th>Próx. aniversário</th><th>Dias restantes</th><th>Boleto</th><th>Status</th></tr></thead>
+          <tbody id="tb-ra"></tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- REL CANAL -->
+    <div class="view" id="view-rel-canal">
+      <div class="topbar"><div class="topbar-title">Relatório — Por canal de aquisição</div><div class="topbar-right"><button class="btn" onclick="exportCSV('canal')">CSV</button></div></div>
+      <div class="content" id="c-canal"></div>
+    </div>
+
+    <!-- REL VIDAS -->
+    <div class="view" id="view-rel-vidas">
+      <div class="topbar"><div class="topbar-title">Relatório — Vidas ativas e canceladas</div><div class="topbar-right"><button class="btn" onclick="exportCSV('vidas')">CSV</button></div></div>
+      <div class="content" id="c-vidas"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="ov" id="ov" onclick="closeBg(event)">
+  <div class="modal">
+    <div class="mh"><div class="mt" id="m-title"></div><button class="ib" onclick="closeModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="mb" id="m-body"></div>
+    <div class="mf"><button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveForm()" id="btn-save">Salvar</button></div>
+  </div>
+</div>
+
+<script>
+// ── CREDENCIAIS ─────────────────────────────────────────────────
+const USERS = { "CX Seguros": "Hero@2026*" };
+
+const NOTION_TOKEN = "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";
+const DBS = {
+  empresas:    "36652622d2198033bdb9dea2031a653b",
+  planos:      "36652622d2198049aeabe006594bdc0d",
+  titulares:   "36652622d21980a0988cd0941802ca23",
+  dependentes: "36652622d21980239e5bce583141b2c6",
+  historico:   "36652622d21980abbdc1e1b6b8b44144"
+};
+
+// ── LOGIN ───────────────────────────────────────────────────────
+function doLogin() {
+  const user = document.getElementById("l-user").value.trim();
+  const pass = document.getElementById("l-pass").value;
+  const err  = document.getElementById("login-error");
+  if (USERS[user] && USERS[user] === pass) {
+    sessionStorage.setItem("cx_auth", "1");
+    document.getElementById("login-screen").style.display = "none";
+    document.getElementById("app").style.display = "flex";
+    err.style.display = "none";
+    loadAll();
+  } else {
+    err.style.display = "block";
+    document.getElementById("l-pass").value = "";
+    document.getElementById("l-pass").focus();
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem("cx_auth");
+  location.reload();
+}
+
+// ── NOTION API ──────────────────────────────────────────────────
+const NV = "2022-06-28";
+
+async function nQuery(dbId) {
+  let results = [], cursor = null;
+  do {
+    const body = cursor ? { start_cursor: cursor } : {};
+    const r = await fetch("https://carteiraseguros.seguros.workers.dev/v1/databases/" + dbId + "/query", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + NOTION_TOKEN, "Notion-Version": NV, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    if (!r.ok) throw new Error("Erro ao consultar Notion (" + r.status + "). Verifique se a integração está conectada ao database.");
+    const d = await r.json();
+    results = results.concat(d.results || []);
+    cursor = d.next_cursor || null;
+  } while (cursor);
+  return results;
+}
+
+async function nCreate(dbId, properties) {
+  const r = await fetch("https://carteiraseguros.seguros.workers.dev/v1/pages", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + NOTION_TOKEN, "Notion-Version": NV, "Content-Type": "application/json" },
+    body: JSON.stringify({ parent: { database_id: dbId }, properties })
+  });
+  if (!r.ok) { const e = await r.json(); throw new Error(e.message || "Erro ao criar registro"); }
+  return r.json();
+}
+
+// ── PROP BUILDERS ───────────────────────────────────────────────
+const P = {
+  title:  v => ({ title: [{ text: { content: String(v||"") } }] }),
+  text:   v => ({ rich_text: [{ text: { content: String(v||"") } }] }),
+  number: v => ({ number: v !== "" && v != null ? Number(v) : null }),
+  select: v => ({ select: v ? { name: String(v) } : null }),
+  date:   v => ({ date: v ? { start: v } : null }),
+  email:  v => ({ email: v || null }),
+  phone:  v => ({ phone_number: v || null }),
+  rel:    id => ({ relation: id ? [{ id }] : [] }),
+};
+
+function gp(page, key) {
+  const prop = page.properties?.[key];
+  if (!prop) return "";
+  switch(prop.type) {
+    case "title":        return prop.title?.map(t=>t.plain_text).join("") || "";
+    case "rich_text":    return prop.rich_text?.map(t=>t.plain_text).join("") || "";
+    case "number":       return prop.number ?? "";
+    case "select":       return prop.select?.name || "";
+    case "date":         return prop.date?.start || "";
+    case "email":        return prop.email || "";
+    case "phone_number": return prop.phone_number || "";
+    case "relation":     return prop.relation?.map(r=>r.id) || [];
+    default:             return "";
+  }
+}
+
+// ── CACHE ───────────────────────────────────────────────────────
+let DATA = { e:[], p:[], t:[], d:[], h:[] };
+let eFilter="", eChip="", tFilter="";
+
+const empById   = id => DATA.e.find(x=>x.id===id);
+const titById   = id => DATA.t.find(x=>x.id===id);
+const pByEmp    = eid => DATA.p.find(x=>(gp(x,"Empresa")||[]).includes(eid));
+const titsByEmp = eid => DATA.t.filter(x=>(gp(x,"Empresa")||[]).includes(eid));
+const depsByTit = tid => DATA.d.filter(x=>(gp(x,"Titular")||[]).includes(tid));
+const depsByEmp = eid => titsByEmp(eid).flatMap(t=>depsByTit(t.id));
+
+async function loadAll() {
+  try {
+    const [e,p,t,d,h] = await Promise.all([
+      nQuery(DBS.empresas), nQuery(DBS.planos), nQuery(DBS.titulares),
+      nQuery(DBS.dependentes), nQuery(DBS.historico)
+    ]);
+    DATA = { e, p, t, d, h };
+    updateBadges();
+    renderCurrent();
+  } catch(err) { toast(err.message, "err"); }
+}
+
+function updateBadges() {
+  document.getElementById("b-e").textContent = DATA.e.length;
+  document.getElementById("b-p").textContent = DATA.p.length;
+  document.getElementById("b-t").textContent = DATA.t.length;
+  document.getElementById("b-d").textContent = DATA.d.length;
+  document.getElementById("b-h").textContent = DATA.h.length;
+}
+
+// ── NAVIGATION ──────────────────────────────────────────────────
+let current = "dashboard";
+function go(v) {
+  document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
+  document.querySelectorAll(".nb").forEach(el=>el.classList.remove("active"));
+  const vw=document.getElementById("view-"+v); if(vw) vw.classList.add("active");
+  const nb=document.getElementById("nav-"+v);  if(nb) nb.classList.add("active");
+  current=v; renderCurrent();
+}
+function back(v) { document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open")); go(v); }
+function renderCurrent() {
+  if(current==="dashboard")   rDash();
+  else if(current==="empresas")    rEmpresas();
+  else if(current==="planos")      rPlanos();
+  else if(current==="titulares")   rTitulares();
+  else if(current==="dependentes") rDependentes();
+  else if(current==="historico")   rHistorico();
+  else if(current==="rel-aniv")    rRelAniv();
+  else if(current==="rel-canal")   rRelCanal();
+  else if(current==="rel-vidas")   rRelVidas();
+}
+
+// ── HELPERS ─────────────────────────────────────────────────────
+const fmt = d => { if(!d) return "—"; const[y,m,dd]=d.split("-"); return dd+"/"+m+"/"+y; };
+const cur = v => v!==""&&v!=null ? "R$ "+Number(v).toLocaleString("pt-BR",{minimumFractionDigits:2}) : "—";
+const badge = s => { const m={Ativo:"bg-g",Cancelado:"bg-r",Inclusão:"bg-b",Exclusão:"bg-r",Reajuste:"bg-a"}; return'<span class="badge '+(m[s]||"bg-gr")+'">'+(s||"—")+"</span>"; };
+const fimVig = ini => { if(!ini) return "—"; const d=new Date(ini); d.setFullYear(d.getFullYear()+1); return fmt(d.toISOString().slice(0,10)); };
+
+// ── DASHBOARD ───────────────────────────────────────────────────
+function rDash() {
+  const tAt=DATA.t.filter(x=>gp(x,"Status")==="Ativo").length;
+  const dAt=DATA.d.filter(x=>gp(x,"Status")==="Ativo").length;
+  const total=DATA.t.length+DATA.d.length, ativos=tAt+dAt, cancel=total-ativos;
+  const churn=total?Math.round(cancel/total*100):0;
+  const arr=DATA.p.filter(x=>gp(x,"Status")==="Ativo").reduce((s,x)=>s+(Number(gp(x,"Valor do boleto"))||0),0)*12;
+  const eAt=DATA.e.filter(x=>gp(x,"Status")==="Ativo").length;
+  document.getElementById("dash-stats").innerHTML=
+    '<div class="stat"><div class="stat-lbl">Empresas ativas</div><div class="stat-val cb">'+eAt+'</div><div class="stat-sub">de '+DATA.e.length+' total</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Vidas ativas</div><div class="stat-val cg">'+ativos+'</div><div class="stat-sub">'+tAt+' tit. · '+dAt+' dep.</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Vidas canceladas</div><div class="stat-val cr">'+cancel+'</div><div class="stat-sub">churn '+churn+'%</div></div>'+
+    '<div class="stat"><div class="stat-lbl">ARR estimado</div><div class="stat-val cg" style="font-size:15px">'+cur(arr)+'</div><div class="stat-sub">contratos ativos × 12</div></div>';
+  const canais={};
+  DATA.e.forEach(x=>{const c=gp(x,"Canal de Aquisição")||"Sem canal";canais[c]=(canais[c]||0)+1;});
+  const maxC=Math.max(...Object.values(canais),1);
+  const colors=["#1D9E75","#185FA5","#BA7517","#534AB7"];
+  const today=new Date();
+  const annivs=DATA.p.map(x=>{
+    const e=empById((gp(x,"Empresa")||[])[0]);
+    const ini=gp(x,"Início vigência"); if(!ini) return null;
+    const next=new Date(ini); next.setFullYear(today.getFullYear());
+    if(next<today) next.setFullYear(today.getFullYear()+1);
+    return{empresa:e?gp(e,"Razão Social"):"—",dias:Math.round((next-today)/86400000)};
+  }).filter(a=>a&&a.dias<=90).sort((a,b)=>a.dias-b.dias);
+  document.getElementById("dash-grid").innerHTML=
+    '<div class="dc"><div class="dct">Canal de aquisição</div>'+
+    Object.entries(canais).map(([k,v],i)=>'<div class="br"><span class="bl">'+k+'</span><div class="bt"><div class="bf" style="width:'+Math.round(v/maxC*100)+'%;background:'+colors[i%4]+'"></div></div><span class="bv">'+v+'</span></div>').join("")+
+    '</div><div class="dc"><div class="dct">Aniversários — próximos 90 dias</div>'+
+    (annivs.length?annivs.map(a=>'<div class="ar"><span style="font-weight:600;font-size:12px">'+a.empresa+'</span><span class="badge '+( a.dias<=30?"bg-r":a.dias<=60?"bg-a":"bg-b")+'">'+a.dias+' dias</span></div>').join(""):'<p style="font-size:12px;color:var(--text3)">Nenhum vencimento em 90 dias.</p>')+
+    '</div><div class="dc"><div class="dct">Vidas por status</div>'+
+    [["Tit. ativos",tAt,DATA.t.length||1,"#1D9E75"],["Tit. cancel.",DATA.t.length-tAt,DATA.t.length||1,"#E24B4A"],["Dep. ativos",dAt,DATA.d.length||1,"#1D9E75"],["Dep. cancel.",DATA.d.length-dAt,DATA.d.length||1,"#E24B4A"]]
+    .map(([l,v,m,c])=>'<div class="br"><span class="bl">'+l+'</span><div class="bt"><div class="bf" style="width:'+( Math.round(v/m*100)||0)+'%;background:'+c+'"></div></div><span class="bv">'+v+'</span></div>').join("")+
+    '</div><div class="dc"><div class="dct">Indicadores</div><div class="kpi"><div class="kpi-l">Churn de vidas</div><div class="kpi-v cr">'+churn+'%</div></div><div class="kpi"><div class="kpi-l">ARR estimado</div><div class="kpi-v cg" style="font-size:17px">'+cur(arr)+'</div></div></div>';
+}
+
+// ── EMPRESAS ────────────────────────────────────────────────────
+function fE(v){eFilter=v;rEmpresas()}
+function cE(el,v){el.closest(".chips").querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));el.classList.add("active");eChip=v;rEmpresas()}
+function rEmpresas(){
+  const q=eFilter.toLowerCase();
+  const rows=DATA.e.filter(e=>(!q||gp(e,"Razão Social").toLowerCase().includes(q)||gp(e,"CNPJ").includes(q)||gp(e,"Canal de Aquisição").toLowerCase().includes(q))&&(!eChip||gp(e,"Status")===eChip));
+  document.getElementById("s-e-t").textContent=DATA.e.length;
+  document.getElementById("s-e-a").textContent=DATA.e.filter(e=>gp(e,"Status")==="Ativo").length;
+  document.getElementById("s-e-c").textContent=DATA.e.filter(e=>gp(e,"Status")==="Cancelado").length;
+  document.getElementById("tb-e").innerHTML=rows.length?rows.map(e=>
+    '<tr><td><button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+gp(e,"Razão Social")+'</button></td>'+
+    '<td class="mono">'+( gp(e,"CNPJ")||"—")+'</td><td>'+badge(gp(e,"Canal de Aquisição")||"—")+'</td>'+
+    '<td>'+( gp(e,"Responsável RH")||"—")+'</td>'+
+    '<td><span class="badge bg-gr">'+titsByEmp(e.id).length+'</span></td>'+
+    '<td><span class="badge bg-gr">'+depsByEmp(e.id).length+'</span></td>'+
+    '<td>'+badge(gp(e,"Status"))+'</td>'+
+    '<td><div class="ra"><button class="ib" onclick="openEmpDetail(\''+e.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>'
+  ).join(""):"<tr><td colspan=8 class=empty>Nenhuma empresa encontrada.</td></tr>";
+}
+function openEmpDetail(id){
+  const e=empById(id); if(!e) return;
+  const pl=pByEmp(id),ts=titsByEmp(id),ds=depsByEmp(id);
+  const hist=DATA.h.filter(h=>ts.some(t=>t.id===(gp(h,"Titular")||[])[0]));
+  document.getElementById("dv-e-badge").innerHTML=badge(gp(e,"Status"));
+  document.getElementById("dv-e-body").innerHTML=
+    '<div class="dt">'+gp(e,"Razão Social")+'</div><div class="ds">'+( gp(e,"CNPJ")||"—")+' · '+( gp(e,"Cidade")||"—")+'</div>'+
+    '<div class="ig"><div class="il">Canal</div><div class="iv"><span class="badge bg-b">'+( gp(e,"Canal de Aquisição")||"—")+'</span></div>'+
+    '<div class="il">Responsável RH</div><div class="iv">'+( gp(e,"Responsável RH")||"—")+'</div>'+
+    '<div class="il">Telefone</div><div class="iv">'+( gp(e,"Telefone RH")||"—")+'</div>'+
+    '<div class="il">E-mail</div><div class="iv">'+( gp(e,"Email RH")||"—")+'</div>'+
+    '<div class="il">Endereço</div><div class="iv">'+( gp(e,"Endereço")||"—")+'</div>'+
+    '<div class="il">CEP</div><div class="iv">'+( gp(e,"CEP")||"—")+'</div></div>'+
+    (pl?'<div class="sl">Plano contratado</div><div class="ig"><div class="il">Seguradora</div><div class="iv">'+gp(pl,"Seguradora")+'</div><div class="il">Plano</div><div class="iv">'+gp(pl,"Plano contratado")+'</div><div class="il">Apólice</div><div class="iv mono">'+( gp(pl,"Apólice")||"—")+'</div><div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div><div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div><div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div></div>':"")+
+    '<div class="sl">Titulares ('+ts.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Carteirinha</th><th>Dep.</th><th>Status</th></tr></thead><tbody>'+
+    (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td><td>'+depsByTit(t.id).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
+    '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Vida</th><th>Data</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
+    (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+( gp(h,"Vida afetada")||"—")+'</td><td>'+fmt(gp(h,"Data da alteração"))+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste (%)")?gp(h,"Reajuste (%)")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem registros</td></tr>")+
+    "</tbody></table></div>";
+  document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
+  document.getElementById("dv-e").classList.add("open");
+}
+
+// ── PLANOS ──────────────────────────────────────────────────────
+function rPlanos(){
+  document.getElementById("tb-p").innerHTML=DATA.p.map(pl=>{
+    const eIds=gp(pl,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
+    return'<tr><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+( gp(pl,"Seguradora")||"—")+'</td><td>'+( gp(pl,"Plano contratado")||"—")+'</td><td class="mono">'+( gp(pl,"Apólice")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td><td>'+fimVig(gp(pl,"Início vigência"))+'</td><td>'+cur(gp(pl,"Valor do boleto"))+'</td><td>'+badge(gp(pl,"Status"))+'</td></tr>';
+  }).join("")||"<tr><td colspan=8 class=empty>Sem planos.</td></tr>";
+}
+
+// ── TITULARES ───────────────────────────────────────────────────
+function fT(v){tFilter=v;rTitulares()}
+function rTitulares(){
+  const q=tFilter.toLowerCase();
+  const rows=DATA.t.filter(t=>!q||gp(t,"Nome").toLowerCase().includes(q)||gp(t,"CPF").includes(q));
+  document.getElementById("tb-t").innerHTML=rows.map(t=>{
+    const eIds=gp(t,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
+    return'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+fmt(gp(t,"Data de nascimento"))+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td><td>'+depsByTit(t.id).length+'</td><td>'+badge(gp(t,"Status"))+'</td><td><div class="ra"><button class="ib" onclick="openTitDetail(\''+t.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
+  }).join("")||"<tr><td colspan=8 class=empty>Nenhum titular encontrado.</td></tr>";
+}
+function openTitDetail(id){
+  const t=titById(id); if(!t) return;
+  const eIds=gp(t,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
+  const deps=depsByTit(id), hist=DATA.h.filter(h=>(gp(h,"Titular")||[]).includes(id));
+  document.getElementById("dv-t-body").innerHTML=
+    '<div class="dt">'+gp(t,"Nome")+'</div><div class="ds">'+( gp(t,"CPF")||"—")+' · '+( e?gp(e,"Razão Social"):"—")+'</div>'+
+    '<div class="ig"><div class="il">Empresa</div><div class="iv">'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
+    '<div class="il">Carteirinha</div><div class="iv mono">'+( gp(t,"Nº carteirinha")||"—")+'</div>'+
+    '<div class="il">Nascimento</div><div class="iv">'+fmt(gp(t,"Data de nascimento"))+'</div>'+
+    '<div class="il">Estado civil</div><div class="iv">'+( gp(t,"Estado civil")||"—")+'</div>'+
+    '<div class="il">Profissão</div><div class="iv">'+( gp(t,"Profissão")||"—")+'</div>'+
+    '<div class="il">Contato</div><div class="iv">'+( gp(t,"Contato")||"—")+'</div>'+
+    '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(t,"Data de inclusão"))+'</div>'+
+    '<div class="il">Status</div><div class="iv">'+badge(gp(t,"Status"))+'</div></div>'+
+    '<div class="sl">Dependentes ('+deps.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Parentesco</th><th>Carteirinha</th><th>Status</th></tr></thead><tbody>'+
+    (deps.map(d=>'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Grau de parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Nº carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem dependentes</td></tr>")+
+    '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Data</th><th>Responsável</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
+    (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+fmt(gp(h,"Data da alteração"))+'</td><td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste (%)")?gp(h,"Reajuste (%)")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem histórico</td></tr>")+
+    "</tbody></table></div>";
+  document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
+  document.getElementById("dv-t").classList.add("open");
+}
+
+// ── DEPENDENTES ─────────────────────────────────────────────────
+function rDependentes(){
+  document.getElementById("tb-d").innerHTML=DATA.d.map(d=>{
+    const tIds=gp(d,"Titular")||[], t=DATA.t.find(x=>tIds.includes(x.id));
+    const e=t?DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id)):null;
+    return'<tr><td>'+( gp(d,"Nome")||"—")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td>'+
+    '<td>'+( t?'<button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</td>'+
+    '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td>'+
+    '<td><span class="badge bg-gr">'+( gp(d,"Grau de parentesco")||"—")+'</span></td>'+
+    '<td class="mono">'+( gp(d,"Nº carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>';
+  }).join("")||"<tr><td colspan=7 class=empty>Sem dependentes.</td></tr>";
+}
+
+// ── HISTÓRICO ───────────────────────────────────────────────────
+function rHistorico(){
+  document.getElementById("tb-h").innerHTML=DATA.h.map(h=>{
+    const tIds=gp(h,"Titular")||[], t=DATA.t.find(x=>tIds.includes(x.id));
+    const e=t?DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id)):null;
+    return'<tr><td>'+badge(gp(h,"Tipo"))+'</td>'+
+    '<td>'+( t?'<button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+(gp(h,"Vida afetada")||gp(t,"Nome"))+"</button>":(gp(h,"Vida afetada")||"—"))+'</td>'+
+    '<td class="mono">'+( gp(h,"CPF da vida afetada")||"—")+'</td><td>'+fmt(gp(h,"Data da alteração"))+'</td>'+
+    '<td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td>'+
+    '<td>'+( gp(h,"Reajuste (%)")?gp(h,"Reajuste (%)")+"%":"—")+'</td>'+
+    '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td></tr>';
+  }).join("")||"<tr><td colspan=8 class=empty>Sem registros.</td></tr>";
+}
+
+// ── RELATÓRIOS ──────────────────────────────────────────────────
+function rRelAniv(){
+  const today=new Date();
+  const rows=DATA.p.map(pl=>{
+    const eIds=gp(pl,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
+    const ini=gp(pl,"Início vigência"); if(!ini) return null;
+    const next=new Date(ini); next.setFullYear(today.getFullYear());
+    if(next<today) next.setFullYear(today.getFullYear()+1);
+    return{e,pl,ini,next,dias:Math.round((next-today)/86400000)};
+  }).filter(Boolean).sort((a,b)=>a.dias-b.dias);
+  document.getElementById("tb-ra").innerHTML=rows.map(r=>
+    '<tr><td>'+( r.e?gp(r.e,"Razão Social"):"—")+'</td><td>'+( gp(r.pl,"Seguradora")||"—")+'</td><td>'+( gp(r.pl,"Plano contratado")||"—")+'</td>'+
+    '<td>'+fmt(r.ini)+'</td><td>'+fmt(r.next.toISOString().slice(0,10))+'</td>'+
+    '<td><span class="badge '+( r.dias<=30?"bg-r":r.dias<=60?"bg-a":"bg-b")+'">'+r.dias+' dias</span></td>'+
+    '<td>'+cur(gp(r.pl,"Valor do boleto"))+'</td><td>'+badge(gp(r.pl,"Status"))+'</td></tr>'
+  ).join("")||"<tr><td colspan=8 class=empty>Sem dados.</td></tr>";
+}
+function rRelCanal(){
+  const canais={};
+  DATA.e.forEach(e=>{const c=gp(e,"Canal de Aquisição")||"Sem canal";if(!canais[c])canais[c]=[];canais[c].push(e);});
+  document.getElementById("c-canal").innerHTML=Object.entries(canais).map(([canal,emps])=>{
+    const tT=emps.reduce((s,e)=>s+titsByEmp(e.id).length,0);
+    const tD=emps.reduce((s,e)=>s+depsByEmp(e.id).length,0);
+    const tB=emps.reduce((s,e)=>{const pl=pByEmp(e.id);return s+(pl?Number(gp(pl,"Valor do boleto"))||0:0);},0);
+    return'<div class="rs"><div class="rt"><span class="badge bg-b">'+canal+'</span> &nbsp;'+emps.length+' empresa(s) · '+tT+' tit. · '+tD+' dep. · '+cur(tB)+'/mês</div>'+
+    '<div class="tw"><table><thead><tr><th>Empresa</th><th>Status</th><th>Seguradora</th><th>Titulares</th><th>Dependentes</th><th>Boleto</th></tr></thead><tbody>'+
+    emps.map(e=>{const pl=pByEmp(e.id);return'<tr><td>'+gp(e,"Razão Social")+'</td><td>'+badge(gp(e,"Status"))+'</td><td>'+( pl?gp(pl,"Seguradora"):"—")+'</td><td>'+titsByEmp(e.id).length+'</td><td>'+depsByEmp(e.id).length+'</td><td>'+( pl?cur(gp(pl,"Valor do boleto")):"—")+'</td></tr>';}).join("")+
+    "</tbody></table></div></div>";
+  }).join("")||'<div class="empty">Sem dados.</div>';
+}
+function rRelVidas(){
+  const tAt=DATA.t.filter(t=>gp(t,"Status")==="Ativo");
+  const tCa=DATA.t.filter(t=>gp(t,"Status")==="Cancelado");
+  const total=DATA.t.length+DATA.d.length;
+  const ativos=tAt.length+DATA.d.filter(d=>gp(d,"Status")==="Ativo").length;
+  const cancel=total-ativos, churn=total?Math.round(cancel/total*100):0;
+  document.getElementById("c-vidas").innerHTML=
+    '<div class="stats s4" style="margin-bottom:16px"><div class="stat"><div class="stat-lbl">Total</div><div class="stat-val">'+total+'</div></div><div class="stat"><div class="stat-lbl">Ativas</div><div class="stat-val cg">'+ativos+'</div></div><div class="stat"><div class="stat-lbl">Canceladas</div><div class="stat-val cr">'+cancel+'</div></div><div class="stat"><div class="stat-lbl">Churn</div><div class="stat-val ca">'+churn+'%</div></div></div>'+
+    '<div class="rs"><div class="rt">Titulares ativos ('+tAt.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th><th>Inclusão</th><th>Dep.</th></tr></thead><tbody>'+
+    tAt.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td><td>'+fmt(gp(t,"Data de inclusão"))+'</td><td>'+depsByTit(t.id).length+'</td></tr>';}).join("")+
+    '</tbody></table></div></div><div class="rs" style="margin-top:16px"><div class="rt">Titulares cancelados ('+tCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th></tr></thead><tbody>'+
+    tCa.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td></tr>';}).join("")+
+    "</tbody></table></div></div>";
+}
+
+// ── EXPORT CSV ──────────────────────────────────────────────────
+function exportCSV(type){
+  let headers=[],rows=[];
+  if(type==="empresas"){headers=["Razão Social","CNPJ","Canal","Responsável","Telefone","Email","Cidade","Status"];rows=DATA.e.map(e=>[gp(e,"Razão Social"),gp(e,"CNPJ"),gp(e,"Canal de Aquisição"),gp(e,"Responsável RH"),gp(e,"Telefone RH"),gp(e,"Email RH"),gp(e,"Cidade"),gp(e,"Status")]);}
+  else if(type==="aniv"){headers=["Empresa","Seguradora","Plano","Início","Próx. aniversário","Dias","Boleto","Status"];const today=new Date();rows=DATA.p.map(pl=>{const e=DATA.e.find(x=>(gp(pl,"Empresa")||[]).includes(x.id));const ini=gp(pl,"Início vigência");const next=ini?new Date(ini):null;if(next){next.setFullYear(today.getFullYear());if(next<today)next.setFullYear(today.getFullYear()+1);}return[e?gp(e,"Razão Social"):"—",gp(pl,"Seguradora"),gp(pl,"Plano contratado"),fmt(ini),next?fmt(next.toISOString().slice(0,10)):"—",next?Math.round((next-today)/86400000):"—",gp(pl,"Valor do boleto"),gp(pl,"Status")];});}
+  else if(type==="canal"){headers=["Canal","Empresa","Status","Seguradora","Titulares","Dependentes","Boleto"];rows=DATA.e.map(e=>{const pl=pByEmp(e.id);return[gp(e,"Canal de Aquisição"),gp(e,"Razão Social"),gp(e,"Status"),pl?gp(pl,"Seguradora"):"—",titsByEmp(e.id).length,depsByEmp(e.id).length,pl?gp(pl,"Valor do boleto"):"—"];});}
+  else if(type==="vidas"){headers=["Nome","Tipo","CPF","Empresa","Carteirinha","Status"];rows=[...DATA.t.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id));return[gp(t,"Nome"),"Titular",gp(t,"CPF"),e?gp(e,"Razão Social"):"—",gp(t,"Nº carteirinha"),gp(t,"Status")];}), ...DATA.d.map(d=>{const t2=titById((gp(d,"Titular")||[])[0]);const e=t2?DATA.e.find(x=>(gp(t2,"Empresa")||[]).includes(x.id)):null;return[gp(d,"Nome"),"Dependente",gp(d,"CPF"),e?gp(e,"Razão Social"):"—",gp(d,"Nº carteirinha"),gp(d,"Status")];})];}
+  const csv=[headers,...rows].map(r=>r.map(c=>'"'+String(c||"").replace(/"/g,'""')+'"').join(",")).join("\n");
+  const a=document.createElement("a");a.href="data:text/csv;charset=utf-8,\uFEFF"+encodeURIComponent(csv);a.download="relatorio-"+type+".csv";a.click();
+}
+
+// ── FORMULÁRIOS ─────────────────────────────────────────────────
+let currentModal="";
+const FORMS={
+  empresa:{title:"Nova empresa",html:'<div class="fs"><div class="ft">Dados cadastrais</div><div class="fg"><div class="field ff"><label class="req">Razão social</label><input id="f-razao"></div><div class="field"><label class="req">CNPJ</label><input id="f-cnpj" placeholder="00.000.000/0001-00"></div><div class="field"><label>CEP</label><input id="f-cep"></div><div class="field ff"><label>Endereço</label><input id="f-end"></div><div class="field"><label>Cidade</label><input id="f-cidade"></div></div></div><div class="fs"><div class="ft">Responsável de RH</div><div class="fg"><div class="field"><label class="req">Nome</label><input id="f-resp"></div><div class="field"><label>Telefone</label><input id="f-tel"></div><div class="field ff"><label>E-mail</label><input id="f-email" type="email"></div></div></div><div class="fs"><div class="ft">Comercial</div><div class="fg"><div class="field"><label>Canal</label><select id="f-canal"><option>Indicação</option><option>Digital</option><option>Corretor parceiro</option><option>Prospecção ativa</option><option>Evento</option></select></div><div class="field"><label>Status</label><select id="f-status"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
+  plano:{title:"Novo plano",html:'<div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field ff"><label class="req">Empresa</label><select id="f-ep"></select></div><div class="field"><label class="req">Seguradora</label><input id="f-seg"></div><div class="field"><label class="req">Plano contratado</label><input id="f-pla"></div><div class="field"><label>Apólice</label><input id="f-apo"></div><div class="field"><label class="req">Início vigência</label><input id="f-ini" type="date"></div><div class="field"><label>Fim vigência</label><input id="f-fim" type="date"></div><div class="field"><label class="req">Boleto (R$)</label><input id="f-bol" type="number" step="0.01"></div><div class="field"><label>Status</label><select id="f-stp"><option>Ativo</option><option>Cancelado</option><option>Em renovação</option></select></div></div></div>'},
+  titular:{title:"Novo titular",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nome"></div><div class="field"><label class="req">CPF</label><input id="f-cpf"></div><div class="field"><label>Nascimento</label><input id="f-nasc" type="date"></div><div class="field"><label>RG</label><input id="f-rg"></div><div class="field"><label>Expedição RG</label><input id="f-rgexp" type="date"></div><div class="field"><label>Órgão expedidor</label><input id="f-orgao"></div><div class="field"><label>Nome da mãe</label><input id="f-mae"></div><div class="field"><label>Nome do pai</label><input id="f-pai"></div><div class="field"><label>Peso (kg)</label><input id="f-peso" type="number"></div><div class="field"><label>Altura (cm)</label><input id="f-alt" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ec"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option><option>União estável</option></select></div><div class="field"><label>Profissão</label><input id="f-prof"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doe"></textarea></div></div></div><div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field"><label class="req">Empresa</label><select id="f-et"></select></div><div class="field"><label>Data de inclusão</label><input id="f-inc" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-cart"></div><div class="field"><label>Contato</label><input id="f-cont"></div><div class="field"><label>Status</label><select id="f-stt"><option>Ativo</option><option>Cancelado</option></select></div></div></div><div class="fs"><div class="ft sens">Dados sensíveis</div><div class="fg"><div class="field"><label>Login seguradora</label><input id="f-log"></div><div class="field"><label>Senha seguradora</label><input id="f-sen" type="password"></div></div></div>'},
+  dependente:{title:"Novo dependente",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nomd"></div><div class="field"><label>CPF (se houver)</label><input id="f-cpfd"></div><div class="field"><label>Nascimento</label><input id="f-nasd" type="date"></div><div class="field"><label>RG</label><input id="f-rgd"></div><div class="field"><label>Nome da mãe</label><input id="f-maed"></div><div class="field"><label>Nome do pai</label><input id="f-paid"></div><div class="field"><label>Peso</label><input id="f-pesd" type="number"></div><div class="field"><label>Altura</label><input id="f-altd" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ecd"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option></select></div><div class="field"><label>Profissão</label><input id="f-prod"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doed"></textarea></div></div></div><div class="fs"><div class="ft">Vínculo</div><div class="fg"><div class="field"><label class="req">Titular</label><select id="f-td"></select></div><div class="field"><label class="req">Parentesco</label><select id="f-pard"><option>Cônjuge</option><option>Filho</option><option>Pai/Mãe</option><option>Irmão</option><option>Outro</option></select></div><div class="field"><label>Data de inclusão</label><input id="f-incd" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-crtd"></div><div class="field"><label>Status</label><select id="f-std"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
+  historico:{title:"Registrar alteração",html:'<div class="fs"><div class="ft">Evento</div><div class="fg"><div class="field"><label class="req">Tipo</label><select id="f-tiph"><option>Inclusão</option><option>Exclusão</option><option>Reajuste</option></select></div><div class="field"><label class="req">Data</label><input id="f-dath" type="date"></div><div class="field ff"><label class="req">Titular relacionado</label><select id="f-vidh"></select></div><div class="field ff"><label class="req">Vida afetada (nome)</label><input id="f-vidan"></div><div class="field"><label>CPF da vida afetada</label><input id="f-cpfh"></div><div class="field"><label>Reajuste (%)</label><input id="f-rejh" type="number" step="0.01"></div><div class="field"><label>Valor atualizado (R$)</label><input id="f-valh" type="number" step="0.01"></div><div class="field"><label class="req">Responsável</label><input id="f-resh"></div><div class="field"><label>Motivo</label><input id="f-moth"></div><div class="field ff"><label>Observações</label><textarea id="f-obsh"></textarea></div></div></div>'}
+};
+
+function openModal(type){
+  currentModal=type;
+  document.getElementById("m-title").textContent=FORMS[type].title;
+  document.getElementById("m-body").innerHTML=FORMS[type].html;
+  document.getElementById("ov").classList.add("open");
+  if(type==="plano"){const s=document.getElementById("f-ep");if(s)s.innerHTML=DATA.e.map(e=>`<option value="${e.id}">${gp(e,"Razão Social")}</option>`).join("")}
+  if(type==="titular"){const s=document.getElementById("f-et");if(s)s.innerHTML=DATA.e.map(e=>`<option value="${e.id}">${gp(e,"Razão Social")}</option>`).join("")}
+  if(type==="dependente"){const s=document.getElementById("f-td");if(s)s.innerHTML=DATA.t.map(t=>`<option value="${t.id}">${gp(t,"Nome")}</option>`).join("")}
+  if(type==="historico"){const s=document.getElementById("f-vidh");if(s)s.innerHTML=DATA.t.map(t=>`<option value="${t.id}">${gp(t,"Nome")}</option>`).join("")}
+}
+function closeModal(){document.getElementById("ov").classList.remove("open")}
+function closeBg(e){if(e.target===document.getElementById("ov"))closeModal()}
+const g=id=>(document.getElementById(id)||{}).value||"";
+
+async function saveForm(){
+  document.getElementById("btn-save").textContent="Salvando…";
+  try{
+    if(currentModal==="empresa"){
+      await nCreate(DBS.empresas,{"Razão Social":P.title(g("f-razao")),"CNPJ":P.text(g("f-cnpj")),"Endereço":P.text(g("f-end")),"Cidade":P.text(g("f-cidade")),"CEP":P.text(g("f-cep")),"Responsável RH":P.text(g("f-resp")),"Telefone RH":P.phone(g("f-tel")),"Email RH":P.email(g("f-email")),"Canal de Aquisição":P.select(g("f-canal")),"Status":P.select(g("f-status"))});
+    }else if(currentModal==="plano"){
+      await nCreate(DBS.planos,{"Name":P.title(g("f-seg")+" — "+g("f-pla")),"Empresa":P.rel(g("f-ep")),"Seguradora":P.text(g("f-seg")),"Plano contratado":P.text(g("f-pla")),"Apólice":P.text(g("f-apo")),"Início vigência":P.date(g("f-ini")),"Fim vigência":P.date(g("f-fim")),"Valor do boleto":P.number(g("f-bol")),"Status":P.select(g("f-stp"))});
+    }else if(currentModal==="titular"){
+      await nCreate(DBS.titulares,{"Nome":P.title(g("f-nome")),"Empresa":P.rel(g("f-et")),"CPF":P.text(g("f-cpf")),"Data de nascimento":P.date(g("f-nasc")),"RG":P.text(g("f-rg")),"Data de expedição RG":P.date(g("f-rgexp")),"Órgão expedidor":P.text(g("f-orgao")),"Nome da mãe":P.text(g("f-mae")),"Nome do pai":P.text(g("f-pai")),"Peso (kg)":P.number(g("f-peso")),"Altura (cm)":P.number(g("f-alt")),"Estado civil":P.select(g("f-ec")),"Profissão":P.text(g("f-prof")),"Doenças preexistentes":P.text(g("f-doe")),"Data de inclusão":P.date(g("f-inc")),"Nº carteirinha":P.text(g("f-cart")),"Contato":P.phone(g("f-cont")),"Login seguradora":P.text(g("f-log")),"Status":P.select(g("f-stt"))});
+    }else if(currentModal==="dependente"){
+      await nCreate(DBS.dependentes,{"Nome":P.title(g("f-nomd")),"Titular":P.rel(g("f-td")),"CPF":P.text(g("f-cpfd")),"Data de nascimento":P.date(g("f-nasd")),"RG":P.text(g("f-rgd")),"Nome da mãe":P.text(g("f-maed")),"Nome do pai":P.text(g("f-paid")),"Peso (kg)":P.number(g("f-pesd")),"Altura (cm)":P.number(g("f-altd")),"Estado civil":P.select(g("f-ecd")),"Profissão":P.text(g("f-prod")),"Doenças preexistentes":P.text(g("f-doed")),"Grau de parentesco":P.select(g("f-pard")),"Data de inclusão":P.date(g("f-incd")),"Nº carteirinha":P.text(g("f-crtd")),"Status":P.select(g("f-std"))});
+    }else if(currentModal==="historico"){
+      const tid=g("f-vidh"),t=titById(tid);
+      await nCreate(DBS.historico,{"Evento":P.title(g("f-tiph")+" — "+(g("f-vidan")||gp(t||{},"Nome"))),"Tipo":P.select(g("f-tiph")),"Titular":P.rel(tid),"Vida afetada":P.text(g("f-vidan")||gp(t||{},"Nome")),"CPF da vida afetada":P.text(g("f-cpfh")||gp(t||{},"CPF")),"Data da alteração":P.date(g("f-dath")),"Responsável":P.text(g("f-resh")),"Motivo":P.text(g("f-moth")),"Reajuste (%)":P.number(g("f-rejh")),"Observações":P.text(g("f-obsh"))});
+    }
+    closeModal(); toast("Salvo com sucesso!","ok"); await loadAll();
+  }catch(err){toast("Erro: "+err.message,"err");}
+  finally{document.getElementById("btn-save").textContent="Salvar";}
+}
+
+// ── TOAST ───────────────────────────────────────────────────────
+function toast(msg,type){
+  const el=document.createElement("div");
+  el.className="toast "+(type==="ok"?"tok":"terr");
+  el.textContent=msg;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),4000);
+}
+
+// ── INIT ────────────────────────────────────────────────────────
+if(sessionStorage.getItem("cx_auth")==="1"){
+  document.getElementById("login-screen").style.display="none";
+  document.getElementById("app").style.display="flex";
+  loadAll();
+}
+</script>
+</body>
+</html>
