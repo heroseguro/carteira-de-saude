@@ -385,7 +385,7 @@ tr:hover .ra{opacity:1}
 <script>
 // ── CREDENCIAIS ─────────────────────────────────────────────────
 const USERS = { "CX Seguros": "Hero@2026*" };
-const API_URL = "https://script.google.com/macros/s/AKfycbwqfke6RJ1zZcW5nnj2avEQUjJHTHuDSuLOurTG54jkahnU5FNluj5VXP2hd8fyt2Wshw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxKf70Eb28UDqHKADoFJPjwg3F0YWEIDpLHgDkKbhWnfCB3rHAtPtQqClbDchCk3hzquw/exec";
 
 // ── LOGIN ───────────────────────────────────────────────────────
 function doLogin() {
