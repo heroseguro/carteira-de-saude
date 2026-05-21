@@ -25,7 +25,7 @@
 }}
 body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:14px;line-height:1.5;height:100vh;overflow:hidden}
 .app{display:flex;height:100vh;overflow:hidden}
-
+ 
 /* LOGIN */
 .login-screen{display:flex;align-items:center;justify-content:center;height:100vh;background:var(--bg3)}
 .login-card{background:var(--bg);border:0.5px solid var(--border2);border-radius:var(--rl);padding:36px 40px;width:100%;max-width:360px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
@@ -42,7 +42,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .field input:focus{outline:none;border-color:var(--green)}
 .login-error{background:var(--rbg);color:var(--red);font-size:12px;padding:8px 12px;border-radius:var(--r);margin-bottom:14px;display:none}
 .btn-full{width:100%;justify-content:center;padding:10px;font-size:13px;font-weight:500}
-
+ 
 /* SIDEBAR */
 .sb{width:210px;background:var(--bg2);border-right:0.5px solid var(--border);display:flex;flex-direction:column;flex-shrink:0}
 .sb-logo{padding:14px 16px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px}
@@ -61,7 +61,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .sb-foot button{display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;font-size:11px;color:var(--text3);font-family:var(--font);padding:4px 6px;border-radius:var(--r);width:100%;margin-bottom:2px}
 .sb-foot button:hover{background:var(--bg3);color:var(--text2)}
 .sb-foot button svg{width:13px;height:13px;stroke-width:1.8}
-
+ 
 /* MAIN */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;background:var(--bg)}
 .view{display:none;flex-direction:column;height:100%;overflow:hidden}
@@ -70,7 +70,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .topbar-title{font-size:14px;font-weight:600}
 .topbar-right{display:flex;gap:7px;align-items:center}
 .content{flex:1;overflow-y:auto;padding:18px}
-
+ 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--r);border:0.5px solid var(--border2);background:transparent;color:var(--text);font-size:12px;font-family:var(--font);cursor:pointer;transition:background .1s;white-space:nowrap}
 .btn:hover{background:var(--bg2)}
@@ -78,7 +78,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .btn-primary{background:var(--green);border-color:var(--green);color:#fff}
 .btn-primary:hover{background:var(--gtx);border-color:var(--gtx)}
 .btn-sm{padding:4px 9px;font-size:11px}
-
+ 
 /* STATS */
 .stats{display:grid;gap:10px;margin-bottom:16px}
 .s4{grid-template-columns:repeat(4,1fr)}
@@ -88,7 +88,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .stat-val{font-size:21px;font-weight:700;line-height:1}
 .stat-sub{font-size:10px;color:var(--text3);margin-top:2px}
 .cg{color:var(--green)}.cr{color:var(--red)}.ca{color:#BA7517}.cb{color:#185FA5}
-
+ 
 /* TABLE */
 .tw{border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden}
 table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
@@ -102,7 +102,7 @@ tr:hover .ra{opacity:1}
 .ib{background:transparent;border:none;cursor:pointer;padding:3px;border-radius:var(--r);color:var(--text2);display:flex}
 .ib:hover{background:var(--border);color:var(--text)}
 .ib svg{width:13px;height:13px;stroke-width:1.8}
-
+ 
 /* BADGES */
 .badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
 .bg-g{background:var(--gbg);color:var(--gtx)}
@@ -110,7 +110,7 @@ tr:hover .ra{opacity:1}
 .bg-a{background:var(--abg);color:var(--atx)}
 .bg-b{background:var(--bbg);color:var(--btx)}
 .bg-gr{background:var(--bg3);color:var(--text2)}
-
+ 
 /* SEARCH & CHIPS */
 .sr{display:flex;gap:8px;margin-bottom:11px}
 .si{flex:1;padding:6px 11px;border:0.5px solid var(--border2);border-radius:var(--r);font-size:12px;background:var(--bg2);color:var(--text);font-family:var(--font)}
@@ -118,7 +118,7 @@ tr:hover .ra{opacity:1}
 .chips{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap}
 .chip{padding:3px 10px;border-radius:20px;border:0.5px solid var(--border2);font-size:11px;cursor:pointer;background:transparent;color:var(--text2);font-family:var(--font)}
 .chip.active{background:var(--gbg);border-color:var(--green);color:var(--gtx);font-weight:600}
-
+ 
 /* MODAL */
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-start;justify-content:center;z-index:200;padding:36px 16px;overflow-y:auto}
 .ov.open{display:flex}
@@ -136,7 +136,7 @@ tr:hover .ra{opacity:1}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
 .field textarea{resize:vertical;min-height:56px}
 .sens{color:#A32D2D!important}
-
+ 
 /* DETAIL */
 .dv{display:none;flex-direction:column;height:100%;overflow:hidden}
 .dv.open{display:flex}
@@ -153,7 +153,7 @@ tr:hover .ra{opacity:1}
 .il:nth-last-child(2),.iv:last-child{border-bottom:none}
 .sl{font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin:15px 0 8px}
 .lbtn{background:transparent;border:none;cursor:pointer;color:var(--green);font-size:12px;font-family:var(--font);text-decoration:underline;padding:0;text-align:left}
-
+ 
 /* DASHBOARD */
 .dg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .dc{background:var(--bg2);border-radius:var(--rl);padding:13px 15px}
@@ -168,11 +168,11 @@ tr:hover .ra{opacity:1}
 .kpi{margin-bottom:11px}
 .kpi-l{font-size:11px;color:var(--text3);margin-bottom:2px}
 .kpi-v{font-size:24px;font-weight:700;line-height:1}
-
+ 
 /* REPORTS */
 .rs{margin-bottom:20px}
 .rt{font-size:13px;font-weight:600;margin-bottom:9px;padding-bottom:7px;border-bottom:0.5px solid var(--border)}
-
+ 
 /* MISC */
 .loading{text-align:center;padding:36px;color:var(--text3);font-size:12px}
 .empty{text-align:center;padding:30px;color:var(--text3);font-size:12px}
@@ -184,7 +184,7 @@ tr:hover .ra{opacity:1}
 </style>
 </head>
 <body>
-
+ 
 <!-- LOGIN -->
 <div id="login-screen" class="login-screen">
   <div class="login-card">
@@ -200,7 +200,7 @@ tr:hover .ra{opacity:1}
     <button class="btn btn-primary btn-full" onclick="doLogin()">Entrar</button>
   </div>
 </div>
-
+ 
 <!-- APP -->
 <div id="app" class="app" style="display:none">
   <div class="sb">
@@ -255,7 +255,7 @@ tr:hover .ra{opacity:1}
       <button onclick="doLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Sair</button>
     </div>
   </div>
-
+ 
   <div class="main">
     <!-- DASHBOARD -->
     <div class="view active" id="view-dashboard">
@@ -265,7 +265,7 @@ tr:hover .ra{opacity:1}
         <div class="dg" id="dash-grid"></div>
       </div>
     </div>
-
+ 
     <!-- EMPRESAS -->
     <div class="view" id="view-empresas">
       <div class="topbar"><div class="topbar-title">Empresas</div><div class="topbar-right">
@@ -294,7 +294,7 @@ tr:hover .ra{opacity:1}
       <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span></div>
       <div class="db" id="dv-e-body"></div>
     </div>
-
+ 
     <!-- PLANOS -->
     <div class="view" id="view-planos">
       <div class="topbar"><div class="topbar-title">Planos</div><div class="topbar-right">
@@ -305,7 +305,7 @@ tr:hover .ra{opacity:1}
         <tbody id="tb-p"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
     </div>
-
+ 
     <!-- TITULARES -->
     <div class="view" id="view-titulares">
       <div class="topbar"><div class="topbar-title">Titulares</div><div class="topbar-right">
@@ -323,7 +323,7 @@ tr:hover .ra{opacity:1}
       <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button></div>
       <div class="db" id="dv-t-body"></div>
     </div>
-
+ 
     <!-- DEPENDENTES -->
     <div class="view" id="view-dependentes">
       <div class="topbar"><div class="topbar-title">Dependentes</div><div class="topbar-right">
@@ -334,7 +334,7 @@ tr:hover .ra{opacity:1}
         <tbody id="tb-d"><tr><td colspan="7" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
     </div>
-
+ 
     <!-- HISTORICO -->
     <div class="view" id="view-historico">
       <div class="topbar"><div class="topbar-title">Histórico de alterações</div><div class="topbar-right">
@@ -345,7 +345,7 @@ tr:hover .ra{opacity:1}
         <tbody id="tb-h"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
     </div>
-
+ 
     <!-- REL ANIVERSÁRIOS -->
     <div class="view" id="view-rel-aniv">
       <div class="topbar"><div class="topbar-title">Relatório — Aniversários de contrato</div><div class="topbar-right"><button class="btn" onclick="exportCSV('aniv')">CSV</button></div></div>
@@ -357,13 +357,13 @@ tr:hover .ra{opacity:1}
         </table></div>
       </div>
     </div>
-
+ 
     <!-- REL CANAL -->
     <div class="view" id="view-rel-canal">
       <div class="topbar"><div class="topbar-title">Relatório — Por canal de aquisição</div><div class="topbar-right"><button class="btn" onclick="exportCSV('canal')">CSV</button></div></div>
       <div class="content" id="c-canal"></div>
     </div>
-
+ 
     <!-- REL VIDAS -->
     <div class="view" id="view-rel-vidas">
       <div class="topbar"><div class="topbar-title">Relatório — Vidas ativas e canceladas</div><div class="topbar-right"><button class="btn" onclick="exportCSV('vidas')">CSV</button></div></div>
@@ -371,7 +371,7 @@ tr:hover .ra{opacity:1}
     </div>
   </div>
 </div>
-
+ 
 <!-- MODAL -->
 <div class="ov" id="ov" onclick="closeBg(event)">
   <div class="modal">
@@ -380,20 +380,12 @@ tr:hover .ra{opacity:1}
     <div class="mf"><button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveForm()" id="btn-save">Salvar</button></div>
   </div>
 </div>
-
+ 
 <script>
 // ── CREDENCIAIS ─────────────────────────────────────────────────
 const USERS = { "CX Seguros": "Hero@2026*" };
-
-const NOTION_TOKEN = "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";
-const DBS = {
-  empresas:    "36652622d2198033bdb9dea2031a653b",
-  planos:      "36652622d2198049aeabe006594bdc0d",
-  titulares:   "36652622d21980a0988cd0941802ca23",
-  dependentes: "36652622d21980239e5bce583141b2c6",
-  historico:   "36652622d21980abbdc1e1b6b8b44144"
-};
-
+const API_URL = "https://script.google.com/macros/s/AKfycbwqfke6RJ1zZcW5nnj2avEQUjJHTHuDSuLOurTG54jkahnU5FNluj5VXP2hd8fyt2Wshw/exec";
+ 
 // ── LOGIN ───────────────────────────────────────────────────────
 function doLogin() {
   const user = document.getElementById("l-user").value.trim();
@@ -411,93 +403,65 @@ function doLogin() {
     document.getElementById("l-pass").focus();
   }
 }
-
+ 
 function doLogout() {
   sessionStorage.removeItem("cx_auth");
   location.reload();
 }
-
-// ── NOTION API ──────────────────────────────────────────────────
-const NV = "2022-06-28";
-
-async function nQuery(dbId) {
-  let results = [], cursor = null;
-  do {
-    const body = cursor ? { start_cursor: cursor } : {};
-    const r = await fetch("https://carteiraseguros.seguros.workers.dev/v1/databases/" + dbId + "/query", {
-      method: "POST",
-      headers: { "Authorization": "Bearer " + NOTION_TOKEN, "Notion-Version": NV, "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-    if (!r.ok) throw new Error("Erro ao consultar Notion (" + r.status + "). Verifique se a integração está conectada ao database.");
-    const d = await r.json();
-    results = results.concat(d.results || []);
-    cursor = d.next_cursor || null;
-  } while (cursor);
-  return results;
-}
-
-async function nCreate(dbId, properties) {
-  const r = await fetch("https://carteiraseguros.seguros.workers.dev/v1/pages", {
+ 
+// ── GOOGLE SHEETS API ───────────────────────────────────────────
+async function apiGet(sheet) {
+  const r = await fetch(API_URL, {
     method: "POST",
-    headers: { "Authorization": "Bearer " + NOTION_TOKEN, "Notion-Version": NV, "Content-Type": "application/json" },
-    body: JSON.stringify({ parent: { database_id: dbId }, properties })
+    body: JSON.stringify({ action: "get", sheet })
   });
-  if (!r.ok) { const e = await r.json(); throw new Error(e.message || "Erro ao criar registro"); }
-  return r.json();
+  if (!r.ok) throw new Error("Erro ao buscar dados (" + r.status + ")");
+  const d = await r.json();
+  if (!d.ok) throw new Error(d.error || "Erro desconhecido");
+  return d.data;
 }
-
-// ── PROP BUILDERS ───────────────────────────────────────────────
-const P = {
-  title:  v => ({ title: [{ text: { content: String(v||"") } }] }),
-  text:   v => ({ rich_text: [{ text: { content: String(v||"") } }] }),
-  number: v => ({ number: v !== "" && v != null ? Number(v) : null }),
-  select: v => ({ select: v ? { name: String(v) } : null }),
-  date:   v => ({ date: v ? { start: v } : null }),
-  email:  v => ({ email: v || null }),
-  phone:  v => ({ phone_number: v || null }),
-  rel:    id => ({ relation: id ? [{ id }] : [] }),
-};
-
-function gp(page, key) {
-  const prop = page.properties?.[key];
-  if (!prop) return "";
-  switch(prop.type) {
-    case "title":        return prop.title?.map(t=>t.plain_text).join("") || "";
-    case "rich_text":    return prop.rich_text?.map(t=>t.plain_text).join("") || "";
-    case "number":       return prop.number ?? "";
-    case "select":       return prop.select?.name || "";
-    case "date":         return prop.date?.start || "";
-    case "email":        return prop.email || "";
-    case "phone_number": return prop.phone_number || "";
-    case "relation":     return prop.relation?.map(r=>r.id) || [];
-    default:             return "";
-  }
+ 
+async function apiCreate(sheet, row) {
+  const r = await fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify({ action: "create", sheet, row })
+  });
+  if (!r.ok) throw new Error("Erro ao salvar (" + r.status + ")");
+  const d = await r.json();
+  if (!d.ok) throw new Error(d.error || "Erro ao criar registro");
+  return d.id;
 }
-
+ 
+// ── HELPER: ler campo de objeto simples ─────────────────────────
+function gp(obj, key) {
+  if (!obj) return "";
+  const v = obj[key];
+  return v !== undefined && v !== null ? v : "";
+}
+ 
 // ── CACHE ───────────────────────────────────────────────────────
 let DATA = { e:[], p:[], t:[], d:[], h:[] };
 let eFilter="", eChip="", tFilter="";
-
-const empById   = id => DATA.e.find(x=>x.id===id);
-const titById   = id => DATA.t.find(x=>x.id===id);
-const pByEmp    = eid => DATA.p.find(x=>(gp(x,"Empresa")||[]).includes(eid));
-const titsByEmp = eid => DATA.t.filter(x=>(gp(x,"Empresa")||[]).includes(eid));
-const depsByTit = tid => DATA.d.filter(x=>(gp(x,"Titular")||[]).includes(tid));
-const depsByEmp = eid => titsByEmp(eid).flatMap(t=>depsByTit(t.id));
-
+ 
+const empById   = id => DATA.e.find(x=>x["ID"]===id);
+const titById   = id => DATA.t.find(x=>x["ID"]===id);
+const pByEmp    = eid => DATA.p.find(x=>gp(x,"Empresa ID")===eid);
+const titsByEmp = eid => DATA.t.filter(x=>gp(x,"Empresa ID")===eid);
+const depsByTit = tid => DATA.d.filter(x=>gp(x,"Titular ID")===tid);
+const depsByEmp = eid => titsByEmp(eid).flatMap(t=>depsByTit(t["ID"]));
+ 
 async function loadAll() {
   try {
     const [e,p,t,d,h] = await Promise.all([
-      nQuery(DBS.empresas), nQuery(DBS.planos), nQuery(DBS.titulares),
-      nQuery(DBS.dependentes), nQuery(DBS.historico)
+      apiGet("Empresas"), apiGet("Planos"), apiGet("Titulares"),
+      apiGet("Dependentes"), apiGet("Historico")
     ]);
     DATA = { e, p, t, d, h };
     updateBadges();
     renderCurrent();
   } catch(err) { toast(err.message, "err"); }
 }
-
+ 
 function updateBadges() {
   document.getElementById("b-e").textContent = DATA.e.length;
   document.getElementById("b-p").textContent = DATA.p.length;
@@ -505,7 +469,7 @@ function updateBadges() {
   document.getElementById("b-d").textContent = DATA.d.length;
   document.getElementById("b-h").textContent = DATA.h.length;
 }
-
+ 
 // ── NAVIGATION ──────────────────────────────────────────────────
 let current = "dashboard";
 function go(v) {
@@ -527,13 +491,13 @@ function renderCurrent() {
   else if(current==="rel-canal")   rRelCanal();
   else if(current==="rel-vidas")   rRelVidas();
 }
-
+ 
 // ── HELPERS ─────────────────────────────────────────────────────
 const fmt = d => { if(!d) return "—"; const[y,m,dd]=d.split("-"); return dd+"/"+m+"/"+y; };
 const cur = v => v!==""&&v!=null ? "R$ "+Number(v).toLocaleString("pt-BR",{minimumFractionDigits:2}) : "—";
 const badge = s => { const m={Ativo:"bg-g",Cancelado:"bg-r",Inclusão:"bg-b",Exclusão:"bg-r",Reajuste:"bg-a"}; return'<span class="badge '+(m[s]||"bg-gr")+'">'+(s||"—")+"</span>"; };
 const fimVig = ini => { if(!ini) return "—"; const d=new Date(ini); d.setFullYear(d.getFullYear()+1); return fmt(d.toISOString().slice(0,10)); };
-
+ 
 // ── DASHBOARD ───────────────────────────────────────────────────
 function rDash() {
   const tAt=DATA.t.filter(x=>gp(x,"Status")==="Ativo").length;
@@ -569,7 +533,7 @@ function rDash() {
     .map(([l,v,m,c])=>'<div class="br"><span class="bl">'+l+'</span><div class="bt"><div class="bf" style="width:'+( Math.round(v/m*100)||0)+'%;background:'+c+'"></div></div><span class="bv">'+v+'</span></div>').join("")+
     '</div><div class="dc"><div class="dct">Indicadores</div><div class="kpi"><div class="kpi-l">Churn de vidas</div><div class="kpi-v cr">'+churn+'%</div></div><div class="kpi"><div class="kpi-l">ARR estimado</div><div class="kpi-v cg" style="font-size:17px">'+cur(arr)+'</div></div></div>';
 }
-
+ 
 // ── EMPRESAS ────────────────────────────────────────────────────
 function fE(v){eFilter=v;rEmpresas()}
 function cE(el,v){el.closest(".chips").querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));el.classList.add("active");eChip=v;rEmpresas()}
@@ -583,16 +547,16 @@ function rEmpresas(){
     '<tr><td><button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+gp(e,"Razão Social")+'</button></td>'+
     '<td class="mono">'+( gp(e,"CNPJ")||"—")+'</td><td>'+badge(gp(e,"Canal de Aquisição")||"—")+'</td>'+
     '<td>'+( gp(e,"Responsável RH")||"—")+'</td>'+
-    '<td><span class="badge bg-gr">'+titsByEmp(e.id).length+'</span></td>'+
-    '<td><span class="badge bg-gr">'+depsByEmp(e.id).length+'</span></td>'+
+    '<td><span class="badge bg-gr">'+titsByEmp(e["ID"]).length+'</span></td>'+
+    '<td><span class="badge bg-gr">'+depsByEmp(e["ID"]).length+'</span></td>'+
     '<td>'+badge(gp(e,"Status"))+'</td>'+
     '<td><div class="ra"><button class="ib" onclick="openEmpDetail(\''+e.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>'
   ).join(""):"<tr><td colspan=8 class=empty>Nenhuma empresa encontrada.</td></tr>";
 }
 function openEmpDetail(id){
   const e=empById(id); if(!e) return;
-  const pl=pByEmp(id),ts=titsByEmp(id),ds=depsByEmp(id);
-  const hist=DATA.h.filter(h=>ts.some(t=>t.id===(gp(h,"Titular")||[])[0]));
+  const pl=pByEmp(e["ID"]),ts=titsByEmp(id),ds=depsByEmp(id);
+  const hist=DATA.h.filter(h=>ts.some(t=>t.id===(gp(h,"Titular ID"))[0]));
   document.getElementById("dv-e-badge").innerHTML=badge(gp(e,"Status"));
   document.getElementById("dv-e-body").innerHTML=
     '<div class="dt">'+gp(e,"Razão Social")+'</div><div class="ds">'+( gp(e,"CNPJ")||"—")+' · '+( gp(e,"Cidade")||"—")+'</div>'+
@@ -604,87 +568,87 @@ function openEmpDetail(id){
     '<div class="il">CEP</div><div class="iv">'+( gp(e,"CEP")||"—")+'</div></div>'+
     (pl?'<div class="sl">Plano contratado</div><div class="ig"><div class="il">Seguradora</div><div class="iv">'+gp(pl,"Seguradora")+'</div><div class="il">Plano</div><div class="iv">'+gp(pl,"Plano contratado")+'</div><div class="il">Apólice</div><div class="iv mono">'+( gp(pl,"Apólice")||"—")+'</div><div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div><div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div><div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div></div>':"")+
     '<div class="sl">Titulares ('+ts.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Carteirinha</th><th>Dep.</th><th>Status</th></tr></thead><tbody>'+
-    (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td><td>'+depsByTit(t.id).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
+    (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
     '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Vida</th><th>Data</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
-    (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+( gp(h,"Vida afetada")||"—")+'</td><td>'+fmt(gp(h,"Data da alteração"))+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste (%)")?gp(h,"Reajuste (%)")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem registros</td></tr>")+
+    (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+( gp(h,"Vida afetada")||"—")+'</td><td>'+fmt(gp(h,"Data"))+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem registros</td></tr>")+
     "</tbody></table></div>";
   document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
   document.getElementById("dv-e").classList.add("open");
 }
-
+ 
 // ── PLANOS ──────────────────────────────────────────────────────
 function rPlanos(){
   document.getElementById("tb-p").innerHTML=DATA.p.map(pl=>{
-    const eIds=gp(pl,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
+    const eIds=gp(pl,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
     return'<tr><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+( gp(pl,"Seguradora")||"—")+'</td><td>'+( gp(pl,"Plano contratado")||"—")+'</td><td class="mono">'+( gp(pl,"Apólice")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td><td>'+fimVig(gp(pl,"Início vigência"))+'</td><td>'+cur(gp(pl,"Valor do boleto"))+'</td><td>'+badge(gp(pl,"Status"))+'</td></tr>';
   }).join("")||"<tr><td colspan=8 class=empty>Sem planos.</td></tr>";
 }
-
+ 
 // ── TITULARES ───────────────────────────────────────────────────
 function fT(v){tFilter=v;rTitulares()}
 function rTitulares(){
   const q=tFilter.toLowerCase();
   const rows=DATA.t.filter(t=>!q||gp(t,"Nome").toLowerCase().includes(q)||gp(t,"CPF").includes(q));
   document.getElementById("tb-t").innerHTML=rows.map(t=>{
-    const eIds=gp(t,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
-    return'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+fmt(gp(t,"Data de nascimento"))+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td><td>'+depsByTit(t.id).length+'</td><td>'+badge(gp(t,"Status"))+'</td><td><div class="ra"><button class="ib" onclick="openTitDetail(\''+t.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
+    const eIds=gp(t,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
+    return'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+fmt(gp(t,"Nascimento"))+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td><td><div class="ra"><button class="ib" onclick="openTitDetail(\''+t.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
   }).join("")||"<tr><td colspan=8 class=empty>Nenhum titular encontrado.</td></tr>";
 }
 function openTitDetail(id){
   const t=titById(id); if(!t) return;
-  const eIds=gp(t,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
-  const deps=depsByTit(id), hist=DATA.h.filter(h=>(gp(h,"Titular")||[]).includes(id));
+  const eIds=gp(t,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
+  const deps=depsByTit(id), hist=DATA.h.filter(h=>(gp(h,"Titular ID")).includes(id));
   document.getElementById("dv-t-body").innerHTML=
     '<div class="dt">'+gp(t,"Nome")+'</div><div class="ds">'+( gp(t,"CPF")||"—")+' · '+( e?gp(e,"Razão Social"):"—")+'</div>'+
     '<div class="ig"><div class="il">Empresa</div><div class="iv">'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
-    '<div class="il">Carteirinha</div><div class="iv mono">'+( gp(t,"Nº carteirinha")||"—")+'</div>'+
-    '<div class="il">Nascimento</div><div class="iv">'+fmt(gp(t,"Data de nascimento"))+'</div>'+
+    '<div class="il">Carteirinha</div><div class="iv mono">'+( gp(t,"Carteirinha")||"—")+'</div>'+
+    '<div class="il">Nascimento</div><div class="iv">'+fmt(gp(t,"Nascimento"))+'</div>'+
     '<div class="il">Estado civil</div><div class="iv">'+( gp(t,"Estado civil")||"—")+'</div>'+
     '<div class="il">Profissão</div><div class="iv">'+( gp(t,"Profissão")||"—")+'</div>'+
     '<div class="il">Contato</div><div class="iv">'+( gp(t,"Contato")||"—")+'</div>'+
-    '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(t,"Data de inclusão"))+'</div>'+
+    '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(t,"Inclusão"))+'</div>'+
     '<div class="il">Status</div><div class="iv">'+badge(gp(t,"Status"))+'</div></div>'+
     '<div class="sl">Dependentes ('+deps.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Parentesco</th><th>Carteirinha</th><th>Status</th></tr></thead><tbody>'+
-    (deps.map(d=>'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Grau de parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Nº carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem dependentes</td></tr>")+
+    (deps.map(d=>'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem dependentes</td></tr>")+
     '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Data</th><th>Responsável</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
-    (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+fmt(gp(h,"Data da alteração"))+'</td><td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste (%)")?gp(h,"Reajuste (%)")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem histórico</td></tr>")+
+    (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+fmt(gp(h,"Data"))+'</td><td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem histórico</td></tr>")+
     "</tbody></table></div>";
   document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
   document.getElementById("dv-t").classList.add("open");
 }
-
+ 
 // ── DEPENDENTES ─────────────────────────────────────────────────
 function rDependentes(){
   document.getElementById("tb-d").innerHTML=DATA.d.map(d=>{
-    const tIds=gp(d,"Titular")||[], t=DATA.t.find(x=>tIds.includes(x.id));
-    const e=t?DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id)):null;
+    const tIds=gp(d,"Titular ID"), t=DATA.t.find(x=>x["ID"]===tId);
+    const e=t?DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id)):null;
     return'<tr><td>'+( gp(d,"Nome")||"—")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td>'+
     '<td>'+( t?'<button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</td>'+
     '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td>'+
-    '<td><span class="badge bg-gr">'+( gp(d,"Grau de parentesco")||"—")+'</span></td>'+
-    '<td class="mono">'+( gp(d,"Nº carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>';
+    '<td><span class="badge bg-gr">'+( gp(d,"Parentesco")||"—")+'</span></td>'+
+    '<td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>';
   }).join("")||"<tr><td colspan=7 class=empty>Sem dependentes.</td></tr>";
 }
-
+ 
 // ── HISTÓRICO ───────────────────────────────────────────────────
 function rHistorico(){
   document.getElementById("tb-h").innerHTML=DATA.h.map(h=>{
-    const tIds=gp(h,"Titular")||[], t=DATA.t.find(x=>tIds.includes(x.id));
-    const e=t?DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id)):null;
+    const tIds=gp(h,"Titular ID"), t=DATA.t.find(x=>x["ID"]===tId);
+    const e=t?DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id)):null;
     return'<tr><td>'+badge(gp(h,"Tipo"))+'</td>'+
     '<td>'+( t?'<button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+(gp(h,"Vida afetada")||gp(t,"Nome"))+"</button>":(gp(h,"Vida afetada")||"—"))+'</td>'+
-    '<td class="mono">'+( gp(h,"CPF da vida afetada")||"—")+'</td><td>'+fmt(gp(h,"Data da alteração"))+'</td>'+
+    '<td class="mono">'+( gp(h,"CPF vida")||"—")+'</td><td>'+fmt(gp(h,"Data"))+'</td>'+
     '<td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td>'+
-    '<td>'+( gp(h,"Reajuste (%)")?gp(h,"Reajuste (%)")+"%":"—")+'</td>'+
+    '<td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td>'+
     '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td></tr>';
   }).join("")||"<tr><td colspan=8 class=empty>Sem registros.</td></tr>";
 }
-
+ 
 // ── RELATÓRIOS ──────────────────────────────────────────────────
 function rRelAniv(){
   const today=new Date();
   const rows=DATA.p.map(pl=>{
-    const eIds=gp(pl,"Empresa")||[], e=DATA.e.find(x=>eIds.includes(x.id));
+    const eIds=gp(pl,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
     const ini=gp(pl,"Início vigência"); if(!ini) return null;
     const next=new Date(ini); next.setFullYear(today.getFullYear());
     if(next<today) next.setFullYear(today.getFullYear()+1);
@@ -701,12 +665,12 @@ function rRelCanal(){
   const canais={};
   DATA.e.forEach(e=>{const c=gp(e,"Canal de Aquisição")||"Sem canal";if(!canais[c])canais[c]=[];canais[c].push(e);});
   document.getElementById("c-canal").innerHTML=Object.entries(canais).map(([canal,emps])=>{
-    const tT=emps.reduce((s,e)=>s+titsByEmp(e.id).length,0);
-    const tD=emps.reduce((s,e)=>s+depsByEmp(e.id).length,0);
-    const tB=emps.reduce((s,e)=>{const pl=pByEmp(e.id);return s+(pl?Number(gp(pl,"Valor do boleto"))||0:0);},0);
+    const tT=emps.reduce((s,e)=>s+titsByEmp(e["ID"]).length,0);
+    const tD=emps.reduce((s,e)=>s+depsByEmp(e["ID"]).length,0);
+    const tB=emps.reduce((s,e)=>{const pl=pByEmp(e["ID"]);return s+(pl?Number(gp(pl,"Valor do boleto"))||0:0);},0);
     return'<div class="rs"><div class="rt"><span class="badge bg-b">'+canal+'</span> &nbsp;'+emps.length+' empresa(s) · '+tT+' tit. · '+tD+' dep. · '+cur(tB)+'/mês</div>'+
     '<div class="tw"><table><thead><tr><th>Empresa</th><th>Status</th><th>Seguradora</th><th>Titulares</th><th>Dependentes</th><th>Boleto</th></tr></thead><tbody>'+
-    emps.map(e=>{const pl=pByEmp(e.id);return'<tr><td>'+gp(e,"Razão Social")+'</td><td>'+badge(gp(e,"Status"))+'</td><td>'+( pl?gp(pl,"Seguradora"):"—")+'</td><td>'+titsByEmp(e.id).length+'</td><td>'+depsByEmp(e.id).length+'</td><td>'+( pl?cur(gp(pl,"Valor do boleto")):"—")+'</td></tr>';}).join("")+
+    emps.map(e=>{const pl=pByEmp(e["ID"]);return'<tr><td>'+gp(e,"Razão Social")+'</td><td>'+badge(gp(e,"Status"))+'</td><td>'+( pl?gp(pl,"Seguradora"):"—")+'</td><td>'+titsByEmp(e["ID"]).length+'</td><td>'+depsByEmp(e["ID"]).length+'</td><td>'+( pl?cur(gp(pl,"Valor do boleto")):"—")+'</td></tr>';}).join("")+
     "</tbody></table></div></div>";
   }).join("")||'<div class="empty">Sem dados.</div>';
 }
@@ -719,23 +683,23 @@ function rRelVidas(){
   document.getElementById("c-vidas").innerHTML=
     '<div class="stats s4" style="margin-bottom:16px"><div class="stat"><div class="stat-lbl">Total</div><div class="stat-val">'+total+'</div></div><div class="stat"><div class="stat-lbl">Ativas</div><div class="stat-val cg">'+ativos+'</div></div><div class="stat"><div class="stat-lbl">Canceladas</div><div class="stat-val cr">'+cancel+'</div></div><div class="stat"><div class="stat-lbl">Churn</div><div class="stat-val ca">'+churn+'%</div></div></div>'+
     '<div class="rs"><div class="rt">Titulares ativos ('+tAt.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th><th>Inclusão</th><th>Dep.</th></tr></thead><tbody>'+
-    tAt.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td><td>'+fmt(gp(t,"Data de inclusão"))+'</td><td>'+depsByTit(t.id).length+'</td></tr>';}).join("")+
+    tAt.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+fmt(gp(t,"Inclusão"))+'</td><td>'+depsByTit(t["ID"]).length+'</td></tr>';}).join("")+
     '</tbody></table></div></div><div class="rs" style="margin-top:16px"><div class="rt">Titulares cancelados ('+tCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th></tr></thead><tbody>'+
-    tCa.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Nº carteirinha")||"—")+'</td></tr>';}).join("")+
+    tCa.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td></tr>';}).join("")+
     "</tbody></table></div></div>";
 }
-
+ 
 // ── EXPORT CSV ──────────────────────────────────────────────────
 function exportCSV(type){
   let headers=[],rows=[];
   if(type==="empresas"){headers=["Razão Social","CNPJ","Canal","Responsável","Telefone","Email","Cidade","Status"];rows=DATA.e.map(e=>[gp(e,"Razão Social"),gp(e,"CNPJ"),gp(e,"Canal de Aquisição"),gp(e,"Responsável RH"),gp(e,"Telefone RH"),gp(e,"Email RH"),gp(e,"Cidade"),gp(e,"Status")]);}
-  else if(type==="aniv"){headers=["Empresa","Seguradora","Plano","Início","Próx. aniversário","Dias","Boleto","Status"];const today=new Date();rows=DATA.p.map(pl=>{const e=DATA.e.find(x=>(gp(pl,"Empresa")||[]).includes(x.id));const ini=gp(pl,"Início vigência");const next=ini?new Date(ini):null;if(next){next.setFullYear(today.getFullYear());if(next<today)next.setFullYear(today.getFullYear()+1);}return[e?gp(e,"Razão Social"):"—",gp(pl,"Seguradora"),gp(pl,"Plano contratado"),fmt(ini),next?fmt(next.toISOString().slice(0,10)):"—",next?Math.round((next-today)/86400000):"—",gp(pl,"Valor do boleto"),gp(pl,"Status")];});}
-  else if(type==="canal"){headers=["Canal","Empresa","Status","Seguradora","Titulares","Dependentes","Boleto"];rows=DATA.e.map(e=>{const pl=pByEmp(e.id);return[gp(e,"Canal de Aquisição"),gp(e,"Razão Social"),gp(e,"Status"),pl?gp(pl,"Seguradora"):"—",titsByEmp(e.id).length,depsByEmp(e.id).length,pl?gp(pl,"Valor do boleto"):"—"];});}
-  else if(type==="vidas"){headers=["Nome","Tipo","CPF","Empresa","Carteirinha","Status"];rows=[...DATA.t.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa")||[]).includes(x.id));return[gp(t,"Nome"),"Titular",gp(t,"CPF"),e?gp(e,"Razão Social"):"—",gp(t,"Nº carteirinha"),gp(t,"Status")];}), ...DATA.d.map(d=>{const t2=titById((gp(d,"Titular")||[])[0]);const e=t2?DATA.e.find(x=>(gp(t2,"Empresa")||[]).includes(x.id)):null;return[gp(d,"Nome"),"Dependente",gp(d,"CPF"),e?gp(e,"Razão Social"):"—",gp(d,"Nº carteirinha"),gp(d,"Status")];})];}
+  else if(type==="aniv"){headers=["Empresa","Seguradora","Plano","Início","Próx. aniversário","Dias","Boleto","Status"];const today=new Date();rows=DATA.p.map(pl=>{const e=DATA.e.find(x=>(gp(pl,"Empresa ID")).includes(x.id));const ini=gp(pl,"Início vigência");const next=ini?new Date(ini):null;if(next){next.setFullYear(today.getFullYear());if(next<today)next.setFullYear(today.getFullYear()+1);}return[e?gp(e,"Razão Social"):"—",gp(pl,"Seguradora"),gp(pl,"Plano contratado"),fmt(ini),next?fmt(next.toISOString().slice(0,10)):"—",next?Math.round((next-today)/86400000):"—",gp(pl,"Valor do boleto"),gp(pl,"Status")];});}
+  else if(type==="canal"){headers=["Canal","Empresa","Status","Seguradora","Titulares","Dependentes","Boleto"];rows=DATA.e.map(e=>{const pl=pByEmp(e["ID"]);return[gp(e,"Canal de Aquisição"),gp(e,"Razão Social"),gp(e,"Status"),pl?gp(pl,"Seguradora"):"—",titsByEmp(e["ID"]).length,depsByEmp(e["ID"]).length,pl?gp(pl,"Valor do boleto"):"—"];});}
+  else if(type==="vidas"){headers=["Nome","Tipo","CPF","Empresa","Carteirinha","Status"];rows=[...DATA.t.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return[gp(t,"Nome"),"Titular",gp(t,"CPF"),e?gp(e,"Razão Social"):"—",gp(t,"Carteirinha"),gp(t,"Status")];}), ...DATA.d.map(d=>{const t2=titById((gp(d,"Titular ID"))[0]);const e=t2?DATA.e.find(x=>x["ID"]===gp(t2,"Empresa ID")):null;return[gp(d,"Nome"),"Dependente",gp(d,"CPF"),e?gp(e,"Razão Social"):"—",gp(d,"Carteirinha"),gp(d,"Status")];})];}
   const csv=[headers,...rows].map(r=>r.map(c=>'"'+String(c||"").replace(/"/g,'""')+'"').join(",")).join("\n");
   const a=document.createElement("a");a.href="data:text/csv;charset=utf-8,\uFEFF"+encodeURIComponent(csv);a.download="relatorio-"+type+".csv";a.click();
 }
-
+ 
 // ── FORMULÁRIOS ─────────────────────────────────────────────────
 let currentModal="";
 const FORMS={
@@ -745,7 +709,7 @@ const FORMS={
   dependente:{title:"Novo dependente",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nomd"></div><div class="field"><label>CPF (se houver)</label><input id="f-cpfd"></div><div class="field"><label>Nascimento</label><input id="f-nasd" type="date"></div><div class="field"><label>RG</label><input id="f-rgd"></div><div class="field"><label>Nome da mãe</label><input id="f-maed"></div><div class="field"><label>Nome do pai</label><input id="f-paid"></div><div class="field"><label>Peso</label><input id="f-pesd" type="number"></div><div class="field"><label>Altura</label><input id="f-altd" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ecd"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option></select></div><div class="field"><label>Profissão</label><input id="f-prod"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doed"></textarea></div></div></div><div class="fs"><div class="ft">Vínculo</div><div class="fg"><div class="field"><label class="req">Titular</label><select id="f-td"></select></div><div class="field"><label class="req">Parentesco</label><select id="f-pard"><option>Cônjuge</option><option>Filho</option><option>Pai/Mãe</option><option>Irmão</option><option>Outro</option></select></div><div class="field"><label>Data de inclusão</label><input id="f-incd" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-crtd"></div><div class="field"><label>Status</label><select id="f-std"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
   historico:{title:"Registrar alteração",html:'<div class="fs"><div class="ft">Evento</div><div class="fg"><div class="field"><label class="req">Tipo</label><select id="f-tiph"><option>Inclusão</option><option>Exclusão</option><option>Reajuste</option></select></div><div class="field"><label class="req">Data</label><input id="f-dath" type="date"></div><div class="field ff"><label class="req">Titular relacionado</label><select id="f-vidh"></select></div><div class="field ff"><label class="req">Vida afetada (nome)</label><input id="f-vidan"></div><div class="field"><label>CPF da vida afetada</label><input id="f-cpfh"></div><div class="field"><label>Reajuste (%)</label><input id="f-rejh" type="number" step="0.01"></div><div class="field"><label>Valor atualizado (R$)</label><input id="f-valh" type="number" step="0.01"></div><div class="field"><label class="req">Responsável</label><input id="f-resh"></div><div class="field"><label>Motivo</label><input id="f-moth"></div><div class="field ff"><label>Observações</label><textarea id="f-obsh"></textarea></div></div></div>'}
 };
-
+ 
 function openModal(type){
   currentModal=type;
   document.getElementById("m-title").textContent=FORMS[type].title;
@@ -759,27 +723,27 @@ function openModal(type){
 function closeModal(){document.getElementById("ov").classList.remove("open")}
 function closeBg(e){if(e.target===document.getElementById("ov"))closeModal()}
 const g=id=>(document.getElementById(id)||{}).value||"";
-
+ 
 async function saveForm(){
   document.getElementById("btn-save").textContent="Salvando…";
   try{
     if(currentModal==="empresa"){
-      await nCreate(DBS.empresas,{"Razão Social":P.title(g("f-razao")),"CNPJ":P.text(g("f-cnpj")),"Endereço":P.text(g("f-end")),"Cidade":P.text(g("f-cidade")),"CEP":P.text(g("f-cep")),"Responsável RH":P.text(g("f-resp")),"Telefone RH":P.phone(g("f-tel")),"Email RH":P.email(g("f-email")),"Canal de Aquisição":P.select(g("f-canal")),"Status":P.select(g("f-status"))});
+      await apiCreate("Empresas",{"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"CEP":g("f-cep"),"Responsável RH":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")});
     }else if(currentModal==="plano"){
-      await nCreate(DBS.planos,{"Name":P.title(g("f-seg")+" — "+g("f-pla")),"Empresa":P.rel(g("f-ep")),"Seguradora":P.text(g("f-seg")),"Plano contratado":P.text(g("f-pla")),"Apólice":P.text(g("f-apo")),"Início vigência":P.date(g("f-ini")),"Fim vigência":P.date(g("f-fim")),"Valor do boleto":P.number(g("f-bol")),"Status":P.select(g("f-stp"))});
+      await apiCreate("Planos",{"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Status":g("f-stp")});
     }else if(currentModal==="titular"){
-      await nCreate(DBS.titulares,{"Nome":P.title(g("f-nome")),"Empresa":P.rel(g("f-et")),"CPF":P.text(g("f-cpf")),"Data de nascimento":P.date(g("f-nasc")),"RG":P.text(g("f-rg")),"Data de expedição RG":P.date(g("f-rgexp")),"Órgão expedidor":P.text(g("f-orgao")),"Nome da mãe":P.text(g("f-mae")),"Nome do pai":P.text(g("f-pai")),"Peso (kg)":P.number(g("f-peso")),"Altura (cm)":P.number(g("f-alt")),"Estado civil":P.select(g("f-ec")),"Profissão":P.text(g("f-prof")),"Doenças preexistentes":P.text(g("f-doe")),"Data de inclusão":P.date(g("f-inc")),"Nº carteirinha":P.text(g("f-cart")),"Contato":P.phone(g("f-cont")),"Login seguradora":P.text(g("f-log")),"Status":P.select(g("f-stt"))});
+      await apiCreate("Titulares",{"Empresa ID":g("f-et"),"Nome":g("f-nome"),"CPF":g("f-cpf"),"Nascimento":g("f-nasc"),"RG":g("f-rg"),"Exp RG":g("f-rgexp"),"Órgão exp":g("f-orgao"),"Mãe":g("f-mae"),"Pai":g("f-pai"),"Peso":g("f-peso"),"Altura":g("f-alt"),"Estado civil":g("f-ec"),"Profissão":g("f-prof"),"Doenças":g("f-doe"),"Inclusão":g("f-inc"),"Carteirinha":g("f-cart"),"Contato":g("f-cont"),"Login seg":g("f-log"),"Status":g("f-stt")});
     }else if(currentModal==="dependente"){
-      await nCreate(DBS.dependentes,{"Nome":P.title(g("f-nomd")),"Titular":P.rel(g("f-td")),"CPF":P.text(g("f-cpfd")),"Data de nascimento":P.date(g("f-nasd")),"RG":P.text(g("f-rgd")),"Nome da mãe":P.text(g("f-maed")),"Nome do pai":P.text(g("f-paid")),"Peso (kg)":P.number(g("f-pesd")),"Altura (cm)":P.number(g("f-altd")),"Estado civil":P.select(g("f-ecd")),"Profissão":P.text(g("f-prod")),"Doenças preexistentes":P.text(g("f-doed")),"Grau de parentesco":P.select(g("f-pard")),"Data de inclusão":P.date(g("f-incd")),"Nº carteirinha":P.text(g("f-crtd")),"Status":P.select(g("f-std"))});
+      await apiCreate("Dependentes",{"Titular ID":g("f-td"),"Nome":g("f-nomd"),"CPF":g("f-cpfd"),"Nascimento":g("f-nasd"),"RG":g("f-rgd"),"Mãe":g("f-maed"),"Pai":g("f-paid"),"Peso":g("f-pesd"),"Altura":g("f-altd"),"Estado civil":g("f-ecd"),"Profissão":g("f-prod"),"Doenças":g("f-doed"),"Parentesco":g("f-pard"),"Inclusão":g("f-incd"),"Carteirinha":g("f-crtd"),"Status":g("f-std")});
     }else if(currentModal==="historico"){
       const tid=g("f-vidh"),t=titById(tid);
-      await nCreate(DBS.historico,{"Evento":P.title(g("f-tiph")+" — "+(g("f-vidan")||gp(t||{},"Nome"))),"Tipo":P.select(g("f-tiph")),"Titular":P.rel(tid),"Vida afetada":P.text(g("f-vidan")||gp(t||{},"Nome")),"CPF da vida afetada":P.text(g("f-cpfh")||gp(t||{},"CPF")),"Data da alteração":P.date(g("f-dath")),"Responsável":P.text(g("f-resh")),"Motivo":P.text(g("f-moth")),"Reajuste (%)":P.number(g("f-rejh")),"Observações":P.text(g("f-obsh"))});
+      await apiCreate("Historico",{"Titular ID":tid,"Tipo":g("f-tiph"),"Vida afetada":g("f-vidan")||gp(t,"Nome"),"CPF vida":g("f-cpfh")||gp(t,"CPF"),"Data":g("f-dath"),"Responsável":g("f-resh"),"Motivo":g("f-moth"),"Reajuste %":g("f-rejh"),"Valor atualizado":g("f-valh"),"Observações":g("f-obsh")});
     }
     closeModal(); toast("Salvo com sucesso!","ok"); await loadAll();
   }catch(err){toast("Erro: "+err.message,"err");}
   finally{document.getElementById("btn-save").textContent="Salvar";}
 }
-
+ 
 // ── TOAST ───────────────────────────────────────────────────────
 function toast(msg,type){
   const el=document.createElement("div");
@@ -788,7 +752,7 @@ function toast(msg,type){
   document.body.appendChild(el);
   setTimeout(()=>el.remove(),4000);
 }
-
+ 
 // ── INIT ────────────────────────────────────────────────────────
 if(sessionStorage.getItem("cx_auth")==="1"){
   document.getElementById("login-screen").style.display="none";
