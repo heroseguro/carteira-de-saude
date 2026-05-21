@@ -3,25 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CX Seguros — Carteira</title>
+<title>Company Hero — Carteira de Saúde</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#fff;--bg2:#f7f7f5;--bg3:#f0efe9;
-  --text:#1a1a18;--text2:#6b6b66;--text3:#9e9d97;
-  --border:rgba(0,0,0,.10);--border2:rgba(0,0,0,.18);
-  --green:#1D9E75;--gbg:#E1F5EE;--gtx:#0F6E56;
+  --bg:#ffffff;--bg2:#F5F6FA;--bg3:#ECEEF5;
+  --text:#1A2138;--text2:#4A5068;--text3:#9099B2;
+  --border:rgba(26,33,56,.10);--border2:rgba(26,33,56,.20);
+  --green:#E8185A;--gbg:#FDEDF3;--gtx:#B00F42;
   --red:#A32D2D;--rbg:#FCEBEB;
-  --abg:#FAEEDA;--atx:#854F0B;
-  --bbg:#E6F1FB;--btx:#185FA5;
+  --abg:#FFF4E0;--atx:#9A6000;
+  --bbg:#E6EEF9;--btx:#1A3A7A;
   --r:8px;--rl:12px;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono","Fira Code",monospace;
+  --navy:#141B2D;
 }
 @media(prefers-color-scheme:dark){:root{
-  --bg:#1c1c1a;--bg2:#242422;--bg3:#2c2c29;
-  --text:#eeeee8;--text2:#9e9d97;--text3:#6b6b66;
-  --border:rgba(255,255,255,.10);--border2:rgba(255,255,255,.18);
+  --bg:#111826;--bg2:#1A2138;--bg3:#222B45;
+  --text:#EEF0F8;--text2:#9099B2;--text3:#5A6380;
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);
 }}
 body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:14px;line-height:1.5;height:100vh;overflow:hidden}
 .app{display:flex;height:100vh;overflow:hidden}
@@ -30,7 +31,7 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .login-screen{display:flex;align-items:center;justify-content:center;height:100vh;background:var(--bg3)}
 .login-card{background:var(--bg);border:0.5px solid var(--border2);border-radius:var(--rl);padding:36px 40px;width:100%;max-width:360px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 .login-logo{display:flex;align-items:center;gap:10px;margin-bottom:24px}
-.login-logo-icon{width:36px;height:36px;background:var(--green);border-radius:var(--r);display:flex;align-items:center;justify-content:center}
+.login-logo-icon{width:36px;height:36px;background:#E8185A;border-radius:var(--r);display:flex;align-items:center;justify-content:center}
 .login-logo-icon svg{width:18px;height:18px;stroke:#fff;stroke-width:2;fill:none}
 .login-logo-text strong{display:block;font-size:14px;font-weight:700}
 .login-logo-text span{font-size:11px;color:var(--text3)}
@@ -44,26 +45,27 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .btn-full{width:100%;justify-content:center;padding:10px;font-size:13px;font-weight:500}
 
 /* SIDEBAR */
-.sb{width:210px;background:var(--bg2);border-right:0.5px solid var(--border);display:flex;flex-direction:column;flex-shrink:0}
-.sb-logo{padding:14px 16px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px}
-.sb-logo-icon{width:28px;height:28px;background:var(--green);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sb-logo-icon svg{width:14px;height:14px;stroke:#fff;stroke-width:2;fill:none}
-.sb-logo-text strong{display:block;font-size:12px;font-weight:700}
-.sb-logo-text span{font-size:10px;color:var(--text3)}
-.nav{padding:6px;flex:1;overflow-y:auto}
-.nav-lbl{font-size:10px;color:var(--text3);padding:10px 8px 3px;text-transform:uppercase;letter-spacing:.07em}
-.nb{display:flex;align-items:center;gap:7px;width:100%;padding:6px 9px;border-radius:var(--r);border:none;background:transparent;color:var(--text2);font-size:12px;font-family:var(--font);cursor:pointer;text-align:left;transition:background .1s}
-.nb:hover{background:var(--bg3);color:var(--text)}
-.nb.active{background:var(--bg);color:var(--text);font-weight:600;box-shadow:0 0 0 0.5px var(--border2)}
-.nb svg{width:15px;height:15px;flex-shrink:0;stroke-width:1.8}
-.nb-badge{margin-left:auto;background:var(--bg3);color:var(--text3);font-size:10px;padding:1px 5px;border-radius:20px}
-.sb-foot{padding:10px 12px;border-top:0.5px solid var(--border)}
-.sb-foot button{display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;font-size:11px;color:var(--text3);font-family:var(--font);padding:4px 6px;border-radius:var(--r);width:100%;margin-bottom:2px}
-.sb-foot button:hover{background:var(--bg3);color:var(--text2)}
+.sb{width:220px;background:#141B2D;border-right:none;display:flex;flex-direction:column;flex-shrink:0}
+.sb-logo{padding:16px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px}
+.sb-logo-mark{width:5px;height:36px;background:#E8185A;border-radius:3px;flex-shrink:0}
+.sb-logo-text strong{display:block;font-size:13px;font-weight:800;color:#fff;letter-spacing:-.3px}
+.sb-logo-text span{font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.02em}
+.nav{padding:8px 6px;flex:1;overflow-y:auto}
+.nav-lbl{font-size:9.5px;color:rgba(255,255,255,.3);padding:12px 10px 3px;text-transform:uppercase;letter-spacing:.1em}
+.nb{display:flex;align-items:center;gap:8px;width:100%;padding:7px 10px;border-radius:var(--r);border:none;background:transparent;color:rgba(255,255,255,.55);font-size:12px;font-family:var(--font);cursor:pointer;text-align:left;transition:background .1s,color .1s}
+.nb:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.85)}
+.nb.active{background:rgba(232,24,90,.15);color:#fff;font-weight:600;border-left:2px solid #E8185A;padding-left:8px}
+.nb svg{width:14px;height:14px;flex-shrink:0;stroke-width:1.8;opacity:.8}
+.nb.active svg{opacity:1}
+.nb-badge{margin-left:auto;background:rgba(255,255,255,.1);color:rgba(255,255,255,.55);font-size:10px;padding:1px 6px;border-radius:20px}
+.nb.active .nb-badge{background:rgba(232,24,90,.3);color:#fff}
+.sb-foot{padding:10px 12px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-foot button{display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;font-size:11px;color:rgba(255,255,255,.4);font-family:var(--font);padding:5px 8px;border-radius:var(--r);width:100%;margin-bottom:2px}
+.sb-foot button:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.7)}
 .sb-foot button svg{width:13px;height:13px;stroke-width:1.8}
 
 /* MAIN */
-.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;background:var(--bg)}
+/* MAIN - defined below with position:relative */
 .view{display:none;flex-direction:column;height:100%;overflow:hidden}
 .view.active{display:flex}
 .topbar{padding:12px 18px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
@@ -138,8 +140,9 @@ tr:hover .ra{opacity:1}
 .sens{color:#A32D2D!important}
 
 /* DETAIL */
-.dv{display:none;flex-direction:column;height:100%;overflow:hidden}
+.dv{display:none;flex-direction:column;height:100%;overflow:hidden;position:absolute;inset:0;background:var(--bg);z-index:10}
 .dv.open{display:flex}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;background:var(--bg);position:relative}
 .dtb{padding:11px 18px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px;flex-shrink:0}
 .bbtn{display:flex;align-items:center;gap:4px;background:transparent;border:none;cursor:pointer;font-size:12px;color:var(--text2);font-family:var(--font);padding:4px 7px;border-radius:var(--r)}
 .bbtn:hover{background:var(--bg2);color:var(--text)}
@@ -189,25 +192,17 @@ tr:hover .ra{opacity:1}
 <iframe id="jsonp-frame" style="display:none"></iframe>
 <div id="login-screen" class="login-screen">
   <div class="login-card">
-    <div class="login-logo">
-      <div class="login-logo-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-      <div class="login-logo-text"><strong>CX Seguros</strong><span>Gestão de Carteira</span></div>
+    <div class="login-logo" style="margin-bottom:28px">
+      <img src="data:image/png;base64,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" style="height:38px;width:auto;display:block;margin-bottom:6px;mix-blend-mode:multiply">
+      <span style="font-size:11px;color:var(--text3)">Gestão de Carteira</span>
     </div>
-    <div class="login-title">Bem-vindo</div>
-    <div class="login-sub">Entre com suas credenciais para acessar o sistema.</div>
-    <div class="login-error" id="login-error">Usuário ou senha incorretos.</div>
-    <div class="field"><label>Usuário</label><input id="l-user" placeholder="Login" autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()"></div>
-    <div class="field"><label>Senha</label><input id="l-pass" type="password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"></div>
-    <button class="btn btn-primary btn-full" onclick="doLogin()">Entrar</button>
-  </div>
-</div>
 
 <!-- APP -->
 <div id="app" class="app" style="display:none">
   <div class="sb">
-    <div class="sb-logo">
-      <div class="sb-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-      <div class="sb-logo-text"><strong>CX Seguros</strong><span>Carteira de Contratos</span></div>
+    <div class="sb-logo" style="padding:14px 16px;flex-direction:column;align-items:flex-start;gap:3px">
+      <img src="data:image/png;base64,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" style="height:26px;width:auto;display:block;filter:brightness(0) invert(1)">
+      <span style="font-size:9px;color:rgba(255,255,255,.4);letter-spacing:.04em">Gestão de Carteira</span>
     </div>
     <div class="nav">
       <div class="nav-lbl">Visão geral</div>
@@ -250,6 +245,32 @@ tr:hover .ra{opacity:1}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg>
         Vidas
       </button>
+      <button class="nb" onclick="go('rel-seguradora')" id="nav-rel-seguradora">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Por seguradora
+      </button>
+      <button class="nb" onclick="go('rel-aniversario-clientes')" id="nav-rel-aniversario-clientes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 6v4l3 3"/></svg>
+        Aniv. clientes
+      </button>
+      <div class="nav-lbl">Painéis</div>
+      <button class="nb" onclick="go('painel-contratos')" id="nav-painel-contratos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Contratos/Planos
+      </button>
+      <button class="nb" onclick="go('painel-churn')" id="nav-painel-churn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg>
+        Churn
+      </button>
+      <button class="nb" onclick="go('rel-premio')" id="nav-rel-premio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        Prêmio emitido
+      </button>
+      <div class="nav-lbl">Sistema</div>
+      <button class="nb" onclick="go('diag')" id="nav-diag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        Diagnóstico
+      </button>
     </div>
     <div class="sb-foot">
       <button onclick="loadAll()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>Atualizar dados</button>
@@ -286,13 +307,13 @@ tr:hover .ra{opacity:1}
           <button class="chip" onclick="cE(this,'Cancelado')">Canceladas</button>
         </div>
         <div class="tw"><table>
-          <thead><tr><th style="width:27%">Razão social</th><th style="width:15%">CNPJ</th><th style="width:13%">Canal</th><th style="width:14%">Responsável RH</th><th style="width:8%">Tit.</th><th style="width:8%">Dep.</th><th style="width:9%">Status</th><th style="width:6%"></th></tr></thead>
+          <thead><tr><th style="width:27%">Razão social</th><th style="width:15%">CNPJ</th><th style="width:13%">Canal</th><th style="width:14%">Responsável do Contrato</th><th style="width:8%">Tit.</th><th style="width:8%">Dep.</th><th style="width:9%">Status</th><th style="width:6%"></th></tr></thead>
           <tbody id="tb-e"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
         </table></div>
       </div>
     </div>
     <div class="dv" id="dv-e">
-      <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span></div>
+      <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" id="btn-emp-new-plano" onclick="openModal('plano',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Plano</button><button class="btn btn-sm" id="btn-emp-new-tit" onclick="openModal('titular',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Titular</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
       <div class="db" id="dv-e-body"></div>
     </div>
 
@@ -302,9 +323,13 @@ tr:hover .ra{opacity:1}
         <button class="btn btn-primary" onclick="openModal('plano')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Novo plano</button>
       </div></div>
       <div class="content"><div class="tw"><table>
-        <thead><tr><th style="width:22%">Empresa</th><th style="width:16%">Seguradora</th><th style="width:14%">Plano</th><th style="width:11%">Apólice</th><th style="width:10%">Início</th><th style="width:10%">Fim</th><th style="width:9%">Boleto</th><th style="width:8%">Status</th></tr></thead>
-        <tbody id="tb-p"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
+        <thead><tr><th style="width:22%">Empresa</th><th style="width:16%">Seguradora</th><th style="width:14%">Plano</th><th style="width:11%">Apólice</th><th style="width:10%">Início</th><th style="width:10%">Fim</th><th style="width:9%">Boleto</th><th style="width:7%">Status</th><th style="width:5%"></th></tr></thead>
+        <tbody id="tb-p"><tr><td colspan="9" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
+    </div>
+    <div class="dv" id="dv-p">
+      <div class="dtb"><button class="bbtn" onclick="back('planos')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Planos</button><span id="dv-p-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
+      <div class="db" id="dv-p-body"></div>
     </div>
 
     <!-- TITULARES -->
@@ -321,7 +346,7 @@ tr:hover .ra{opacity:1}
       </div>
     </div>
     <div class="dv" id="dv-t">
-      <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button></div>
+      <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
       <div class="db" id="dv-t-body"></div>
     </div>
 
@@ -331,9 +356,13 @@ tr:hover .ra{opacity:1}
         <button class="btn btn-primary" onclick="openModal('dependente')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Novo dependente</button>
       </div></div>
       <div class="content"><div class="tw"><table>
-        <thead><tr><th style="width:22%">Nome</th><th style="width:12%">CPF</th><th style="width:20%">Titular</th><th style="width:18%">Empresa</th><th style="width:12%">Parentesco</th><th style="width:10%">Carteirinha</th><th style="width:6%">Status</th></tr></thead>
-        <tbody id="tb-d"><tr><td colspan="7" class="loading">Carregando…</td></tr></tbody>
+        <thead><tr><th style="width:20%">Nome</th><th style="width:12%">CPF</th><th style="width:19%">Titular</th><th style="width:17%">Empresa</th><th style="width:11%">Parentesco</th><th style="width:10%">Carteirinha</th><th style="width:6%">Status</th><th style="width:5%"></th></tr></thead>
+        <tbody id="tb-d"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
+    </div>
+    <div class="dv" id="dv-d">
+      <div class="dtb"><button class="bbtn" onclick="back('dependentes')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Dependentes</button><span id="dv-d-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
+      <div class="db" id="dv-d-body"></div>
     </div>
 
     <!-- HISTORICO -->
@@ -342,9 +371,13 @@ tr:hover .ra{opacity:1}
         <button class="btn btn-primary" onclick="openModal('historico')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>Registrar alteração</button>
       </div></div>
       <div class="content"><div class="tw"><table>
-        <thead><tr><th style="width:10%">Tipo</th><th style="width:17%">Vida afetada</th><th style="width:12%">CPF</th><th style="width:9%">Data</th><th style="width:15%">Responsável</th><th style="width:13%">Motivo</th><th style="width:8%">Reajuste</th><th style="width:16%">Empresa</th></tr></thead>
-        <tbody id="tb-h"><tr><td colspan="8" class="loading">Carregando…</td></tr></tbody>
+        <thead><tr><th style="width:9%">Tipo</th><th style="width:16%">Vida afetada</th><th style="width:11%">CPF</th><th style="width:9%">Data</th><th style="width:14%">Responsável</th><th style="width:12%">Motivo</th><th style="width:7%">Reajuste</th><th style="width:15%">Empresa</th><th style="width:7%"></th></tr></thead>
+        <tbody id="tb-h"><tr><td colspan="9" class="loading">Carregando…</td></tr></tbody>
       </table></div></div>
+    </div>
+    <div class="dv" id="dv-h">
+      <div class="dtb"><button class="bbtn" onclick="back('historico')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Histórico</button></div>
+      <div class="db" id="dv-h-body"></div>
     </div>
 
     <!-- REL ANIVERSÁRIOS -->
@@ -370,6 +403,42 @@ tr:hover .ra{opacity:1}
       <div class="topbar"><div class="topbar-title">Relatório — Vidas ativas e canceladas</div><div class="topbar-right"><button class="btn" onclick="exportCSV('vidas')">CSV</button></div></div>
       <div class="content" id="c-vidas"></div>
     </div>
+
+    <!-- REL SEGURADORA -->
+    <div class="view" id="view-rel-seguradora">
+      <div class="topbar"><div class="topbar-title">Relatório — Por seguradora</div><div class="topbar-right"><button class="btn" onclick="exportCSV('seguradora')">CSV</button></div></div>
+      <div class="content" id="c-seguradora"></div>
+    </div>
+
+    <!-- REL ANIVERSÁRIO CLIENTES -->
+    <div class="view" id="view-rel-aniversario-clientes">
+      <div class="topbar"><div class="topbar-title">Aniversários de clientes — Relacionamento</div></div>
+      <div class="content" id="c-aniv-clientes"></div>
+    </div>
+
+    <!-- PAINEL CONTRATOS/PLANOS -->
+    <div class="view" id="view-painel-contratos">
+      <div class="topbar"><div class="topbar-title">Painel — Contratos e Planos</div><div class="topbar-right"><button class="btn" onclick="exportCSV('contratos')">CSV</button></div></div>
+      <div class="content" id="c-painel-contratos"></div>
+    </div>
+
+    <!-- PAINEL CHURN -->
+    <div class="view" id="view-painel-churn">
+      <div class="topbar"><div class="topbar-title">Painel — Churn de Contratos e Planos</div></div>
+      <div class="content" id="c-painel-churn"></div>
+    </div>
+
+    <!-- REL PRÊMIO EMITIDO -->
+    <div class="view" id="view-rel-premio">
+      <div class="topbar"><div class="topbar-title">Relatório — Prêmio emitido por seguradora</div><div class="topbar-right"><button class="btn" onclick="exportCSV('premio')">CSV</button></div></div>
+      <div class="content" id="c-rel-premio"></div>
+    </div>
+
+    <!-- DIAGNÓSTICO -->
+    <div class="view" id="view-diag">
+      <div class="topbar"><div class="topbar-title">Diagnóstico de dados</div><div class="topbar-right"><button class="btn" onclick="rDiag()">🔄 Atualizar</button></div></div>
+      <div class="content" id="c-diag"><div class="loading">Carregando…</div></div>
+    </div>
   </div>
 </div>
 
@@ -385,7 +454,7 @@ tr:hover .ra{opacity:1}
 <script>
 // ── CREDENCIAIS ─────────────────────────────────────────────────
 const USERS = { "CX Seguros": "Hero@2026*" };
-const API_URL = "https://script.google.com/macros/s/AKfycbxKf70Eb28UDqHKADoFJPjwg3F0YWEIDpLHgDkKbhWnfCB3rHAtPtQqClbDchCk3hzquw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyca5rMtOgzK0ck-U2qOZVfuVBTHXxZEjEarL_LvOh3GMh9-3vkeluMhKruwZj-TQnnrQ-sEXAb38SpPMeg/exec";
 
 // ── LOGIN ───────────────────────────────────────────────────────
 function doLogin() {
@@ -430,9 +499,26 @@ async function apiGet(sheet) {
 }
 
 async function apiCreate(sheet, row) {
-  const d = await jsonp(API_URL + "?action=create&sheet=" + encodeURIComponent(sheet) + "&row=" + encodeURIComponent(JSON.stringify(row)));
+  // Remove undefined/null values to prevent malformed JSON
+  const cleanRow = Object.fromEntries(Object.entries(row).filter(([,v])=>v!==undefined&&v!==null&&v!==""));
+  const d = await jsonp(API_URL + "?action=create&sheet=" + encodeURIComponent(sheet) + "&row=" + encodeURIComponent(JSON.stringify(cleanRow)));
   if (!d.ok) throw new Error(d.error || "Erro ao criar registro");
   return d.id;
+}
+
+async function apiDelete(sheet, id) {
+  const d = await jsonp(API_URL + "?action=delete&sheet=" + encodeURIComponent(sheet) + "&id=" + encodeURIComponent(id));
+  if (!d.ok) throw new Error(d.error || "Erro ao excluir");
+  return true;
+}
+
+async function doDelete(sheet, id, nome) {
+  if (!confirm('Excluir "' + nome + '"?')) return;
+  try {
+    await apiDelete(sheet, id);
+    toast("Excluído!", "ok");
+    await loadAll();
+  } catch(e2) { toast("Erro: " + e2.message, "err"); }
 }
 
 // ── HELPER: ler campo de objeto simples ─────────────────────────
@@ -446,12 +532,195 @@ function gp(obj, key) {
 let DATA = { e:[], p:[], t:[], d:[], h:[] };
 let eFilter="", eChip="", tFilter="";
 
-const empById   = id => DATA.e.find(x=>x["ID"]===id);
-const titById   = id => DATA.t.find(x=>x["ID"]===id);
-const pByEmp    = eid => DATA.p.find(x=>gp(x,"Empresa ID")===eid);
-const titsByEmp = eid => DATA.t.filter(x=>gp(x,"Empresa ID")===eid);
-const depsByTit = tid => DATA.d.filter(x=>gp(x,"Titular ID")===tid);
+// All ID comparisons use String() to handle GAS returning numbers vs strings
+const sid = v => String(v||"").trim();
+const empById   = id => DATA.e.find(x=>sid(x["ID"])===sid(id));
+const titById   = id => DATA.t.find(x=>sid(x["ID"])===sid(id));
+const depById   = id => DATA.d.find(x=>sid(x["ID"])===sid(id));
+const pByEmp    = eid => DATA.p.find(x=>sid(gp(x,"Empresa ID"))===sid(eid));
+const titsByEmp = eid => DATA.t.filter(x=>sid(gp(x,"Empresa ID"))===sid(eid));
+const depsByTit = tid => DATA.d.filter(x=>sid(gp(x,"Titular ID"))===sid(tid));
 const depsByEmp = eid => titsByEmp(eid).flatMap(t=>depsByTit(t["ID"]));
+// Universal empresa name resolver
+const empName = (eid) => { const e=empById(eid); return e?gp(e,"Razão Social"):"—"; };
+
+// Track which record is open in a detail panel
+let currentDetailType="", currentDetailId="";
+
+async function apiUpdate(sheet, id, row) {
+  /*
+  ════════════════════════════════════════════════════════════════════
+  CÓDIGO COMPLETO DO GOOGLE APPS SCRIPT — copie para o seu GAS
+  ════════════════════════════════════════════════════════════════════
+  function doGet(e) {
+    var p = e.parameter;
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var output;
+
+    // ── READ ──────────────────────────────────────────────────────
+    if (!p.action || p.action === 'read') {
+      var ws = ss.getSheetByName(p.sheet);
+      if (!ws) { output = {ok:false, error:'Aba não encontrada: ' + p.sheet}; }
+      else {
+        var data = ws.getDataRange().getValues();
+        var headers = data[0];
+        var rows = data.slice(1).map(function(r){
+          var obj = {};
+          headers.forEach(function(h,i){ obj[h] = r[i]; });
+          return obj;
+        });
+        output = {ok:true, data:rows};
+      }
+    }
+
+    // ── CREATE ────────────────────────────────────────────────────
+    else if (p.action === 'create') {
+      var ws = ss.getSheetByName(p.sheet);
+      if (!ws) { output = {ok:false, error:'Aba não encontrada: ' + p.sheet}; }
+      else {
+        var headers = ws.getDataRange().getValues()[0];
+        var rowObj = JSON.parse(decodeURIComponent(p.row));
+        var newId = Utilities.getUuid();
+        var newRow = headers.map(function(h){ return h === 'ID' ? newId : (rowObj[h] !== undefined ? rowObj[h] : ''); });
+        ws.appendRow(newRow);
+        output = {ok:true, id:newId};
+      }
+    }
+
+    // ── UPDATE ────────────────────────────────────────────────────
+    else if (p.action === 'update') {
+      var ws = ss.getSheetByName(p.sheet);
+      if (!ws) { output = {ok:false, error:'Aba não encontrada: ' + p.sheet}; }
+      else {
+        var data = ws.getDataRange().getValues();
+        var headers = data[0];
+        var idCol = headers.indexOf('ID');
+        var rowObj = JSON.parse(decodeURIComponent(p.row));
+        var found = false;
+        for (var i = 1; i < data.length; i++) {
+          if (String(data[i][idCol]).trim() === String(p.id).trim()) {
+            for (var k in rowObj) {
+              var col = headers.indexOf(k);
+              if (col >= 0) ws.getRange(i + 1, col + 1).setValue(rowObj[k]);
+            }
+            found = true;
+            break;
+          }
+        }
+        output = found ? {ok:true, id:p.id} : {ok:false, error:'ID não encontrado: ' + p.id};
+      }
+    }
+
+    else {
+      output = {ok:false, error:'Ação desconhecida: ' + p.action};
+    }
+
+    var cb = p.callback;
+    var json = JSON.stringify(output);
+    return ContentService
+      .createTextOutput(cb ? cb + '(' + json + ')' : json)
+      .setMimeType(cb ? ContentService.MimeType.JAVASCRIPT : ContentService.MimeType.JSON);
+  }
+  ════════════════════════════════════════════════════════════════════
+  */
+  const cleanRow = Object.fromEntries(Object.entries(row).filter(([,v])=>v!==undefined&&v!==null));
+  let d;
+  try {
+    d = await jsonp(API_URL + "?action=update&sheet=" + encodeURIComponent(sheet) + "&id=" + encodeURIComponent(id) + "&row=" + encodeURIComponent(JSON.stringify(cleanRow)));
+  } catch(netErr) {
+    throw new Error("Erro de rede ao salvar: " + netErr.message);
+  }
+  if (!d.ok) {
+    const msg = d.error || "";
+    if (msg.toLowerCase().includes("ação desconhecida") || msg.toLowerCase().includes("desconhecida")) {
+      throw new Error("O Google Apps Script precisa ser atualizado para suportar edição. Copie o código completo do comentário na função apiUpdate do HTML e cole no seu GAS.");
+    }
+    throw new Error(msg || "Erro ao atualizar registro.");
+  }
+  return d;
+}
+
+function editCurrent(){
+  if(!currentDetailType||!currentDetailId) return;
+  const typeMap={empresa:"empresa",plano:"plano",titular:"titular",dependente:"dependente"};
+  const t=typeMap[currentDetailType]; if(!t) return;
+  // Pre-fill form with existing data
+  openModal(t);
+  setTimeout(()=>{
+    if(t==="empresa"){
+      const e=empById(currentDetailId); if(!e) return;
+      const set=(id,v)=>{const el=document.getElementById(id);if(el)el.value=v||""};
+      set("f-razao",gp(e,"Razão Social"));set("f-cnpj",gp(e,"CNPJ"));set("f-cep",gp(e,"CEP"));
+      set("f-end",gp(e,"Endereço"));set("f-cidade",gp(e,"Cidade"));set("f-resp",gp(e,"Responsável do Contrato"));
+      set("f-tel",gp(e,"Telefone RH"));set("f-email",gp(e,"Email RH"));
+      set("f-canal",gp(e,"Canal de Aquisição"));set("f-status",gp(e,"Status"));
+      document.getElementById("m-title").textContent="Editar empresa";
+    } else if(t==="plano"){
+      const pl=DATA.p.find(x=>sid(x["ID"])===sid(currentDetailId)); if(!pl) return;
+      const set=(id,v)=>{const el=document.getElementById(id);if(el)el.value=v||""};
+      set("f-ep",gp(pl,"Empresa ID"));set("f-seg",gp(pl,"Seguradora"));set("f-pla",gp(pl,"Plano contratado"));
+      set("f-apo",gp(pl,"Apólice"));set("f-ini",gp(pl,"Início vigência"));set("f-fim",gp(pl,"Fim vigência"));
+      set("f-bol",gp(pl,"Valor do boleto"));set("f-stp",gp(pl,"Status"));
+      document.getElementById("m-title").textContent="Editar plano";
+    } else if(t==="titular"){
+      const ti=titById(currentDetailId); if(!ti) return;
+      const set=(id,v)=>{const el=document.getElementById(id);if(el)el.value=v||""};
+      set("f-nome",gp(ti,"Nome"));set("f-cpf",gp(ti,"CPF"));set("f-nasc",gp(ti,"Nascimento"));
+      set("f-rg",gp(ti,"RG"));set("f-mae",gp(ti,"Mãe"));set("f-pai",gp(ti,"Pai"));
+      set("f-peso",gp(ti,"Peso"));set("f-alt",gp(ti,"Altura"));set("f-ec",gp(ti,"Estado civil"));
+      set("f-prof",gp(ti,"Profissão"));set("f-doe",gp(ti,"Doenças"));set("f-et",gp(ti,"Empresa ID"));
+      set("f-inc",gp(ti,"Inclusão"));set("f-cart",gp(ti,"Carteirinha"));set("f-cont",gp(ti,"Contato"));
+      set("f-stt",gp(ti,"Status"));
+      document.getElementById("m-title").textContent="Editar titular";
+    } else if(t==="dependente"){
+      const dep=DATA.d.find(x=>sid(x["ID"])===sid(currentDetailId)); if(!dep) return;
+      const set=(id,v)=>{const el=document.getElementById(id);if(el)el.value=v||""};
+      set("f-nomd",gp(dep,"Nome"));set("f-cpfd",gp(dep,"CPF"));set("f-nasd",gp(dep,"Nascimento"));
+      set("f-rgd",gp(dep,"RG"));set("f-maed",gp(dep,"Mãe"));set("f-paid",gp(dep,"Pai"));
+      set("f-pesd",gp(dep,"Peso"));set("f-altd",gp(dep,"Altura"));set("f-ecd",gp(dep,"Estado civil"));
+      set("f-prod",gp(dep,"Profissão"));set("f-doed",gp(dep,"Doenças"));
+      set("f-td",gp(dep,"Titular ID"));set("f-pard",gp(dep,"Parentesco"));
+      set("f-incd",gp(dep,"Inclusão"));set("f-crtd",gp(dep,"Carteirinha"));set("f-std",gp(dep,"Status"));
+      document.getElementById("m-title").textContent="Editar dependente";
+    }
+    // Override save to do update instead of create
+    document.getElementById("btn-save").onclick=()=>saveEditForm();
+  },100);
+}
+
+async function saveEditForm(){
+  document.getElementById("btn-save").textContent="Salvando…";
+  const g=id=>(document.getElementById(id)||{}).value||"";
+  try{
+    const sheetMap={empresa:"Empresas",plano:"Planos",titular:"Titulares",dependente:"Dependentes"};
+    const sheet=sheetMap[currentDetailType];
+    let row={};
+    if(currentDetailType==="empresa"){
+      const emailVal=g("f-email");
+      if(emailVal&&!validateEmail(emailVal)){toast("E-mail inválido.","err");document.getElementById("btn-save").textContent="Salvar";return;}
+      row={"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"CEP":g("f-cep"),"Responsável do Contrato":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")};
+    } else if(currentDetailType==="plano"){
+      row={"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Status":g("f-stp")};
+    } else if(currentDetailType==="titular"){
+      row={"Empresa ID":g("f-et"),"Nome":g("f-nome"),"CPF":g("f-cpf"),"Nascimento":g("f-nasc"),"RG":g("f-rg"),"Mãe":g("f-mae"),"Pai":g("f-pai"),"Peso":g("f-peso"),"Altura":g("f-alt"),"Estado civil":g("f-ec"),"Profissão":g("f-prof"),"Doenças":g("f-doe"),"Inclusão":g("f-inc"),"Carteirinha":g("f-cart"),"Contato":g("f-cont"),"Status":g("f-stt")};
+    } else if(currentDetailType==="dependente"){
+      row={"Titular ID":g("f-td"),"Nome":g("f-nomd"),"CPF":g("f-cpfd"),"Nascimento":g("f-nasd"),"RG":g("f-rgd"),"Mãe":g("f-maed"),"Pai":g("f-paid"),"Peso":g("f-pesd"),"Altura":g("f-altd"),"Estado civil":g("f-ecd"),"Profissão":g("f-prod"),"Doenças":g("f-doed"),"Parentesco":g("f-pard"),"Inclusão":g("f-incd"),"Carteirinha":g("f-crtd"),"Status":g("f-std")};
+    }
+    await apiUpdate(sheet, currentDetailId, row);
+    closeModal();
+    toast("Atualizado com sucesso!","ok");
+    await loadAll();
+    // Reopen the detail panel
+    const id=currentDetailId, type=currentDetailType;
+    setTimeout(()=>{
+      if(type==="empresa") openEmpDetail(id);
+      else if(type==="titular") openTitDetail(id);
+      else if(type==="plano") openPlanDetail(id);
+      else if(type==="dependente") openDepDetail(id);
+    },300);
+  }catch(err){toast("Erro: "+err.message,"err");}
+  finally{document.getElementById("btn-save").textContent="Salvar";document.getElementById("btn-save").onclick=saveForm;}
+}
 
 async function loadAll() {
   try {
@@ -459,7 +728,54 @@ async function loadAll() {
       apiGet("Empresas"), apiGet("Planos"), apiGet("Titulares"),
       apiGet("Dependentes"), apiGet("Historico")
     ]);
-    DATA = { e, p, t, d, h };
+
+    // ── Normalização robusta de campos ──────────────────────────
+    // Mapeia variações de nomes de campo para o nome canônico
+    const FIELD_ALIASES = {
+      // Razão Social
+      "razao social": "Razão Social",
+      "razão social": "Razão Social",
+      "razaosocial":  "Razão Social",
+      // Empresa ID
+      "empresa id":   "Empresa ID",
+      "empresaid":    "Empresa ID",
+      "empresa_id":   "Empresa ID",
+      // Titular ID
+      "titular id":   "Titular ID",
+      "titularid":    "Titular ID",
+      "titular_id":   "Titular ID",
+      // Início vigência
+      "inicio vigencia":  "Início vigência",
+      "início vigência":  "Início vigência",
+      "iniciovigencia":   "Início vigência",
+      // Valor do boleto
+      "valor do boleto":  "Valor do boleto",
+      "boleto mensal":    "Valor do boleto",
+      // Plano contratado
+      "plano contratado": "Plano contratado",
+    };
+
+    const norm = (rows) => rows.map(r => {
+      const out = {};
+      for (const k of Object.keys(r)) {
+        // Resolve alias caso exista, senão mantém chave original
+        const canonical = FIELD_ALIASES[k.toLowerCase().trim()] || k;
+        out[canonical] = r[k];
+      }
+      // IDs: garantir string sem espaços
+      if (out["ID"]        !== undefined) out["ID"]        = String(out["ID"]).trim();
+      if (out["Empresa ID"]!== undefined) out["Empresa ID"]= String(out["Empresa ID"]).trim();
+      if (out["Titular ID"]!== undefined) out["Titular ID"]= String(out["Titular ID"]).trim();
+      return out;
+    });
+
+    DATA = {
+      e: norm(e),
+      p: norm(p),
+      t: norm(t),
+      d: norm(d),
+      h: norm(h)
+    };
     updateBadges();
     renderCurrent();
   } catch(err) { toast(err.message, "err"); }
@@ -493,13 +809,20 @@ function renderCurrent() {
   else if(current==="rel-aniv")    rRelAniv();
   else if(current==="rel-canal")   rRelCanal();
   else if(current==="rel-vidas")   rRelVidas();
+  else if(current==="rel-seguradora") rRelSeguradora();
+  else if(current==="rel-aniversario-clientes") rRelAnivClientes();
+  else if(current==="painel-contratos") rPainelContratos();
+  else if(current==="painel-churn") rPainelChurn();
+  else if(current==="rel-premio") rRelPremio();
+  else if(current==="diag") rDiag();
 }
 
 // ── HELPERS ─────────────────────────────────────────────────────
-const fmt = d => { if(!d) return "—"; const[y,m,dd]=d.split("-"); return dd+"/"+m+"/"+y; };
+const fmt = d => { if(!d) return "—"; const pts=d.split("-"); const y=pts[0],m=pts[1],dd=pts[2]; return dd+"/"+m+"/"+y; };
 const cur = v => v!==""&&v!=null ? "R$ "+Number(v).toLocaleString("pt-BR",{minimumFractionDigits:2}) : "—";
 const badge = s => { const m={Ativo:"bg-g",Cancelado:"bg-r",Inclusão:"bg-b",Exclusão:"bg-r",Reajuste:"bg-a"}; return'<span class="badge '+(m[s]||"bg-gr")+'">'+(s||"—")+"</span>"; };
 const fimVig = ini => { if(!ini) return "—"; const d=new Date(ini); d.setFullYear(d.getFullYear()+1); return fmt(d.toISOString().slice(0,10)); };
+const nextAniv = (ini) => { if(!ini) return null; const today=new Date(); today.setHours(0,0,0,0); const d=new Date(ini); d.setFullYear(today.getFullYear()); if(d < today) d.setFullYear(today.getFullYear()+1); return d; };
 
 // ── DASHBOARD ───────────────────────────────────────────────────
 function rDash() {
@@ -509,10 +832,13 @@ function rDash() {
   const churn=total?Math.round(cancel/total*100):0;
   const arr=DATA.p.filter(x=>gp(x,"Status")==="Ativo").reduce((s,x)=>s+(Number(gp(x,"Valor do boleto"))||0),0)*12;
   const eAt=DATA.e.filter(x=>gp(x,"Status")==="Ativo").length;
+  const pAt=DATA.p.filter(x=>gp(x,"Status")==="Ativo").length;
+  const pCa=DATA.p.filter(x=>gp(x,"Status")==="Cancelado").length;
+  const churnP=DATA.p.length?Math.round(pCa/DATA.p.length*100):0;
   document.getElementById("dash-stats").innerHTML=
     '<div class="stat"><div class="stat-lbl">Empresas ativas</div><div class="stat-val cb">'+eAt+'</div><div class="stat-sub">de '+DATA.e.length+' total</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Contratos ativos</div><div class="stat-val cg">'+pAt+'</div><div class="stat-sub">churn contratos '+churnP+'%</div></div>'+
     '<div class="stat"><div class="stat-lbl">Vidas ativas</div><div class="stat-val cg">'+ativos+'</div><div class="stat-sub">'+tAt+' tit. · '+dAt+' dep.</div></div>'+
-    '<div class="stat"><div class="stat-lbl">Vidas canceladas</div><div class="stat-val cr">'+cancel+'</div><div class="stat-sub">churn '+churn+'%</div></div>'+
     '<div class="stat"><div class="stat-lbl">ARR estimado</div><div class="stat-val cg" style="font-size:15px">'+cur(arr)+'</div><div class="stat-sub">contratos ativos × 12</div></div>';
   const canais={};
   DATA.e.forEach(x=>{const c=gp(x,"Canal de Aquisição")||"Sem canal";canais[c]=(canais[c]||0)+1;});
@@ -520,11 +846,11 @@ function rDash() {
   const colors=["#1D9E75","#185FA5","#BA7517","#534AB7"];
   const today=new Date();
   const annivs=DATA.p.map(x=>{
-    const e=empById((gp(x,"Empresa")||[])[0]);
+    const eId=gp(x,"Empresa ID"), e=empById(eId);
     const ini=gp(x,"Início vigência"); if(!ini) return null;
-    const next=new Date(ini); next.setFullYear(today.getFullYear());
-    if(next<today) next.setFullYear(today.getFullYear()+1);
-    return{empresa:e?gp(e,"Razão Social"):"—",dias:Math.round((next-today)/86400000)};
+    const next=nextAniv(ini); if(!next) return null;
+    const _td=new Date(); _td.setHours(0,0,0,0);
+    return{empresa:e?gp(e,"Razão Social"):"—",dias:Math.round((next-_td)/86400000)};
   }).filter(a=>a&&a.dias<=90).sort((a,b)=>a.dias-b.dias);
   document.getElementById("dash-grid").innerHTML=
     '<div class="dc"><div class="dct">Canal de aquisição</div>'+
@@ -547,31 +873,32 @@ function rEmpresas(){
   document.getElementById("s-e-a").textContent=DATA.e.filter(e=>gp(e,"Status")==="Ativo").length;
   document.getElementById("s-e-c").textContent=DATA.e.filter(e=>gp(e,"Status")==="Cancelado").length;
   document.getElementById("tb-e").innerHTML=rows.length?rows.map(e=>
-    '<tr><td><button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+gp(e,"Razão Social")+'</button></td>'+
+    '<tr><td><button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+gp(e,"Razão Social")+'</button></td>'+
     '<td class="mono">'+( gp(e,"CNPJ")||"—")+'</td><td>'+badge(gp(e,"Canal de Aquisição")||"—")+'</td>'+
-    '<td>'+( gp(e,"Responsável RH")||"—")+'</td>'+
+    '<td>'+( gp(e,"Responsável do Contrato")||"—")+'</td>'+
     '<td><span class="badge bg-gr">'+titsByEmp(e["ID"]).length+'</span></td>'+
     '<td><span class="badge bg-gr">'+depsByEmp(e["ID"]).length+'</span></td>'+
     '<td>'+badge(gp(e,"Status"))+'</td>'+
-    '<td><div class="ra"><button class="ib" onclick="openEmpDetail(\''+e.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>'
+    '<td><div class="ra"><button class="ib" onclick="doDelete(\'Empresas\',e[\'ID\'],gp(e,\'Razão Social\'))" title="Excluir" style="color:#A32D2D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6m3,0V4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v2"/></svg></button><button class="ib" onclick="openEmpDetail(\''+e["ID"]+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>'
   ).join(""):"<tr><td colspan=8 class=empty>Nenhuma empresa encontrada.</td></tr>";
 }
 function openEmpDetail(id){
   const e=empById(id); if(!e) return;
+  currentDetailType="empresa"; currentDetailId=id;
   const pl=pByEmp(e["ID"]),ts=titsByEmp(id),ds=depsByEmp(id);
-  const hist=DATA.h.filter(h=>ts.some(t=>t.id===(gp(h,"Titular ID"))[0]));
+  const hist=DATA.h.filter(h=>ts.some(t=>t["ID"]===gp(h,"Titular ID")));
   document.getElementById("dv-e-badge").innerHTML=badge(gp(e,"Status"));
   document.getElementById("dv-e-body").innerHTML=
     '<div class="dt">'+gp(e,"Razão Social")+'</div><div class="ds">'+( gp(e,"CNPJ")||"—")+' · '+( gp(e,"Cidade")||"—")+'</div>'+
     '<div class="ig"><div class="il">Canal</div><div class="iv"><span class="badge bg-b">'+( gp(e,"Canal de Aquisição")||"—")+'</span></div>'+
-    '<div class="il">Responsável RH</div><div class="iv">'+( gp(e,"Responsável RH")||"—")+'</div>'+
+    '<div class="il">Responsável do Contrato</div><div class="iv">'+( gp(e,"Responsável do Contrato")||"—")+'</div>'+
     '<div class="il">Telefone</div><div class="iv">'+( gp(e,"Telefone RH")||"—")+'</div>'+
     '<div class="il">E-mail</div><div class="iv">'+( gp(e,"Email RH")||"—")+'</div>'+
     '<div class="il">Endereço</div><div class="iv">'+( gp(e,"Endereço")||"—")+'</div>'+
     '<div class="il">CEP</div><div class="iv">'+( gp(e,"CEP")||"—")+'</div></div>'+
     (pl?'<div class="sl">Plano contratado</div><div class="ig"><div class="il">Seguradora</div><div class="iv">'+gp(pl,"Seguradora")+'</div><div class="il">Plano</div><div class="iv">'+gp(pl,"Plano contratado")+'</div><div class="il">Apólice</div><div class="iv mono">'+( gp(pl,"Apólice")||"—")+'</div><div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div><div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div><div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div></div>':"")+
     '<div class="sl">Titulares ('+ts.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Carteirinha</th><th>Dep.</th><th>Status</th></tr></thead><tbody>'+
-    (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
+    (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
     '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Vida</th><th>Data</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
     (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+( gp(h,"Vida afetada")||"—")+'</td><td>'+fmt(gp(h,"Data"))+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem registros</td></tr>")+
     "</tbody></table></div>";
@@ -581,10 +908,47 @@ function openEmpDetail(id){
 
 // ── PLANOS ──────────────────────────────────────────────────────
 function rPlanos(){
-  document.getElementById("tb-p").innerHTML=DATA.p.map(pl=>{
-    const eIds=gp(pl,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
-    return'<tr><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+( gp(pl,"Seguradora")||"—")+'</td><td>'+( gp(pl,"Plano contratado")||"—")+'</td><td class="mono">'+( gp(pl,"Apólice")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td><td>'+fimVig(gp(pl,"Início vigência"))+'</td><td>'+cur(gp(pl,"Valor do boleto"))+'</td><td>'+badge(gp(pl,"Status"))+'</td></tr>';
-  }).join("")||"<tr><td colspan=8 class=empty>Sem planos.</td></tr>";
+  const _pRows=DATA.p.map(pl=>{
+    const eId=gp(pl,"Empresa ID"), e=DATA.e.find(x=>sid(x["ID"])===sid(eId));
+    const eName=e?gp(e,"Razão Social"):"—";
+    return'<tr>'+
+      '<td>'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ eName+"</button>":eName)+'</td>'+
+      '<td>'+(gp(pl,"Seguradora")||"—")+'</td>'+
+      '<td>'+(gp(pl,"Plano contratado")||"—")+'</td>'+
+      '<td class="mono">'+(gp(pl,"Apólice")||"—")+'</td>'+
+      '<td>'+fmt(gp(pl,"Início vigência"))+'</td>'+
+      '<td>'+fimVig(gp(pl,"Início vigência"))+'</td>'+
+      '<td>'+cur(gp(pl,"Valor do boleto"))+'</td>'+
+      '<td>'+badge(gp(pl,"Status"))+'</td>'+
+      '<td><div class="ra"><button class="ib" onclick="doDelete(\'Planos\',pl[\'ID\'],gp(pl,\'Seguradora\'))" title="Excluir" style="color:#A32D2D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6m3,0V4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v2"/></svg></button><button class="ib" onclick="openPlanDetail(\''+pl["ID"]+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td>'+
+      '</tr>';
+  });
+  document.getElementById("tb-p").innerHTML=_pRows.length?_pRows.join(""):"<tr><td colspan=9 class=empty>Sem planos cadastrados.</td></tr>";
+}
+function openPlanDetail(id){
+  const pl=DATA.p.find(x=>sid(x["ID"])===sid(id)); if(!pl) return;
+  currentDetailType="plano"; currentDetailId=id;
+  const eId=gp(pl,"Empresa ID"), e=DATA.e.find(x=>sid(x["ID"])===sid(eId));
+  const ts=e?titsByEmp(e["ID"]):[], ds=e?depsByEmp(e["ID"]):[];
+  document.getElementById("dv-p-badge").innerHTML=badge(gp(pl,"Status"));
+  document.getElementById("dv-p-body").innerHTML=
+    '<div class="dt">'+(e?gp(e,"Razão Social"):"Sem empresa")+'</div>'+
+    '<div class="ds">'+(gp(pl,"Seguradora")||"—")+' · '+(gp(pl,"Plano contratado")||"—")+'</div>'+
+    '<div class="ig">'+
+      '<div class="il">Empresa</div><div class="iv">'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
+      '<div class="il">Seguradora</div><div class="iv">'+(gp(pl,"Seguradora")||"—")+'</div>'+
+      '<div class="il">Plano contratado</div><div class="iv">'+(gp(pl,"Plano contratado")||"—")+'</div>'+
+      '<div class="il">Apólice</div><div class="iv mono">'+(gp(pl,"Apólice")||"—")+'</div>'+
+      '<div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div>'+
+      '<div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div>'+
+      '<div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div>'+
+      '<div class="il">Status</div><div class="iv">'+badge(gp(pl,"Status"))+'</div>'+
+    '</div>'+
+    '<div class="sl">Titulares vinculados ('+ts.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Carteirinha</th><th>Dep.</th><th>Status</th></tr></thead><tbody>'+
+    (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+(gp(t,"CPF")||"—")+'</td><td class="mono">'+(gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
+    '</tbody></table></div>';
+  document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
+  document.getElementById("dv-p").classList.add("open");
 }
 
 // ── TITULARES ───────────────────────────────────────────────────
@@ -593,17 +957,18 @@ function rTitulares(){
   const q=tFilter.toLowerCase();
   const rows=DATA.t.filter(t=>!q||gp(t,"Nome").toLowerCase().includes(q)||gp(t,"CPF").includes(q));
   document.getElementById("tb-t").innerHTML=rows.map(t=>{
-    const eIds=gp(t,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
-    return'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+fmt(gp(t,"Nascimento"))+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td><td><div class="ra"><button class="ib" onclick="openTitDetail(\''+t.id+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
+    const eId=gp(t,"Empresa ID"), e=DATA.e.find(x=>sid(x["ID"])===sid(eId));
+    return'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td><td>'+fmt(gp(t,"Nascimento"))+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td><td><div class="ra"><button class="ib" onclick="doDelete(\'Titulares\',t[\'ID\'],gp(t,\'Nome\'))" title="Excluir" style="color:#A32D2D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6m3,0V4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v2"/></svg></button><button class="ib" onclick="openTitDetail(\''+t["ID"]+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
   }).join("")||"<tr><td colspan=8 class=empty>Nenhum titular encontrado.</td></tr>";
 }
 function openTitDetail(id){
   const t=titById(id); if(!t) return;
-  const eIds=gp(t,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
-  const deps=depsByTit(id), hist=DATA.h.filter(h=>(gp(h,"Titular ID")).includes(id));
+  currentDetailType="titular"; currentDetailId=id;
+  const eId=gp(t,"Empresa ID"), e=DATA.e.find(x=>sid(x["ID"])===sid(eId));
+  const deps=depsByTit(id), hist=DATA.h.filter(h=>sid(gp(h,"Titular ID"))===sid(id));
   document.getElementById("dv-t-body").innerHTML=
     '<div class="dt">'+gp(t,"Nome")+'</div><div class="ds">'+( gp(t,"CPF")||"—")+' · '+( e?gp(e,"Razão Social"):"—")+'</div>'+
-    '<div class="ig"><div class="il">Empresa</div><div class="iv">'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
+    '<div class="ig"><div class="il">Empresa</div><div class="iv">'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
     '<div class="il">Carteirinha</div><div class="iv mono">'+( gp(t,"Carteirinha")||"—")+'</div>'+
     '<div class="il">Nascimento</div><div class="iv">'+fmt(gp(t,"Nascimento"))+'</div>'+
     '<div class="il">Estado civil</div><div class="iv">'+( gp(t,"Estado civil")||"—")+'</div>'+
@@ -612,7 +977,7 @@ function openTitDetail(id){
     '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(t,"Inclusão"))+'</div>'+
     '<div class="il">Status</div><div class="iv">'+badge(gp(t,"Status"))+'</div></div>'+
     '<div class="sl">Dependentes ('+deps.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Parentesco</th><th>Carteirinha</th><th>Status</th></tr></thead><tbody>'+
-    (deps.map(d=>'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem dependentes</td></tr>")+
+    (deps.map(d=>'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td><td><div class="ra"><button class="ib" onclick="doDelete(\'Dependentes\',d[\'ID\'],gp(d,\'Nome\'))" title="Excluir" style="color:#A32D2D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6m3,0V4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v2"/></svg></button></div></td></tr>').join("")||"<tr><td colspan=6 class=empty>Sem dependentes</td></tr>")+
     '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Data</th><th>Responsável</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
     (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+fmt(gp(h,"Data"))+'</td><td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem histórico</td></tr>")+
     "</tbody></table></div>";
@@ -623,39 +988,91 @@ function openTitDetail(id){
 // ── DEPENDENTES ─────────────────────────────────────────────────
 function rDependentes(){
   document.getElementById("tb-d").innerHTML=DATA.d.map(d=>{
-    const tIds=gp(d,"Titular ID"), t=DATA.t.find(x=>x["ID"]===tId);
-    const e=t?DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id)):null;
-    return'<tr><td>'+( gp(d,"Nome")||"—")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td>'+
-    '<td>'+( t?'<button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</td>'+
-    '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td>'+
-    '<td><span class="badge bg-gr">'+( gp(d,"Parentesco")||"—")+'</span></td>'+
-    '<td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>';
-  }).join("")||"<tr><td colspan=7 class=empty>Sem dependentes.</td></tr>";
+    const tId=gp(d,"Titular ID"), t=DATA.t.find(x=>sid(x["ID"])===sid(tId));
+    const e=t?DATA.e.find(x=>sid(gp(t,"Empresa ID"))===sid(x["ID"])):null;
+    return'<tr><td>'+(gp(d,"Nome")||"—")+'</td><td class="mono">'+(gp(d,"CPF")||"—")+'</td>'+
+    '<td>'+(t?'<button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</td>'+
+    '<td>'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td>'+
+    '<td><span class="badge bg-gr">'+(gp(d,"Parentesco")||"—")+'</span></td>'+
+    '<td class="mono">'+(gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td>'+
+    '<td><div class="ra"><button class="ib" onclick="openDepDetail(\''+d["ID"]+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
+  }).join("")||"<tr><td colspan=8 class=empty>Sem dependentes.</td></tr>";
+}
+function openDepDetail(id){
+  const d=DATA.d.find(x=>sid(x["ID"])===sid(id)); if(!d) return;
+  currentDetailType="dependente"; currentDetailId=id;
+  const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));
+  const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;
+  document.getElementById("dv-d-badge").innerHTML=badge(gp(d,"Status"));
+  document.getElementById("dv-d-body").innerHTML=
+    '<div class="dt">'+gp(d,"Nome")+'</div>'+
+    '<div class="ds">'+(gp(d,"CPF")||"—")+' · '+(gp(d,"Parentesco")||"—")+' de '+(t?gp(t,"Nome"):"—")+'</div>'+
+    '<div class="ig">'+
+      '<div class="il">Nome completo</div><div class="iv">'+gp(d,"Nome")+'</div>'+
+      '<div class="il">CPF</div><div class="iv mono">'+(gp(d,"CPF")||"—")+'</div>'+
+      '<div class="il">RG</div><div class="iv mono">'+(gp(d,"RG")||"—")+'</div>'+
+      '<div class="il">Nascimento</div><div class="iv">'+fmt(gp(d,"Nascimento"))+'</div>'+
+      '<div class="il">Parentesco</div><div class="iv">'+(gp(d,"Parentesco")||"—")+'</div>'+
+      '<div class="il">Estado civil</div><div class="iv">'+(gp(d,"Estado civil")||"—")+'</div>'+
+      '<div class="il">Profissão</div><div class="iv">'+(gp(d,"Profissão")||"—")+'</div>'+
+      '<div class="il">Titular</div><div class="iv">'+(t?'<button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</div>'+
+      '<div class="il">Empresa</div><div class="iv">'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
+      '<div class="il">Carteirinha</div><div class="iv mono">'+(gp(d,"Carteirinha")||"—")+'</div>'+
+      '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(d,"Inclusão"))+'</div>'+
+      '<div class="il">Doenças preexistentes</div><div class="iv">'+(gp(d,"Doenças")||"—")+'</div>'+
+      '<div class="il">Status</div><div class="iv">'+badge(gp(d,"Status"))+'</div>'+
+    '</div>';
+  document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
+  document.getElementById("dv-d").classList.add("open");
 }
 
 // ── HISTÓRICO ───────────────────────────────────────────────────
 function rHistorico(){
   document.getElementById("tb-h").innerHTML=DATA.h.map(h=>{
-    const tIds=gp(h,"Titular ID"), t=DATA.t.find(x=>x["ID"]===tId);
-    const e=t?DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id)):null;
+    const tId=gp(h,"Titular ID"), t=DATA.t.find(x=>sid(x["ID"])===sid(tId));
+    const e=t?DATA.e.find(x=>sid(gp(t,"Empresa ID"))===sid(x["ID"])):null;
     return'<tr><td>'+badge(gp(h,"Tipo"))+'</td>'+
-    '<td>'+( t?'<button class="lbtn" onclick="openTitDetail(\''+t.id+'\')">'+(gp(h,"Vida afetada")||gp(t,"Nome"))+"</button>":(gp(h,"Vida afetada")||"—"))+'</td>'+
-    '<td class="mono">'+( gp(h,"CPF vida")||"—")+'</td><td>'+fmt(gp(h,"Data"))+'</td>'+
-    '<td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td>'+
-    '<td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td>'+
-    '<td>'+( e?'<button class="lbtn" onclick="openEmpDetail(\''+e.id+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td></tr>';
-  }).join("")||"<tr><td colspan=8 class=empty>Sem registros.</td></tr>";
+    '<td>'+(t?'<button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+(gp(h,"Vida afetada")||gp(t,"Nome"))+"</button>":(gp(h,"Vida afetada")||"—"))+'</td>'+
+    '<td class="mono">'+(gp(h,"CPF vida")||"—")+'</td><td>'+fmt(gp(h,"Data"))+'</td>'+
+    '<td>'+(gp(h,"Responsável")||"—")+'</td><td>'+(gp(h,"Motivo")||"—")+'</td>'+
+    '<td>'+(gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td>'+
+    '<td>'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</td>'+
+    '<td><div class="ra"><button class="ib" onclick="openHistDetail(\''+h["ID"]+'\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>';
+  }).join("")||"<tr><td colspan=9 class=empty>Sem registros.</td></tr>";
+}
+function openHistDetail(id){
+  const h=DATA.h.find(x=>sid(x["ID"])===sid(id)); if(!h) return;
+  const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(h,"Titular ID")));
+  const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;
+  document.getElementById("dv-h-body").innerHTML=
+    '<div class="dt">'+(gp(h,"Vida afetada")||gp(t,"Nome")||"—")+'</div>'+
+    '<div class="ds">'+badge(gp(h,"Tipo"))+' · '+fmt(gp(h,"Data"))+'</div>'+
+    '<div class="ig">'+
+      '<div class="il">Tipo de alteração</div><div class="iv">'+badge(gp(h,"Tipo"))+'</div>'+
+      '<div class="il">Data</div><div class="iv">'+fmt(gp(h,"Data"))+'</div>'+
+      '<div class="il">Vida afetada</div><div class="iv">'+(gp(h,"Vida afetada")||"—")+'</div>'+
+      '<div class="il">CPF da vida</div><div class="iv mono">'+(gp(h,"CPF vida")||"—")+'</div>'+
+      '<div class="il">Titular relacionado</div><div class="iv">'+(t?'<button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</div>'+
+      '<div class="il">Empresa</div><div class="iv">'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
+      '<div class="il">Responsável</div><div class="iv">'+(gp(h,"Responsável")||"—")+'</div>'+
+      '<div class="il">Motivo</div><div class="iv">'+(gp(h,"Motivo")||"—")+'</div>'+
+      '<div class="il">Reajuste (%)</div><div class="iv">'+(gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</div>'+
+      '<div class="il">Valor atualizado</div><div class="iv">'+cur(gp(h,"Valor atualizado"))+'</div>'+
+      '<div class="il">Observações</div><div class="iv">'+(gp(h,"Observações")||"—")+'</div>'+
+    '</div>';
+  document.querySelectorAll(".view,.dv").forEach(el=>el.classList.remove("active","open"));
+  document.getElementById("dv-h").classList.add("open");
 }
 
 // ── RELATÓRIOS ──────────────────────────────────────────────────
 function rRelAniv(){
   const today=new Date();
   const rows=DATA.p.map(pl=>{
-    const eIds=gp(pl,"Empresa ID"), e=DATA.e.find(x=>x["ID"]===eId);
-    const ini=gp(pl,"Início vigência"); if(!ini) return null;
-    const next=new Date(ini); next.setFullYear(today.getFullYear());
-    if(next<today) next.setFullYear(today.getFullYear()+1);
-    return{e,pl,ini,next,dias:Math.round((next-today)/86400000)};
+    const eId=gp(pl,"Empresa ID"), e=DATA.e.find(x=>sid(x["ID"])===sid(eId));
+    const ini=gp(pl,"Início vigência")||gp(pl,"Inicio vigencia")||gp(pl,"Início Vigência"); if(!ini) return null;
+    const next=nextAniv(ini); if(!next) return null;
+    const todayMs=new Date(); todayMs.setHours(0,0,0,0);
+    return{e,pl,ini,next,dias:Math.round((next-todayMs)/86400000)};
   }).filter(Boolean).sort((a,b)=>a.dias-b.dias);
   document.getElementById("tb-ra").innerHTML=rows.map(r=>
     '<tr><td>'+( r.e?gp(r.e,"Razão Social"):"—")+'</td><td>'+( gp(r.pl,"Seguradora")||"—")+'</td><td>'+( gp(r.pl,"Plano contratado")||"—")+'</td>'+
@@ -680,48 +1097,236 @@ function rRelCanal(){
 function rRelVidas(){
   const tAt=DATA.t.filter(t=>gp(t,"Status")==="Ativo");
   const tCa=DATA.t.filter(t=>gp(t,"Status")==="Cancelado");
+  const dAt=DATA.d.filter(d=>gp(d,"Status")==="Ativo");
+  const dCa=DATA.d.filter(d=>gp(d,"Status")==="Cancelado");
   const total=DATA.t.length+DATA.d.length;
-  const ativos=tAt.length+DATA.d.filter(d=>gp(d,"Status")==="Ativo").length;
+  const ativos=tAt.length+dAt.length;
   const cancel=total-ativos, churn=total?Math.round(cancel/total*100):0;
   document.getElementById("c-vidas").innerHTML=
     '<div class="stats s4" style="margin-bottom:16px"><div class="stat"><div class="stat-lbl">Total</div><div class="stat-val">'+total+'</div></div><div class="stat"><div class="stat-lbl">Ativas</div><div class="stat-val cg">'+ativos+'</div></div><div class="stat"><div class="stat-lbl">Canceladas</div><div class="stat-val cr">'+cancel+'</div></div><div class="stat"><div class="stat-lbl">Churn</div><div class="stat-val ca">'+churn+'%</div></div></div>'+
     '<div class="rs"><div class="rt">Titulares ativos ('+tAt.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th><th>Inclusão</th><th>Dep.</th></tr></thead><tbody>'+
-    tAt.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+fmt(gp(t,"Inclusão"))+'</td><td>'+depsByTit(t["ID"]).length+'</td></tr>';}).join("")+
-    '</tbody></table></div></div><div class="rs" style="margin-top:16px"><div class="rt">Titulares cancelados ('+tCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th></tr></thead><tbody>'+
-    tCa.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td></tr>';}).join("")+
+    tAt.map(t=>{const e=DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID")));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+fmt(gp(t,"Inclusão"))+'</td><td>'+depsByTit(t["ID"]).length+'</td></tr>';}).join("")+
+    '</tbody></table></div></div>'+
+    '<div class="rs" style="margin-top:16px"><div class="rt">Dependentes ativos ('+dAt.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Titular</th><th>Empresa</th><th>Parentesco</th><th>Carteirinha</th></tr></thead><tbody>'+
+    dAt.map(d=>{const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( t?gp(t,"Nome"):"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td></tr>';}).join("")+
+    '</tbody></table></div></div>'+
+    '<div class="rs" style="margin-top:16px"><div class="rt">Titulares cancelados ('+tCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th></tr></thead><tbody>'+
+    tCa.map(t=>{const e=DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID")));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td></tr>';}).join("")+
+    '</tbody></table></div></div>'+
+    '<div class="rs" style="margin-top:16px"><div class="rt">Dependentes cancelados ('+dCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Titular</th><th>Empresa</th><th>Parentesco</th></tr></thead><tbody>'+
+    dCa.map(d=>{const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( t?gp(t,"Nome"):"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td></tr>';}).join("")+
     "</tbody></table></div></div>";
+}
+
+
+// ── REL SEGURADORA ──────────────────────────────────────────────
+function rRelSeguradora(){
+  const seg={};
+  DATA.p.forEach(pl=>{
+    const s=gp(pl,"Seguradora")||"Sem seguradora";
+    if(!seg[s]) seg[s]={contratos:0,cancelados:0,boleto:0,vidas:0};
+    seg[s].contratos++;
+    if(gp(pl,"Status")==="Cancelado") seg[s].cancelados++;
+    seg[s].boleto+=Number(gp(pl,"Valor do boleto"))||0;
+    const eId=gp(pl,"Empresa ID");
+    seg[s].vidas+=titsByEmp(eId).length+depsByEmp(eId).length;
+  });
+  const totalBoleto=Object.values(seg).reduce((s,x)=>s+x.boleto,0);
+  document.getElementById("c-seguradora").innerHTML=
+    '<div class="stats s4" style="margin-bottom:16px">'+
+    '<div class="stat"><div class="stat-lbl">Seguradoras</div><div class="stat-val">'+Object.keys(seg).length+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Total contratos</div><div class="stat-val">'+DATA.p.length+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Prêmio total/mês</div><div class="stat-val cg" style="font-size:15px">'+cur(totalBoleto)+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Prêmio anual (ARR)</div><div class="stat-val cg" style="font-size:15px">'+cur(totalBoleto*12)+'</div></div>'+
+    '</div>'+
+    '<div class="tw"><table><thead><tr><th>Seguradora</th><th>Contratos ativos</th><th>Cancelados</th><th>Vidas</th><th>Prêmio/mês</th><th>Prêmio anual</th></tr></thead><tbody>'+
+    Object.entries(seg).sort((a,b)=>b[1].boleto-a[1].boleto).map(([s,d])=>
+      '<tr><td style="font-weight:600">'+s+'</td><td>'+( d.contratos-d.cancelados)+'</td><td>'+d.cancelados+'</td><td>'+d.vidas+'</td><td>'+cur(d.boleto)+'</td><td>'+cur(d.boleto*12)+'</td></tr>'
+    ).join("")+
+    '</tbody></table></div>';
+}
+
+// ── REL ANIVERSÁRIO CLIENTES ─────────────────────────────────────
+function rRelAnivClientes(){
+  const today=new Date();
+  const toMD=function(d){if(!d)return null;var pts=d.split("-");var m=parseInt(pts[1]),dd=parseInt(pts[2]);return {m:m,d:dd,str:(dd<10?"0"+dd:dd)+"/"+(m<10?"0"+m:m)};};
+  const allVidas=[
+    ...DATA.t.map(t=>({nome:gp(t,"Nome"),cpf:gp(t,"CPF"),nasc:gp(t,"Nascimento"),tipo:"Titular",empresa:gp(DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID")))||{},"Razão Social")||"—",status:gp(t,"Status")})),
+    ...DATA.d.map(d=>{const t=titById(gp(d,"Titular ID"));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return{nome:gp(d,"Nome"),cpf:gp(d,"CPF"),nasc:gp(d,"Nascimento"),tipo:"Dependente",empresa:e?gp(e,"Razão Social"):"—",status:gp(d,"Status")};})
+  ].filter(v=>v.nasc&&v.status==="Ativo");
+
+  const meses=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+  const byMonth={};
+  allVidas.forEach(v=>{
+    const md=toMD(v.nasc);if(!md)return;
+    if(!byMonth[md.m])byMonth[md.m]=[];
+    byMonth[md.m].push({...v,dia:md.d,dataStr:md.str});
+  });
+
+  const currentMonth=today.getMonth()+1;
+  const sortedMonths=Object.keys(byMonth).map(Number).sort((a,b)=>{
+    const da=(a-currentMonth+12)%12, db=(b-currentMonth+12)%12;
+    return da-db;
+  });
+
+  document.getElementById("c-aniv-clientes").innerHTML=
+    '<p style="font-size:12px;color:var(--text2);margin-bottom:14px">Aniversários de titulares e dependentes ativos, agrupados por mês.</p>'+
+    sortedMonths.map(m=>{
+      const vidas=byMonth[m].sort((a,b)=>a.dia-b.dia);
+      const isCurrentMonth=m===currentMonth;
+      return '<div class="rs"><div class="rt">'+( isCurrentMonth?'<span class="badge bg-g">Este mês</span> &nbsp;':"")+meses[m-1]+' ('+vidas.length+')</div>'+
+        '<div class="tw"><table><thead><tr><th>Nome</th><th>Dia</th><th>Tipo</th><th>Empresa</th><th>CPF</th></tr></thead><tbody>'+
+        vidas.map(v=>'<tr'+(v.dia===today.getDate()&&isCurrentMonth?' style="background:var(--gbg)"':'')+ '><td style="font-weight:'+(v.dia===today.getDate()&&isCurrentMonth?"600":"400")+'">'+v.nome+(v.dia===today.getDate()&&isCurrentMonth?' 🎂':'')+ '</td><td>'+v.dataStr+'</td><td><span class="badge '+( v.tipo==="Titular"?"bg-b":"bg-gr")+ '">'+v.tipo+'</span></td><td>'+v.empresa+'</td><td class="mono">'+( v.cpf||"—")+'</td></tr>').join("")+
+        '</tbody></table></div></div>';
+    }).join("")||'<div class="empty">Nenhum aniversário cadastrado.</div>';
+}
+
+// ── PAINEL CONTRATOS/PLANOS ─────────────────────────────────────
+function rPainelContratos(){
+  const pAt=DATA.p.filter(x=>gp(x,"Status")==="Ativo");
+  const pCa=DATA.p.filter(x=>gp(x,"Status")==="Cancelado");
+  const pOther=DATA.p.filter(x=>gp(x,"Status")!=="Ativo"&&gp(x,"Status")!=="Cancelado");
+  const eAt=DATA.e.filter(x=>gp(x,"Status")==="Ativo").length;
+  const eCa=DATA.e.filter(x=>gp(x,"Status")==="Cancelado").length;
+  document.getElementById("c-painel-contratos").innerHTML=
+    '<div class="stats s4" style="margin-bottom:16px">'+
+    '<div class="stat"><div class="stat-lbl">Empresas ativas</div><div class="stat-val cg">'+eAt+'</div><div class="stat-sub">'+eCa+' canceladas</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Planos ativos</div><div class="stat-val cg">'+pAt.length+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Planos cancelados</div><div class="stat-val cr">'+pCa.length+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Em renovação/outros</div><div class="stat-val ca">'+pOther.length+'</div></div>'+
+    '</div>'+
+    '<div class="rs"><div class="rt">Planos ativos ('+pAt.length+')</div><div class="tw"><table><thead><tr><th>Empresa</th><th>Seguradora</th><th>Plano</th><th>Apólice</th><th>Início</th><th>Fim</th><th>Boleto</th></tr></thead><tbody>'+
+    pAt.map(pl=>{const eId=gp(pl,"Empresa ID"),e=DATA.e.find(x=>sid(x["ID"])===sid(eId));return'<tr><td>'+(e?gp(e,"Razão Social"):"—")+'</td><td>'+(gp(pl,"Seguradora")||"—")+'</td><td>'+(gp(pl,"Plano contratado")||"—")+'</td><td class="mono">'+(gp(pl,"Apólice")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td><td>'+fimVig(gp(pl,"Início vigência"))+'</td><td>'+cur(gp(pl,"Valor do boleto"))+'</td></tr>';}).join("")||"<tr><td colspan=7 class=empty>Nenhum.</td></tr>"+
+    '</tbody></table></div></div>'+
+    '<div class="rs" style="margin-top:16px"><div class="rt">Planos cancelados ('+pCa.length+')</div><div class="tw"><table><thead><tr><th>Empresa</th><th>Seguradora</th><th>Plano</th><th>Apólice</th><th>Início</th></tr></thead><tbody>'+
+    pCa.map(pl=>{const eId=gp(pl,"Empresa ID"),e=DATA.e.find(x=>sid(x["ID"])===sid(eId));return'<tr><td>'+(e?gp(e,"Razão Social"):"—")+'</td><td>'+(gp(pl,"Seguradora")||"—")+'</td><td>'+(gp(pl,"Plano contratado")||"—")+'</td><td class="mono">'+(gp(pl,"Apólice")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td></tr>';}).join("")||"<tr><td colspan=5 class=empty>Nenhum.</td></tr>"+
+    '</tbody></table></div></div>';
+}
+
+// ── PAINEL CHURN ────────────────────────────────────────────────
+function rPainelChurn(){
+  const total=DATA.p.length, canceled=DATA.p.filter(x=>gp(x,"Status")==="Cancelado").length;
+  const churnP=total?Math.round(canceled/total*100):0;
+  const tTotal=DATA.t.length+DATA.d.length;
+  const tCanc=DATA.t.filter(x=>gp(x,"Status")==="Cancelado").length+DATA.d.filter(x=>gp(x,"Status")==="Cancelado").length;
+  const churnV=tTotal?Math.round(tCanc/tTotal*100):0;
+  const eTotal=DATA.e.length, eCanceled=DATA.e.filter(x=>gp(x,"Status")==="Cancelado").length;
+  const churnE=eTotal?Math.round(eCanceled/eTotal*100):0;
+  // Churn por canal
+  const byCanal={};
+  DATA.e.forEach(e=>{
+    const c=gp(e,"Canal de Aquisição")||"Sem canal";
+    if(!byCanal[c])byCanal[c]={total:0,canceled:0};
+    byCanal[c].total++;
+    if(gp(e,"Status")==="Cancelado")byCanal[c].canceled++;
+  });
+  document.getElementById("c-painel-churn").innerHTML=
+    '<div class="stats s3" style="margin-bottom:16px">'+
+    '<div class="stat"><div class="stat-lbl">Churn de contratos</div><div class="stat-val cr">'+churnP+'%</div><div class="stat-sub">'+canceled+' de '+total+' planos cancelados</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Churn de vidas</div><div class="stat-val cr">'+churnV+'%</div><div class="stat-sub">'+tCanc+' de '+tTotal+' vidas canceladas</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Churn de empresas</div><div class="stat-val cr">'+churnE+'%</div><div class="stat-sub">'+eCanceled+' de '+eTotal+' empresas canceladas</div></div>'+
+    '</div>'+
+    '<div class="dc" style="margin-bottom:16px"><div class="dct">Churn por canal de aquisição</div>'+
+    Object.entries(byCanal).sort((a,b)=>b[1].canceled-a[1].canceled).map(([c,d])=>{
+      const pct=d.total?Math.round(d.canceled/d.total*100):0;
+      return'<div class="br"><span class="bl">'+c+'</span><div class="bt"><div class="bf" style="width:'+pct+'%;background:'+(pct>30?"#E24B4A":pct>15?"#BA7517":"#1D9E75")+'"></div></div><span class="bv cr">'+pct+'%</span></div>';
+    }).join("")+
+    '</div>'+
+    '<div class="rs"><div class="rt">Planos cancelados</div><div class="tw"><table><thead><tr><th>Empresa</th><th>Canal</th><th>Seguradora</th><th>Plano</th><th>Início vigência</th><th>Boleto</th></tr></thead><tbody>'+
+    DATA.p.filter(x=>gp(x,"Status")==="Cancelado").map(pl=>{
+      const eId=gp(pl,"Empresa ID"),e=DATA.e.find(x=>sid(x["ID"])===sid(eId));
+      return'<tr><td>'+(e?gp(e,"Razão Social"):"—")+'</td><td>'+(e?'<span class="badge bg-b">'+(gp(e,"Canal de Aquisição")||"—")+'</span>':"—")+'</td><td>'+(gp(pl,"Seguradora")||"—")+'</td><td>'+(gp(pl,"Plano contratado")||"—")+'</td><td>'+fmt(gp(pl,"Início vigência"))+'</td><td>'+cur(gp(pl,"Valor do boleto"))+'</td></tr>';
+    }).join("")||"<tr><td colspan=6 class=empty>Nenhum plano cancelado.</td></tr>"+
+    '</tbody></table></div></div>';
+}
+
+// ── RELATÓRIO PRÊMIO EMITIDO ────────────────────────────────────
+function rRelPremio(){
+  const seg={};
+  DATA.p.forEach(pl=>{
+    const s=gp(pl,"Seguradora")||"Sem seguradora";
+    const status=gp(pl,"Status");
+    if(!seg[s])seg[s]={ativos:0,cancelados:0,boletoAtivo:0,boletoTotal:0};
+    seg[s].boletoTotal+=Number(gp(pl,"Valor do boleto"))||0;
+    if(status==="Ativo"){seg[s].ativos++;seg[s].boletoAtivo+=Number(gp(pl,"Valor do boleto"))||0;}
+    else if(status==="Cancelado")seg[s].cancelados++;
+  });
+  const totalMes=Object.values(seg).reduce((s,x)=>s+x.boletoAtivo,0);
+  document.getElementById("c-rel-premio").innerHTML=
+    '<div class="stats s3" style="margin-bottom:16px">'+
+    '<div class="stat"><div class="stat-lbl">Seguradoras</div><div class="stat-val cb">'+Object.keys(seg).length+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Prêmio ativo/mês</div><div class="stat-val cg" style="font-size:15px">'+cur(totalMes)+'</div></div>'+
+    '<div class="stat"><div class="stat-lbl">Prêmio ativo/ano</div><div class="stat-val cg" style="font-size:15px">'+cur(totalMes*12)+'</div></div>'+
+    '</div>'+
+    '<div class="tw"><table><thead><tr><th>Seguradora</th><th>Contratos ativos</th><th>Contratos cancelados</th><th>Vidas seguradas</th><th>Prêmio/mês (ativos)</th><th>Prêmio/ano (ativos)</th></tr></thead><tbody>'+
+    Object.entries(seg).sort((a,b)=>b[1].boletoAtivo-a[1].boletoAtivo).map(([s,d])=>{
+      const eId_seg=DATA.p.filter(x=>gp(x,"Seguradora")===s&&gp(x,"Status")==="Ativo");
+      const vidasSeg=eId_seg.reduce((acc,pl)=>{const eId=gp(pl,"Empresa ID");return acc+titsByEmp(eId).length+depsByEmp(eId).length;},0);
+      return'<tr><td style="font-weight:600">'+s+'</td><td>'+d.ativos+'</td><td>'+d.cancelados+'</td><td>'+vidasSeg+'</td><td>'+cur(d.boletoAtivo)+'</td><td>'+cur(d.boletoAtivo*12)+'</td></tr>';
+    }).join("")+
+    '</tbody></table></div>';
 }
 
 // ── EXPORT CSV ──────────────────────────────────────────────────
 function exportCSV(type){
   let headers=[],rows=[];
-  if(type==="empresas"){headers=["Razão Social","CNPJ","Canal","Responsável","Telefone","Email","Cidade","Status"];rows=DATA.e.map(e=>[gp(e,"Razão Social"),gp(e,"CNPJ"),gp(e,"Canal de Aquisição"),gp(e,"Responsável RH"),gp(e,"Telefone RH"),gp(e,"Email RH"),gp(e,"Cidade"),gp(e,"Status")]);}
-  else if(type==="aniv"){headers=["Empresa","Seguradora","Plano","Início","Próx. aniversário","Dias","Boleto","Status"];const today=new Date();rows=DATA.p.map(pl=>{const e=DATA.e.find(x=>(gp(pl,"Empresa ID")).includes(x.id));const ini=gp(pl,"Início vigência");const next=ini?new Date(ini):null;if(next){next.setFullYear(today.getFullYear());if(next<today)next.setFullYear(today.getFullYear()+1);}return[e?gp(e,"Razão Social"):"—",gp(pl,"Seguradora"),gp(pl,"Plano contratado"),fmt(ini),next?fmt(next.toISOString().slice(0,10)):"—",next?Math.round((next-today)/86400000):"—",gp(pl,"Valor do boleto"),gp(pl,"Status")];});}
+  if(type==="empresas"){headers=["Razão Social","CNPJ","Canal","Responsável","Telefone","Email","Cidade","Status"];rows=DATA.e.map(e=>[gp(e,"Razão Social"),gp(e,"CNPJ"),gp(e,"Canal de Aquisição"),gp(e,"Responsável do Contrato"),gp(e,"Telefone RH"),gp(e,"Email RH"),gp(e,"Cidade"),gp(e,"Status")]);}
+  else if(type==="aniv"){headers=["Empresa","Seguradora","Plano","Início","Próx. aniversário","Dias","Boleto","Status"];const today=new Date();rows=DATA.p.map(pl=>{const eId=gp(pl,"Empresa ID");const e=DATA.e.find(x=>sid(x["ID"])===sid(eId));const ini=gp(pl,"Início vigência");const next=ini?new Date(ini):null;if(next){next.setFullYear(today.getFullYear());if(next<today)next.setFullYear(today.getFullYear()+1);}return[e?gp(e,"Razão Social"):"—",gp(pl,"Seguradora"),gp(pl,"Plano contratado"),fmt(ini),next?fmt(next.toISOString().slice(0,10)):"—",next?Math.round((next-today)/86400000):"—",gp(pl,"Valor do boleto"),gp(pl,"Status")];});}
   else if(type==="canal"){headers=["Canal","Empresa","Status","Seguradora","Titulares","Dependentes","Boleto"];rows=DATA.e.map(e=>{const pl=pByEmp(e["ID"]);return[gp(e,"Canal de Aquisição"),gp(e,"Razão Social"),gp(e,"Status"),pl?gp(pl,"Seguradora"):"—",titsByEmp(e["ID"]).length,depsByEmp(e["ID"]).length,pl?gp(pl,"Valor do boleto"):"—"];});}
-  else if(type==="vidas"){headers=["Nome","Tipo","CPF","Empresa","Carteirinha","Status"];rows=[...DATA.t.map(t=>{const e=DATA.e.find(x=>(gp(t,"Empresa ID")).includes(x.id));return[gp(t,"Nome"),"Titular",gp(t,"CPF"),e?gp(e,"Razão Social"):"—",gp(t,"Carteirinha"),gp(t,"Status")];}), ...DATA.d.map(d=>{const t2=titById((gp(d,"Titular ID"))[0]);const e=t2?DATA.e.find(x=>x["ID"]===gp(t2,"Empresa ID")):null;return[gp(d,"Nome"),"Dependente",gp(d,"CPF"),e?gp(e,"Razão Social"):"—",gp(d,"Carteirinha"),gp(d,"Status")];})];}
-  const csv=[headers,...rows].map(r=>r.map(c=>'"'+String(c||"").replace(/"/g,'""')+'"').join(",")).join("\n");
+  else if(type==="seguradora"){
+    headers=["Seguradora","Contratos ativos","Cancelados","Vidas","Prêmio/mês","Prêmio anual"];
+    const seg={};DATA.p.forEach(pl=>{const s=gp(pl,"Seguradora")||"Sem seguradora";if(!seg[s])seg[s]={at:0,ca:0,bol:0,vidas:0};seg[s].at++;if(gp(pl,"Status")==="Cancelado")seg[s].ca++;seg[s].bol+=Number(gp(pl,"Valor do boleto"))||0;const eId=gp(pl,"Empresa ID");seg[s].vidas+=titsByEmp(eId).length+depsByEmp(eId).length;});
+    rows=Object.entries(seg).map(([s,d])=>[s,d.at-d.ca,d.ca,d.vidas,d.bol,d.bol*12]);
+  }
+  else if(type==="vidas"){headers=["Nome","Tipo","CPF","Empresa","Carteirinha","Status"];rows=[...DATA.t.map(t=>{const e=DATA.e.find(x=>sid(gp(t,"Empresa ID"))===sid(x["ID"]));return[gp(t,"Nome"),"Titular",gp(t,"CPF"),e?gp(e,"Razão Social"):"—",gp(t,"Carteirinha"),gp(t,"Status")];}), ...DATA.d.map(d=>{const t2=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t2?DATA.e.find(x=>sid(x["ID"])===sid(gp(t2,"Empresa ID"))):null;return[gp(d,"Nome"),"Dependente",gp(d,"CPF"),e?gp(e,"Razão Social"):"—",gp(d,"Carteirinha"),gp(d,"Status")];})];}
+  else if(type==="contratos"){headers=["Empresa","Canal","Seguradora","Plano","Apólice","Início","Status","Boleto"];rows=DATA.p.map(pl=>{const eId=gp(pl,"Empresa ID"),e=DATA.e.find(x=>sid(x["ID"])===sid(eId));return[e?gp(e,"Razão Social"):"—",e?gp(e,"Canal de Aquisição"):"—",gp(pl,"Seguradora"),gp(pl,"Plano contratado"),gp(pl,"Apólice"),gp(pl,"Início vigência"),gp(pl,"Status"),gp(pl,"Valor do boleto")];});}
+  else if(type==="premio"){headers=["Seguradora","Contratos ativos","Cancelados","Vidas","Prêmio/mês","Prêmio/ano"];const seg={};DATA.p.forEach(pl=>{const s=gp(pl,"Seguradora")||"Sem seguradora";if(!seg[s])seg[s]={at:0,ca:0,bol:0,vidas:0};if(gp(pl,"Status")==="Ativo"){seg[s].at++;seg[s].bol+=Number(gp(pl,"Valor do boleto"))||0;const eId=gp(pl,"Empresa ID");seg[s].vidas+=titsByEmp(eId).length+depsByEmp(eId).length;}else if(gp(pl,"Status")==="Cancelado")seg[s].ca++;});rows=Object.entries(seg).map(([s,d])=>[s,d.at,d.ca,d.vidas,d.bol,d.bol*12]);}  const csv=[headers,...rows].map(r=>r.map(c=>'"'+String(c||"").replace(/"/g,'""')+'"').join(",")).join("\n");
   const a=document.createElement("a");a.href="data:text/csv;charset=utf-8,\uFEFF"+encodeURIComponent(csv);a.download="relatorio-"+type+".csv";a.click();
 }
 
 // ── FORMULÁRIOS ─────────────────────────────────────────────────
 let currentModal="";
 const FORMS={
-  empresa:{title:"Nova empresa",html:'<div class="fs"><div class="ft">Dados cadastrais</div><div class="fg"><div class="field ff"><label class="req">Razão social</label><input id="f-razao"></div><div class="field"><label class="req">CNPJ</label><input id="f-cnpj" placeholder="00.000.000/0001-00"></div><div class="field"><label>CEP</label><input id="f-cep"></div><div class="field ff"><label>Endereço</label><input id="f-end"></div><div class="field"><label>Cidade</label><input id="f-cidade"></div></div></div><div class="fs"><div class="ft">Responsável de RH</div><div class="fg"><div class="field"><label class="req">Nome</label><input id="f-resp"></div><div class="field"><label>Telefone</label><input id="f-tel"></div><div class="field ff"><label>E-mail</label><input id="f-email" type="email"></div></div></div><div class="fs"><div class="ft">Comercial</div><div class="fg"><div class="field"><label>Canal</label><select id="f-canal"><option>Indicação</option><option>Digital</option><option>Corretor parceiro</option><option>Prospecção ativa</option><option>Evento</option></select></div><div class="field"><label>Status</label><select id="f-status"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
+  empresa:{title:"Nova empresa",html:'<div class="fs"><div class="ft">Dados cadastrais</div><div class="fg"><div class="field ff"><label class="req">Razão social</label><input id="f-razao"></div><div class="field"><label class="req">CNPJ</label><input id="f-cnpj" placeholder="00.000.000/0001-00"></div><div class="field"><label>CEP</label><input id="f-cep"></div><div class="field ff"><label>Endereço</label><input id="f-end"></div><div class="field"><label>Cidade</label><input id="f-cidade"></div></div></div><div class="fs"><div class="ft">Responsável do Contrato</div><div class="fg"><div class="field"><label class="req">Nome</label><input id="f-resp"></div><div class="field"><label>Telefone</label><input id="f-tel"></div><div class="field ff"><label>E-mail</label><input id="f-email" type="email"></div></div></div><div class="fs"><div class="ft">Comercial</div><div class="fg"><div class="field"><label>Canal</label><select id="f-canal"><option>Base Hero</option><option>Onboarding EV</option><option>Renovação EV</option><option>Ativação da Base</option><option>Contadores</option><option>Migração</option><option>Indicação Alice</option><option>Indicação CX</option><option>Orgânico</option><option>Simulador</option><option>Área Logada</option><option>APP PJ Hero</option><option>Outros</option><option>RH</option><option>Branded Content</option></select></div><div class="field"><label>Status</label><select id="f-status"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
   plano:{title:"Novo plano",html:'<div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field ff"><label class="req">Empresa</label><select id="f-ep"></select></div><div class="field"><label class="req">Seguradora</label><input id="f-seg"></div><div class="field"><label class="req">Plano contratado</label><input id="f-pla"></div><div class="field"><label>Apólice</label><input id="f-apo"></div><div class="field"><label class="req">Início vigência</label><input id="f-ini" type="date"></div><div class="field"><label>Fim vigência</label><input id="f-fim" type="date"></div><div class="field"><label class="req">Boleto (R$)</label><input id="f-bol" type="number" step="0.01"></div><div class="field"><label>Status</label><select id="f-stp"><option>Ativo</option><option>Cancelado</option><option>Em renovação</option></select></div></div></div>'},
   titular:{title:"Novo titular",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nome"></div><div class="field"><label class="req">CPF</label><input id="f-cpf"></div><div class="field"><label>Nascimento</label><input id="f-nasc" type="date"></div><div class="field"><label>RG</label><input id="f-rg"></div><div class="field"><label>Expedição RG</label><input id="f-rgexp" type="date"></div><div class="field"><label>Órgão expedidor</label><input id="f-orgao"></div><div class="field"><label>Nome da mãe</label><input id="f-mae"></div><div class="field"><label>Nome do pai</label><input id="f-pai"></div><div class="field"><label>Peso (kg)</label><input id="f-peso" type="number"></div><div class="field"><label>Altura (cm)</label><input id="f-alt" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ec"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option><option>União estável</option></select></div><div class="field"><label>Profissão</label><input id="f-prof"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doe"></textarea></div></div></div><div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field"><label class="req">Empresa</label><select id="f-et"></select></div><div class="field"><label>Data de inclusão</label><input id="f-inc" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-cart"></div><div class="field"><label>Contato</label><input id="f-cont"></div><div class="field"><label>Status</label><select id="f-stt"><option>Ativo</option><option>Cancelado</option></select></div></div></div><div class="fs"><div class="ft sens">Dados sensíveis</div><div class="fg"><div class="field"><label>Login seguradora</label><input id="f-log"></div><div class="field"><label>Senha seguradora</label><input id="f-sen" type="password"></div></div></div>'},
   dependente:{title:"Novo dependente",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nomd"></div><div class="field"><label>CPF (se houver)</label><input id="f-cpfd"></div><div class="field"><label>Nascimento</label><input id="f-nasd" type="date"></div><div class="field"><label>RG</label><input id="f-rgd"></div><div class="field"><label>Nome da mãe</label><input id="f-maed"></div><div class="field"><label>Nome do pai</label><input id="f-paid"></div><div class="field"><label>Peso</label><input id="f-pesd" type="number"></div><div class="field"><label>Altura</label><input id="f-altd" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ecd"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option></select></div><div class="field"><label>Profissão</label><input id="f-prod"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doed"></textarea></div></div></div><div class="fs"><div class="ft">Vínculo</div><div class="fg"><div class="field"><label class="req">Titular</label><select id="f-td"></select></div><div class="field"><label class="req">Parentesco</label><select id="f-pard"><option>Cônjuge</option><option>Filho</option><option>Pai/Mãe</option><option>Irmão</option><option>Outro</option></select></div><div class="field"><label>Data de inclusão</label><input id="f-incd" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-crtd"></div><div class="field"><label>Status</label><select id="f-std"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
   historico:{title:"Registrar alteração",html:'<div class="fs"><div class="ft">Evento</div><div class="fg"><div class="field"><label class="req">Tipo</label><select id="f-tiph"><option>Inclusão</option><option>Exclusão</option><option>Reajuste</option></select></div><div class="field"><label class="req">Data</label><input id="f-dath" type="date"></div><div class="field ff"><label class="req">Titular relacionado</label><select id="f-vidh"></select></div><div class="field ff"><label class="req">Vida afetada (nome)</label><input id="f-vidan"></div><div class="field"><label>CPF da vida afetada</label><input id="f-cpfh"></div><div class="field"><label>Reajuste (%)</label><input id="f-rejh" type="number" step="0.01"></div><div class="field"><label>Valor atualizado (R$)</label><input id="f-valh" type="number" step="0.01"></div><div class="field"><label class="req">Responsável</label><input id="f-resh"></div><div class="field"><label>Motivo</label><input id="f-moth"></div><div class="field ff"><label>Observações</label><textarea id="f-obsh"></textarea></div></div></div>'}
 };
 
-function openModal(type){
+function openModal(type, preEmpId, preTitId){
   currentModal=type;
   document.getElementById("m-title").textContent=FORMS[type].title;
   document.getElementById("m-body").innerHTML=FORMS[type].html;
   document.getElementById("ov").classList.add("open");
-  if(type==="plano"){const s=document.getElementById("f-ep");if(s)s.innerHTML=DATA.e.map(e=>`<option value="${e.id}">${gp(e,"Razão Social")}</option>`).join("")}
-  if(type==="titular"){const s=document.getElementById("f-et");if(s)s.innerHTML=DATA.e.map(e=>`<option value="${e.id}">${gp(e,"Razão Social")}</option>`).join("")}
-  if(type==="dependente"){const s=document.getElementById("f-td");if(s)s.innerHTML=DATA.t.map(t=>`<option value="${t.id}">${gp(t,"Nome")}</option>`).join("")}
-  if(type==="historico"){const s=document.getElementById("f-vidh");if(s)s.innerHTML=DATA.t.map(t=>`<option value="${t.id}">${gp(t,"Nome")}</option>`).join("")}
+  if(type==="plano"){
+    const s=document.getElementById("f-ep");
+    if(s){
+      s.innerHTML=DATA.e.map(e=>`<option value="${e["ID"]}">${gp(e,"Razão Social")}</option>`).join("");
+      if(preEmpId) s.value=preEmpId;
+    }
+  }
+  if(type==="titular"){
+    const s=document.getElementById("f-et");
+    if(s){
+      s.innerHTML=DATA.e.map(e=>`<option value="${e["ID"]}">${gp(e,"Razão Social")}</option>`).join("");
+      if(preEmpId) s.value=preEmpId;
+    }
+  }
+  if(type==="dependente"){
+    // Populate empresa selector first if we have context
+    const s=document.getElementById("f-td");
+    // Filter titulares by empresa if preEmpId provided
+    const titList=preEmpId ? DATA.t.filter(t=>gp(t,"Empresa ID")===preEmpId) : DATA.t;
+    if(s) s.innerHTML=titList.map(t=>`<option value="${t["ID"]}">${gp(t,"Nome")}</option>`).join("");
+    if(preTitId){const s2=document.getElementById("f-td");if(s2)s2.value=preTitId;}
+  }
+  if(type==="historico"){
+    const s=document.getElementById("f-vidh");
+    const titList=preEmpId ? DATA.t.filter(t=>gp(t,"Empresa ID")===preEmpId) : DATA.t;
+    if(s) s.innerHTML=titList.map(t=>`<option value="${t["ID"]}">${gp(t,"Nome")}</option>`).join("");
+  }
+  setTimeout(applyMasks, 50);
 }
 function closeModal(){document.getElementById("ov").classList.remove("open")}
 function closeBg(e){if(e.target===document.getElementById("ov"))closeModal()}
@@ -731,7 +1336,9 @@ async function saveForm(){
   document.getElementById("btn-save").textContent="Salvando…";
   try{
     if(currentModal==="empresa"){
-      await apiCreate("Empresas",{"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"CEP":g("f-cep"),"Responsável RH":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")});
+      const emailVal=g("f-email");
+      if(emailVal && !validateEmail(emailVal)){toast("E-mail inválido.","err");document.getElementById("btn-save").textContent="Salvar";return;}
+      await apiCreate("Empresas",{"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"CEP":g("f-cep"),"Responsável do Contrato":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")});
     }else if(currentModal==="plano"){
       await apiCreate("Planos",{"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Status":g("f-stp")});
     }else if(currentModal==="titular"){
@@ -745,6 +1352,217 @@ async function saveForm(){
     closeModal(); toast("Salvo com sucesso!","ok"); await loadAll();
   }catch(err){toast("Erro: "+err.message,"err");}
   finally{document.getElementById("btn-save").textContent="Salvar";}
+}
+
+
+// ── MÁSCARAS ────────────────────────────────────────────────────
+function maskCNPJ(v){
+  v=v.replace(/\D/g,"").slice(0,14);
+  if(v.length<=2) return v;
+  if(v.length<=5) return v.slice(0,2)+"."+v.slice(2);
+  if(v.length<=8) return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5);
+  if(v.length<=12) return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5,8)+"/"+v.slice(8);
+  return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5,8)+"/"+v.slice(8,12)+"-"+v.slice(12,14);
+}
+function maskPhone(v){
+  v=v.replace(/\D/g,"").slice(0,11);
+  if(v.length<=2) return "("+v;
+  if(v.length<=7) return "("+v.slice(0,2)+") "+v.slice(2);
+  return "("+v.slice(0,2)+") "+v.slice(2,7)+"-"+v.slice(7);
+}
+function maskCPF(v){
+  v=v.replace(/\D/g,"").slice(0,11);
+  if(v.length<=3) return v;
+  if(v.length<=6) return v.slice(0,3)+"."+v.slice(3);
+  if(v.length<=9) return v.slice(0,3)+"."+v.slice(3,6)+"."+v.slice(6);
+  return v.slice(0,3)+"."+v.slice(3,6)+"."+v.slice(6,9)+"-"+v.slice(9,11);
+}
+function maskRG(v){
+  v=v.replace(/\D/g,"").slice(0,9);
+  if(v.length<=2) return v;
+  if(v.length<=5) return v.slice(0,2)+"."+v.slice(2);
+  if(v.length<=8) return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5);
+  return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5,8)+"-"+v.slice(8);
+}
+function applyMasks(){
+  const cnpj=document.getElementById("f-cnpj");
+  if(cnpj) cnpj.addEventListener("input",function(){this.value=maskCNPJ(this.value)});
+  ["f-tel","f-cont"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("input",function(){this.value=maskPhone(this.value)})});
+  ["f-cpf","f-cpfd"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("input",function(){this.value=maskCPF(this.value)})});
+  ["f-rg","f-rgd"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("input",function(){this.value=maskRG(this.value)})});
+}
+
+function validateEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// ── COPIAR DADOS ────────────────────────────────────────────────
+function copyCurrentDetail(){
+  let text = "";
+  if(currentDetailType==="empresa"){
+    const e=empById(currentDetailId); if(!e) return;
+    const pl=pByEmp(e["ID"]), ts=titsByEmp(e["ID"]);
+    text = `EMPRESA — ${gp(e,"Razão Social")}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CNPJ: ${gp(e,"CNPJ")||"—"}
+Endereço: ${gp(e,"Endereço")||"—"}
+Cidade: ${gp(e,"Cidade")||"—"}
+CEP: ${gp(e,"CEP")||"—"}
+Canal: ${gp(e,"Canal de Aquisição")||"—"}
+Status: ${gp(e,"Status")||"—"}
+
+RESPONSÁVEL DO CONTRATO
+Nome: ${gp(e,"Responsável do Contrato")||"—"}
+Telefone: ${gp(e,"Telefone RH")||"—"}
+E-mail: ${gp(e,"Email RH")||"—"}
+`;
+    if(pl){
+      text += `
+PLANO CONTRATADO
+Seguradora: ${gp(pl,"Seguradora")||"—"}
+Plano: ${gp(pl,"Plano contratado")||"—"}
+Apólice: ${gp(pl,"Apólice")||"—"}
+Início: ${gp(pl,"Início vigência")||"—"}
+Boleto: R$ ${gp(pl,"Valor do boleto")||"—"}
+Status plano: ${gp(pl,"Status")||"—"}
+`;
+    }
+    if(ts.length){
+      text += `
+TITULARES (${ts.length})
+`;
+      ts.forEach((t,i)=>{ text += `${i+1}. ${gp(t,"Nome")} — CPF: ${gp(t,"CPF")||"—"} — Carteirinha: ${gp(t,"Carteirinha")||"—"}
+`; });
+    }
+  } else if(currentDetailType==="titular"){
+    const t=titById(currentDetailId); if(!t) return;
+    const e=DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID")));
+    const deps=depsByTit(currentDetailId);
+    text = `TITULAR — ${gp(t,"Nome")}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CPF: ${gp(t,"CPF")||"—"}
+RG: ${gp(t,"RG")||"—"}
+Nascimento: ${gp(t,"Nascimento")||"—"}
+Estado civil: ${gp(t,"Estado civil")||"—"}
+Profissão: ${gp(t,"Profissão")||"—"}
+Contato: ${gp(t,"Contato")||"—"}
+Empresa: ${e?gp(e,"Razão Social"):"—"}
+Carteirinha: ${gp(t,"Carteirinha")||"—"}
+Inclusão: ${gp(t,"Inclusão")||"—"}
+Status: ${gp(t,"Status")||"—"}
+`;
+    if(deps.length){
+      text += `
+DEPENDENTES (${deps.length})
+`;
+      deps.forEach((d,i)=>{ text += `${i+1}. ${gp(d,"Nome")} — ${gp(d,"Parentesco")||"—"} — CPF: ${gp(d,"CPF")||"—"}
+`; });
+    }
+  } else if(currentDetailType==="plano"){
+    const pl=DATA.p.find(x=>sid(x["ID"])===sid(currentDetailId)); if(!pl) return;
+    const e=DATA.e.find(x=>sid(x["ID"])===sid(gp(pl,"Empresa ID")));
+    text = `PLANO — ${gp(pl,"Plano contratado")||"—"}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Empresa: ${e?gp(e,"Razão Social"):"—"}
+Seguradora: ${gp(pl,"Seguradora")||"—"}
+Plano: ${gp(pl,"Plano contratado")||"—"}
+Apólice: ${gp(pl,"Apólice")||"—"}
+Início vigência: ${gp(pl,"Início vigência")||"—"}
+Fim vigência: ${gp(pl,"Fim vigência")||"—"}
+Boleto mensal: R$ ${gp(pl,"Valor do boleto")||"—"}
+Status: ${gp(pl,"Status")||"—"}
+`;
+  } else if(currentDetailType==="dependente"){
+    const d=DATA.d.find(x=>sid(x["ID"])===sid(currentDetailId)); if(!d) return;
+    const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));
+    const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;
+    text = `DEPENDENTE — ${gp(d,"Nome")}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CPF: ${gp(d,"CPF")||"—"}
+RG: ${gp(d,"RG")||"—"}
+Nascimento: ${gp(d,"Nascimento")||"—"}
+Parentesco: ${gp(d,"Parentesco")||"—"}
+Estado civil: ${gp(d,"Estado civil")||"—"}
+Profissão: ${gp(d,"Profissão")||"—"}
+Titular: ${t?gp(t,"Nome"):"—"}
+Empresa: ${e?gp(e,"Razão Social"):"—"}
+Carteirinha: ${gp(d,"Carteirinha")||"—"}
+Inclusão: ${gp(d,"Inclusão")||"—"}
+Status: ${gp(d,"Status")||"—"}
+`;
+  }
+  if(!text) return;
+  navigator.clipboard.writeText(text).then(()=>{
+    toast("Dados copiados para a área de transferência!","ok");
+  }).catch(()=>{
+    // Fallback for browsers without clipboard API
+    const ta=document.createElement("textarea");
+    ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    toast("Dados copiados!","ok");
+  });
+}
+
+// ── DIAGNÓSTICO ─────────────────────────────────────────────────
+function rDiag(){
+  const el=document.getElementById("c-diag"); if(!el) return;
+  const eKeys=DATA.e.length?Object.keys(DATA.e[0]):[];
+  const pKeys=DATA.p.length?Object.keys(DATA.p[0]):[];
+  const tKeys=DATA.t.length?Object.keys(DATA.t[0]):[];
+  let out='<div style="font-size:11px;font-family:monospace;line-height:1.8">';
+  out+='<p style="font-size:12px;font-weight:600;margin-bottom:10px">Esta tela mostra os dados brutos do Google Sheets para diagnosticar vínculos e suporte a edição.</p>';
+
+  // GAS update support test
+  out+='<div style="margin-bottom:16px;padding:10px 14px;background:var(--bg2);border-radius:8px">';
+  out+='<strong style="font-size:12px">Suporte a edição no GAS:</strong> ';
+  out+='<button class="btn btn-sm" onclick="testGASUpdate()" style="margin-left:8px">Testar agora</button>';
+  out+='<div id="diag-update-result" style="margin-top:6px;font-size:11px;color:var(--text2)">Clique em "Testar agora" para verificar se o seu GAS suporta a ação de edição (update).</div>';
+  out+='</div>';
+
+  out+='<div style="margin-bottom:14px"><strong>Campos recebidos — Empresas:</strong><br>'+eKeys.map(k=>`<code style="background:var(--bg3);padding:1px 5px;border-radius:3px;margin:2px;display:inline-block">${k}</code>`).join(" ")+'</div>';
+  out+='<div style="margin-bottom:14px"><strong>Campos recebidos — Planos:</strong><br>'+pKeys.map(k=>`<code style="background:var(--bg3);padding:1px 5px;border-radius:3px;margin:2px;display:inline-block">${k}</code>`).join(" ")+'</div>';
+  out+='<div style="margin-bottom:14px"><strong>Campos recebidos — Titulares:</strong><br>'+tKeys.map(k=>`<code style="background:var(--bg3);padding:1px 5px;border-radius:3px;margin:2px;display:inline-block">${k}</code>`).join(" ")+'</div>';
+  if(DATA.e.length){
+    out+='<div style="margin-bottom:14px"><strong>IDs das Empresas:</strong><br>';
+    DATA.e.slice(0,10).forEach(e=>{
+      out+=`<div>ID=<code>${JSON.stringify(e["ID"])}</code> (${typeof e["ID"]}) | Razão Social=<code>${e["Razão Social"]||"(vazio)"}</code></div>`;
+    });
+    out+='</div>';
+  }
+  if(DATA.p.length){
+    out+='<div style="margin-bottom:14px"><strong>Vínculo Plano → Empresa (todos os campos do plano):</strong><br>';
+    DATA.p.slice(0,5).forEach((p,i)=>{
+      const eid=p["Empresa ID"];
+      const match=DATA.e.find(x=>sid(x["ID"])===sid(eid));
+      out+=`<div style="background:var(--bg2);padding:6px 8px;border-radius:6px;margin-bottom:6px">`;
+      out+=`<strong>Plano ${i+1}:</strong> Empresa ID=<code>${JSON.stringify(eid)}</code> (${typeof eid}) → <strong style="color:${match?"var(--green)":"var(--red)"}">${match?gp(match,"Razão Social"):"❌ NÃO VINCULADO"}</strong><br>`;
+      out+=`<em style="color:var(--text3)">Todos os campos: ${Object.entries(p).map(([k,v])=>`${k}=${JSON.stringify(v)}`).join(" | ")}</em>`;
+      out+='</div>';
+    });
+    out+='</div>';
+  }
+  out+='</div>';
+  el.innerHTML=out;
+}
+
+async function testGASUpdate(){
+  const res=document.getElementById("diag-update-result"); if(!res) return;
+  res.textContent="Testando…";
+  try{
+    // Send a dummy update with a non-existent ID to test if the handler exists
+    const d=await jsonp(API_URL+"?action=update&sheet=Empresas&id=__test__&row="+encodeURIComponent(JSON.stringify({__test__:"1"})));
+    if(d.ok||d.error==="ID não encontrado: __test__"||d.error==="ID não encontrado"){
+      res.innerHTML='<span style="color:var(--green);font-weight:600">✓ GAS suporta edição (update). Salvar deve funcionar normalmente.</span>';
+    } else if(d.error&&(d.error.toLowerCase().includes("desconhecida")||d.error.toLowerCase().includes("unknown"))){
+      res.innerHTML='<span style="color:var(--red);font-weight:600">✗ GAS NÃO suporta edição ainda.</span> Você precisa atualizar o script no Google Apps Script com o código completo que está no comentário da função <code>apiUpdate</code> no HTML.';
+    } else {
+      res.innerHTML='<span style="color:var(--atx);font-weight:600">⚠ Resposta inesperada:</span> '+JSON.stringify(d);
+    }
+  }catch(e){
+    res.innerHTML='<span style="color:var(--red)">Erro de rede: '+e.message+'</span>';
+  }
 }
 
 // ── TOAST ───────────────────────────────────────────────────────
