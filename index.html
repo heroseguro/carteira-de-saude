@@ -45,8 +45,8 @@ body{font-family:var(--font);background:var(--bg3);color:var(--text);font-size:1
 .btn-full{width:100%;justify-content:center;padding:10px;font-size:13px;font-weight:500}
 
 /* SIDEBAR */
-.sb{width:220px;background:#141B2D;border-right:none;display:flex;flex-direction:column;flex-shrink:0}
-.sb-logo{padding:16px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px}
+.sb{width:240px;background:#141B2D;border-right:none;display:flex;flex-direction:column;flex-shrink:0}
+.sb-logo{padding:14px 14px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;min-height:60px;overflow:visible}
 .sb-logo-mark{width:5px;height:36px;background:#E8185A;border-radius:3px;flex-shrink:0}
 .sb-logo-text strong{display:block;font-size:13px;font-weight:800;color:#fff;letter-spacing:-.3px}
 .sb-logo-text span{font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.02em}
@@ -212,8 +212,8 @@ tr:hover .ra{opacity:1}
 <!-- APP -->
 <div id="app" class="app" style="display:none">
   <div class="sb">
-    <div class="sb-logo" style="padding:12px 16px">
-      <svg viewBox="0 0 140 36" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto;flex-shrink:0">
+    <div class="sb-logo" style="padding:12px 14px;gap:10px;overflow:visible">
+      <svg viewBox="0 0 140 36" xmlns="http://www.w3.org/2000/svg" style="height:34px;width:128px;flex-shrink:0;overflow:visible">
   <rect x="0" y="0" width="5" height="36" rx="2.5" fill="#E8185A"/>
   <text x="13" y="14" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="-0.3">COMPANY</text>
   <text x="13" y="30" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="-0.3">HERO</text>
@@ -329,7 +329,7 @@ tr:hover .ra{opacity:1}
       </div>
     </div>
     <div class="dv" id="dv-e">
-      <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" id="btn-emp-new-plano" onclick="openModal('plano',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Plano</button><button class="btn btn-sm" id="btn-emp-new-tit" onclick="openModal('titular',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Titular</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="copyCurrentDetail()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2M8 4a2 2 0 012-2h4a2 2 0 012 2M8 4h8"/></svg>Copiar</button><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
+      <div class="dtb"><button class="bbtn" onclick="back('empresas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Empresas</button><span id="dv-e-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" id="btn-emp-new-plano" onclick="openModal('plano',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Plano</button><button class="btn btn-sm" id="btn-emp-new-tit" onclick="openModal('titular',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Titular</button><button class="btn btn-sm" id="btn-emp-new-dep" onclick="openModal('dependente',currentDetailId)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M12 5v14M5 12h14"/></svg>+ Dependente</button><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button><button class="btn btn-sm" onclick="deleteCurrent()">Excluir</button></div></div>
       <div class="db" id="dv-e-body"></div>
     </div>
 
@@ -344,7 +344,7 @@ tr:hover .ra{opacity:1}
       </table></div></div>
     </div>
     <div class="dv" id="dv-p">
-      <div class="dtb"><button class="bbtn" onclick="back('planos')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Planos</button><span id="dv-p-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
+      <div class="dtb"><button class="bbtn" onclick="back('planos')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Planos</button><span id="dv-p-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button><button class="btn btn-sm" onclick="deleteCurrent()">Excluir</button></div></div>
       <div class="db" id="dv-p-body"></div>
     </div>
 
@@ -362,7 +362,7 @@ tr:hover .ra{opacity:1}
       </div>
     </div>
     <div class="dv" id="dv-t">
-      <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
+      <div class="dtb"><button class="bbtn" onclick="back('titulares')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Titulares</button><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button><button class="btn btn-sm" onclick="deleteCurrent()">Excluir</button></div></div>
       <div class="db" id="dv-t-body"></div>
     </div>
 
@@ -377,7 +377,7 @@ tr:hover .ra{opacity:1}
       </table></div></div>
     </div>
     <div class="dv" id="dv-d">
-      <div class="dtb"><button class="bbtn" onclick="back('dependentes')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Dependentes</button><span id="dv-d-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button></div></div>
+      <div class="dtb"><button class="bbtn" onclick="back('dependentes')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Dependentes</button><span id="dv-d-badge"></span><div style="margin-left:auto;display:flex;gap:7px"><button class="btn btn-sm" onclick="editCurrent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar</button><button class="btn btn-sm" onclick="deleteCurrent()">Excluir</button></div></div>
       <div class="db" id="dv-d-body"></div>
     </div>
 
@@ -652,7 +652,7 @@ function editCurrent(){
       const e=empById(currentDetailId); if(!e) return;
       const set=(id,v)=>{const el=document.getElementById(id);if(el)el.value=v||""};
       set("f-razao",gp(e,"Razão Social"));set("f-cnpj",gp(e,"CNPJ"));set("f-cep",gp(e,"CEP"));
-      set("f-end",gp(e,"Endereço"));set("f-cidade",gp(e,"Cidade"));set("f-resp",gp(e,"Responsável do Contrato"));
+      set("f-end",gp(e,"Endereço"));set("f-cidade",gp(e,"Cidade"));set("f-estado",gp(e,"Estado"));set("f-resp",gp(e,"Responsável do Contrato"));
       set("f-tel",gp(e,"Telefone RH"));set("f-email",gp(e,"Email RH"));
       set("f-canal",gp(e,"Canal de Aquisição"));set("f-status",gp(e,"Status"));
       document.getElementById("m-title").textContent="Editar empresa";
@@ -661,7 +661,7 @@ function editCurrent(){
       const set=(id,v)=>{const el=document.getElementById(id);if(el)el.value=v||""};
       set("f-ep",gp(pl,"Empresa ID"));set("f-seg",gp(pl,"Seguradora"));set("f-pla",gp(pl,"Plano contratado"));
       set("f-apo",gp(pl,"Apólice"));set("f-ini",gp(pl,"Início vigência"));set("f-fim",gp(pl,"Fim vigência"));
-      set("f-bol",gp(pl,"Valor do boleto"));set("f-stp",gp(pl,"Status"));
+      set("f-bol",gp(pl,"Valor do boleto"));set("f-acom",gp(pl,"Acomodação"));set("f-cop",gp(pl,"Modelo de coparticipação"));set("f-stp",gp(pl,"Status"));
       document.getElementById("m-title").textContent="Editar plano";
     } else if(t==="titular"){
       const ti=titById(currentDetailId); if(!ti) return;
@@ -669,7 +669,7 @@ function editCurrent(){
       set("f-nome",gp(ti,"Nome"));set("f-cpf",gp(ti,"CPF"));set("f-nasc",gp(ti,"Nascimento"));
       set("f-rg",gp(ti,"RG"));set("f-mae",gp(ti,"Mãe"));set("f-pai",gp(ti,"Pai"));
       set("f-peso",gp(ti,"Peso"));set("f-alt",gp(ti,"Altura"));set("f-ec",gp(ti,"Estado civil"));
-      set("f-prof",gp(ti,"Profissão"));set("f-doe",gp(ti,"Doenças"));set("f-et",gp(ti,"Empresa ID"));
+      set("f-prof",gp(ti,"Profissão"));set("f-doe",gp(ti,"Doenças"));set("f-endt",gp(ti,"Endereço"));set("f-cept",gp(ti,"CEP"));set("f-cidadet",gp(ti,"Cidade"));set("f-estadot",gp(ti,"Estado"));set("f-et",gp(ti,"Empresa ID"));
       set("f-inc",gp(ti,"Inclusão"));set("f-cart",gp(ti,"Carteirinha"));set("f-cont",gp(ti,"Contato"));
       set("f-stt",gp(ti,"Status"));
       document.getElementById("m-title").textContent="Editar titular";
@@ -679,7 +679,7 @@ function editCurrent(){
       set("f-nomd",gp(dep,"Nome"));set("f-cpfd",gp(dep,"CPF"));set("f-nasd",gp(dep,"Nascimento"));
       set("f-rgd",gp(dep,"RG"));set("f-maed",gp(dep,"Mãe"));set("f-paid",gp(dep,"Pai"));
       set("f-pesd",gp(dep,"Peso"));set("f-altd",gp(dep,"Altura"));set("f-ecd",gp(dep,"Estado civil"));
-      set("f-prod",gp(dep,"Profissão"));set("f-doed",gp(dep,"Doenças"));
+      set("f-prod",gp(dep,"Profissão"));set("f-doed",gp(dep,"Doenças"));set("f-endd",gp(dep,"Endereço"));set("f-cepd",gp(dep,"CEP"));set("f-cidaded",gp(dep,"Cidade"));set("f-estadod",gp(dep,"Estado"));
       set("f-td",gp(dep,"Titular ID"));set("f-pard",gp(dep,"Parentesco"));
       set("f-incd",gp(dep,"Inclusão"));set("f-crtd",gp(dep,"Carteirinha"));set("f-std",gp(dep,"Status"));
       document.getElementById("m-title").textContent="Editar dependente";
@@ -699,13 +699,13 @@ async function saveEditForm(){
     if(currentDetailType==="empresa"){
       const emailVal=g("f-email");
       if(emailVal&&!validateEmail(emailVal)){toast("E-mail inválido.","err");document.getElementById("btn-save").textContent="Salvar";return;}
-      row={"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"CEP":g("f-cep"),"Responsável do Contrato":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")};
+      row={"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"Estado":g("f-estado"),"CEP":g("f-cep"),"Responsável do Contrato":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")};
     } else if(currentDetailType==="plano"){
-      row={"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Status":g("f-stp")};
+      row={"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Acomodação":g("f-acom"),"Modelo de coparticipação":g("f-cop"),"Status":g("f-stp")};
     } else if(currentDetailType==="titular"){
-      row={"Empresa ID":g("f-et"),"Nome":g("f-nome"),"CPF":g("f-cpf"),"Nascimento":g("f-nasc"),"RG":g("f-rg"),"Mãe":g("f-mae"),"Pai":g("f-pai"),"Peso":g("f-peso"),"Altura":g("f-alt"),"Estado civil":g("f-ec"),"Profissão":g("f-prof"),"Doenças":g("f-doe"),"Inclusão":g("f-inc"),"Carteirinha":g("f-cart"),"Contato":g("f-cont"),"Status":g("f-stt")};
+      row={"Empresa ID":g("f-et"),"Nome":g("f-nome"),"CPF":g("f-cpf"),"Nascimento":g("f-nasc"),"RG":g("f-rg"),"Mãe":g("f-mae"),"Pai":g("f-pai"),"Peso":g("f-peso"),"Altura":g("f-alt"),"Estado civil":g("f-ec"),"Profissão":g("f-prof"),"Doenças":g("f-doe"),"Endereço":g("f-endt"),"CEP":g("f-cept"),"Cidade":g("f-cidadet"),"Estado":g("f-estadot"),"Inclusão":g("f-inc"),"Carteirinha":g("f-cart"),"Contato":g("f-cont"),"Status":g("f-stt")};
     } else if(currentDetailType==="dependente"){
-      row={"Titular ID":g("f-td"),"Nome":g("f-nomd"),"CPF":g("f-cpfd"),"Nascimento":g("f-nasd"),"RG":g("f-rgd"),"Mãe":g("f-maed"),"Pai":g("f-paid"),"Peso":g("f-pesd"),"Altura":g("f-altd"),"Estado civil":g("f-ecd"),"Profissão":g("f-prod"),"Doenças":g("f-doed"),"Parentesco":g("f-pard"),"Inclusão":g("f-incd"),"Carteirinha":g("f-crtd"),"Status":g("f-std")};
+      row={"Titular ID":g("f-td"),"Nome":g("f-nomd"),"CPF":g("f-cpfd"),"Nascimento":g("f-nasd"),"RG":g("f-rgd"),"Mãe":g("f-maed"),"Pai":g("f-paid"),"Peso":g("f-pesd"),"Altura":g("f-altd"),"Estado civil":g("f-ecd"),"Profissão":g("f-prod"),"Doenças":g("f-doed"),"Endereço":g("f-endd"),"CEP":g("f-cepd"),"Cidade":g("f-cidaded"),"Estado":g("f-estadod"),"Parentesco":g("f-pard"),"Inclusão":g("f-incd"),"Carteirinha":g("f-crtd"),"Status":g("f-std")};
     }
     await apiUpdate(sheet, currentDetailId, row);
     closeModal();
@@ -721,6 +721,37 @@ async function saveEditForm(){
     },300);
   }catch(err){toast("Erro: "+err.message,"err");}
   finally{document.getElementById("btn-save").textContent="Salvar";document.getElementById("btn-save").onclick=saveForm;}
+}
+
+
+async function apiDelete(sheet, id) {
+  const d = await jsonp(API_URL + "?action=delete&sheet=" + encodeURIComponent(sheet) + "&id=" + encodeURIComponent(id));
+  if (!d.ok) {
+    const msg = d.error || "";
+    if (msg.toLowerCase().includes("ação desconhecida") || msg.toLowerCase().includes("desconhecida")) {
+      throw new Error("O Google Apps Script precisa ser atualizado para suportar exclusão. Use o arquivo Code.gs enviado junto com este HTML.");
+    }
+    throw new Error(msg || "Erro ao excluir registro.");
+  }
+  return d;
+}
+
+async function deleteCurrent(){
+  if(!currentDetailType || !currentDetailId) return;
+  const sheetMap={empresa:"Empresas",plano:"Planos",titular:"Titulares",dependente:"Dependentes"};
+  const labelMap={empresa:"empresa",plano:"plano",titular:"titular",dependente:"dependente"};
+  const sheet=sheetMap[currentDetailType];
+  if(!sheet) return;
+  if(!confirm("Tem certeza que deseja excluir este(a) " + labelMap[currentDetailType] + "? Essa ação não pode ser desfeita.")) return;
+  try{
+    await apiDelete(sheet, currentDetailId);
+    toast("Excluído com sucesso!","ok");
+    const backMap={empresa:"empresas",plano:"planos",titular:"titulares",dependente:"dependentes"};
+    const target=backMap[currentDetailType];
+    currentDetailType=""; currentDetailId="";
+    await loadAll();
+    go(target);
+  }catch(err){toast("Erro: "+err.message,"err");}
 }
 
 async function loadAll() {
@@ -896,8 +927,9 @@ function openEmpDetail(id){
     '<div class="il">Telefone</div><div class="iv">'+( gp(e,"Telefone RH")||"—")+'</div>'+
     '<div class="il">E-mail</div><div class="iv">'+( gp(e,"Email RH")||"—")+'</div>'+
     '<div class="il">Endereço</div><div class="iv">'+( gp(e,"Endereço")||"—")+'</div>'+
+    '<div class="il">Cidade/Estado</div><div class="iv">'+( gp(e,"Cidade")||"—")+' / '+(gp(e,"Estado")||"—")+'</div>'+
     '<div class="il">CEP</div><div class="iv">'+( gp(e,"CEP")||"—")+'</div></div>'+
-    (pl?'<div class="sl">Plano contratado</div><div class="ig"><div class="il">Seguradora</div><div class="iv">'+gp(pl,"Seguradora")+'</div><div class="il">Plano</div><div class="iv">'+gp(pl,"Plano contratado")+'</div><div class="il">Apólice</div><div class="iv mono">'+( gp(pl,"Apólice")||"—")+'</div><div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div><div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div><div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div></div>':"")+
+    (pl?'<div class="sl">Plano contratado</div><div class="ig"><div class="il">Seguradora</div><div class="iv">'+gp(pl,"Seguradora")+'</div><div class="il">Plano</div><div class="iv">'+gp(pl,"Plano contratado")+'</div><div class="il">Apólice</div><div class="iv mono">'+( gp(pl,"Apólice")||"—")+'</div><div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div><div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div><div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div><div class="il">Acomodação</div><div class="iv">'+(gp(pl,"Acomodação")||"—")+'</div><div class="il">Coparticipação</div><div class="iv">'+(gp(pl,"Modelo de coparticipação")||"—")+'</div></div>':"")+
     '<div class="sl">Titulares ('+ts.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Carteirinha</th><th>Dep.</th><th>Status</th></tr></thead><tbody>'+
     (ts.map(t=>'<tr><td><button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+gp(t,"Nome")+'</button></td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+depsByTit(t["ID"]).length+'</td><td>'+badge(gp(t,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem titulares</td></tr>")+
     '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Vida</th><th>Data</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
@@ -943,6 +975,8 @@ function openPlanDetail(id){
       '<div class="il">Início vigência</div><div class="iv">'+fmt(gp(pl,"Início vigência"))+'</div>'+
       '<div class="il">Fim vigência</div><div class="iv">'+fimVig(gp(pl,"Início vigência"))+'</div>'+
       '<div class="il">Boleto mensal</div><div class="iv">'+cur(gp(pl,"Valor do boleto"))+'</div>'+
+      '<div class="il">Acomodação</div><div class="iv">'+(gp(pl,"Acomodação")||"—")+'</div>'+
+      '<div class="il">Coparticipação</div><div class="iv">'+(gp(pl,"Modelo de coparticipação")||"—")+'</div>'+
       '<div class="il">Status</div><div class="iv">'+badge(gp(pl,"Status"))+'</div>'+
     '</div>'+
     '<div class="sl">Titulares vinculados ('+ts.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Carteirinha</th><th>Dep.</th><th>Status</th></tr></thead><tbody>'+
@@ -975,10 +1009,13 @@ function openTitDetail(id){
     '<div class="il">Estado civil</div><div class="iv">'+( gp(t,"Estado civil")||"—")+'</div>'+
     '<div class="il">Profissão</div><div class="iv">'+( gp(t,"Profissão")||"—")+'</div>'+
     '<div class="il">Contato</div><div class="iv">'+( gp(t,"Contato")||"—")+'</div>'+
+    '<div class="il">Endereço</div><div class="iv">'+( gp(t,"Endereço")||"—")+'</div>'+
+    '<div class="il">Cidade/Estado</div><div class="iv">'+( gp(t,"Cidade")||"—")+' / '+(gp(t,"Estado")||"—")+'</div>'+
+    '<div class="il">CEP</div><div class="iv">'+( gp(t,"CEP")||"—")+'</div>'+ 
     '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(t,"Inclusão"))+'</div>'+
     '<div class="il">Status</div><div class="iv">'+badge(gp(t,"Status"))+'</div></div>'+
     '<div class="sl">Dependentes ('+deps.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Parentesco</th><th>Carteirinha</th><th>Status</th></tr></thead><tbody>'+
-    (deps.map(d=>'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem dependentes</td></tr>")+
+    (deps.map(d=>'<tr><td><button class="lbtn" onclick="openDepDetail(''+d["ID"]+'')">'+gp(d,"Nome")+'</button></td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td><td>'+badge(gp(d,"Status"))+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem dependentes</td></tr>")+
     '</tbody></table></div><div class="sl">Histórico</div><div class="tw"><table><thead><tr><th>Tipo</th><th>Data</th><th>Responsável</th><th>Motivo</th><th>Reajuste</th></tr></thead><tbody>'+
     (hist.map(h=>'<tr><td>'+badge(gp(h,"Tipo"))+'</td><td>'+fmt(gp(h,"Data"))+'</td><td>'+( gp(h,"Responsável")||"—")+'</td><td>'+( gp(h,"Motivo")||"—")+'</td><td>'+( gp(h,"Reajuste %")?gp(h,"Reajuste %")+"%":"—")+'</td></tr>').join("")||"<tr><td colspan=5 class=empty>Sem histórico</td></tr>")+
     "</tbody></table></div>";
@@ -1019,6 +1056,9 @@ function openDepDetail(id){
       '<div class="il">Titular</div><div class="iv">'+(t?'<button class="lbtn" onclick="openTitDetail(\''+t["ID"]+'\')">'+ gp(t,"Nome")+"</button>":"—")+'</div>'+
       '<div class="il">Empresa</div><div class="iv">'+(e?'<button class="lbtn" onclick="openEmpDetail(\''+e["ID"]+'\')">'+ gp(e,"Razão Social")+"</button>":"—")+'</div>'+
       '<div class="il">Carteirinha</div><div class="iv mono">'+(gp(d,"Carteirinha")||"—")+'</div>'+
+      '<div class="il">Endereço</div><div class="iv">'+(gp(d,"Endereço")||"—")+'</div>'+
+      '<div class="il">Cidade/Estado</div><div class="iv">'+(gp(d,"Cidade")||"—")+' / '+(gp(d,"Estado")||"—")+'</div>'+
+      '<div class="il">CEP</div><div class="iv">'+(gp(d,"CEP")||"—")+'</div>'+ 
       '<div class="il">Data de inclusão</div><div class="iv">'+fmt(gp(d,"Inclusão"))+'</div>'+
       '<div class="il">Doenças preexistentes</div><div class="iv">'+(gp(d,"Doenças")||"—")+'</div>'+
       '<div class="il">Status</div><div class="iv">'+badge(gp(d,"Status"))+'</div>'+
@@ -1109,13 +1149,13 @@ function rRelVidas(){
     tAt.map(t=>{const e=DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID")));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td><td>'+fmt(gp(t,"Inclusão"))+'</td><td>'+depsByTit(t["ID"]).length+'</td></tr>';}).join("")+
     '</tbody></table></div></div>'+
     '<div class="rs" style="margin-top:16px"><div class="rt">Dependentes ativos ('+dAt.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Titular</th><th>Empresa</th><th>Parentesco</th><th>Carteirinha</th></tr></thead><tbody>'+
-    dAt.map(d=>{const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( t?gp(t,"Nome"):"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td></tr>';}).join("")+
+    dAt.map(d=>{const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return'<tr><td><button class="lbtn" onclick="openDepDetail(''+d["ID"]+'')">'+gp(d,"Nome")+'</button></td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( t?gp(t,"Nome"):"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td><td class="mono">'+( gp(d,"Carteirinha")||"—")+'</td></tr>';}).join("")+
     '</tbody></table></div></div>'+
     '<div class="rs" style="margin-top:16px"><div class="rt">Titulares cancelados ('+tCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Empresa</th><th>Carteirinha</th></tr></thead><tbody>'+
     tCa.map(t=>{const e=DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID")));return'<tr><td>'+gp(t,"Nome")+'</td><td class="mono">'+( gp(t,"CPF")||"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td class="mono">'+( gp(t,"Carteirinha")||"—")+'</td></tr>';}).join("")+
     '</tbody></table></div></div>'+
     '<div class="rs" style="margin-top:16px"><div class="rt">Dependentes cancelados ('+dCa.length+')</div><div class="tw"><table><thead><tr><th>Nome</th><th>CPF</th><th>Titular</th><th>Empresa</th><th>Parentesco</th></tr></thead><tbody>'+
-    dCa.map(d=>{const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return'<tr><td>'+gp(d,"Nome")+'</td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( t?gp(t,"Nome"):"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td></tr>';}).join("")+
+    dCa.map(d=>{const t=DATA.t.find(x=>sid(x["ID"])===sid(gp(d,"Titular ID")));const e=t?DATA.e.find(x=>sid(x["ID"])===sid(gp(t,"Empresa ID"))):null;return'<tr><td><button class="lbtn" onclick="openDepDetail(''+d["ID"]+'')">'+gp(d,"Nome")+'</button></td><td class="mono">'+( gp(d,"CPF")||"—")+'</td><td>'+( t?gp(t,"Nome"):"—")+'</td><td>'+( e?gp(e,"Razão Social"):"—")+'</td><td>'+( gp(d,"Parentesco")||"—")+'</td></tr>';}).join("")+
     "</tbody></table></div></div>";
 }
 
@@ -1288,10 +1328,10 @@ function exportCSV(type){
 // ── FORMULÁRIOS ─────────────────────────────────────────────────
 let currentModal="";
 const FORMS={
-  empresa:{title:"Nova empresa",html:'<div class="fs"><div class="ft">Dados cadastrais</div><div class="fg"><div class="field ff"><label class="req">Razão social</label><input id="f-razao"></div><div class="field"><label class="req">CNPJ</label><input id="f-cnpj" placeholder="00.000.000/0001-00"></div><div class="field"><label>CEP</label><input id="f-cep"></div><div class="field ff"><label>Endereço</label><input id="f-end"></div><div class="field"><label>Cidade</label><input id="f-cidade"></div></div></div><div class="fs"><div class="ft">Responsável do Contrato</div><div class="fg"><div class="field"><label class="req">Nome</label><input id="f-resp"></div><div class="field"><label>Telefone</label><input id="f-tel"></div><div class="field ff"><label>E-mail</label><input id="f-email" type="email"></div></div></div><div class="fs"><div class="ft">Comercial</div><div class="fg"><div class="field"><label>Canal</label><select id="f-canal"><option>Base Hero</option><option>Onboarding EV</option><option>Renovação EV</option><option>Ativação da Base</option><option>Contadores</option><option>Migração</option><option>Indicação Alice</option><option>Indicação CX</option><option>Orgânico</option><option>Simulador</option><option>Área Logada</option><option>APP PJ Hero</option><option>Outros</option><option>RH</option><option>Branded Content</option></select></div><div class="field"><label>Status</label><select id="f-status"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
-  plano:{title:"Novo plano",html:'<div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field ff"><label class="req">Empresa</label><select id="f-ep"></select></div><div class="field"><label class="req">Seguradora</label><input id="f-seg"></div><div class="field"><label class="req">Plano contratado</label><input id="f-pla"></div><div class="field"><label>Apólice</label><input id="f-apo"></div><div class="field"><label class="req">Início vigência</label><input id="f-ini" type="date"></div><div class="field"><label>Fim vigência</label><input id="f-fim" type="date"></div><div class="field"><label class="req">Boleto (R$)</label><input id="f-bol" type="number" step="0.01"></div><div class="field"><label>Status</label><select id="f-stp"><option>Ativo</option><option>Cancelado</option><option>Em renovação</option></select></div></div></div>'},
-  titular:{title:"Novo titular",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nome"></div><div class="field"><label class="req">CPF</label><input id="f-cpf"></div><div class="field"><label>Nascimento</label><input id="f-nasc" type="date"></div><div class="field"><label>RG</label><input id="f-rg"></div><div class="field"><label>Expedição RG</label><input id="f-rgexp" type="date"></div><div class="field"><label>Órgão expedidor</label><input id="f-orgao"></div><div class="field"><label>Nome da mãe</label><input id="f-mae"></div><div class="field"><label>Nome do pai</label><input id="f-pai"></div><div class="field"><label>Peso (kg)</label><input id="f-peso" type="number"></div><div class="field"><label>Altura (cm)</label><input id="f-alt" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ec"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option><option>União estável</option></select></div><div class="field"><label>Profissão</label><input id="f-prof"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doe"></textarea></div></div></div><div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field"><label class="req">Empresa</label><select id="f-et"></select></div><div class="field"><label>Data de inclusão</label><input id="f-inc" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-cart"></div><div class="field"><label>Contato</label><input id="f-cont"></div><div class="field"><label>Status</label><select id="f-stt"><option>Ativo</option><option>Cancelado</option></select></div></div></div><div class="fs"><div class="ft sens">Dados sensíveis</div><div class="fg"><div class="field"><label>Login seguradora</label><input id="f-log"></div><div class="field"><label>Senha seguradora</label><input id="f-sen" type="password"></div></div></div>'},
-  dependente:{title:"Novo dependente",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nomd"></div><div class="field"><label>CPF (se houver)</label><input id="f-cpfd"></div><div class="field"><label>Nascimento</label><input id="f-nasd" type="date"></div><div class="field"><label>RG</label><input id="f-rgd"></div><div class="field"><label>Nome da mãe</label><input id="f-maed"></div><div class="field"><label>Nome do pai</label><input id="f-paid"></div><div class="field"><label>Peso</label><input id="f-pesd" type="number"></div><div class="field"><label>Altura</label><input id="f-altd" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ecd"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option></select></div><div class="field"><label>Profissão</label><input id="f-prod"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doed"></textarea></div></div></div><div class="fs"><div class="ft">Vínculo</div><div class="fg"><div class="field"><label class="req">Titular</label><select id="f-td"></select></div><div class="field"><label class="req">Parentesco</label><select id="f-pard"><option>Cônjuge</option><option>Filho</option><option>Pai/Mãe</option><option>Irmão</option><option>Outro</option></select></div><div class="field"><label>Data de inclusão</label><input id="f-incd" type="date"></div><div class="field"><label>Nº carteirinha</label><input id="f-crtd"></div><div class="field"><label>Status</label><select id="f-std"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
+  empresa:{title:"Nova empresa",html:'<div class="fs"><div class="ft">Dados cadastrais</div><div class="fg"><div class="field ff"><label class="req">Razão social</label><input id="f-razao"></div><div class="field"><label class="req">CNPJ</label><input id="f-cnpj" placeholder="00.000.000/0001-00"></div><div class="field"><label>CEP</label><input id="f-cep"></div><div class="field ff"><label>Endereço</label><input id="f-end"></div><div class="field"><label>Cidade</label><input id="f-cidade"></div><div class="field"><label>Estado</label><select id="f-estado"><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div></div></div><div class="fs"><div class="ft">Responsável do Contrato</div><div class="fg"><div class="field"><label class="req">Nome</label><input id="f-resp"></div><div class="field"><label>Telefone</label><input id="f-tel" placeholder="(00) 00000-0000"></div><div class="field ff"><label>E-mail</label><input id="f-email" type="email" placeholder="nome@email.com"></div></div></div><div class="fs"><div class="ft">Comercial</div><div class="fg"><div class="field"><label>Canal</label><select id="f-canal"><option>Base Hero</option><option>Onboarding EV</option><option>Renovação EV</option><option>Ativação da Base</option><option>Contadores</option><option>Migração</option><option>Indicação Alice</option><option>Indicação CX</option><option>Orgânico</option><option>Simulador</option><option>Área Logada</option><option>APP PJ Hero</option><option>Outros</option><option>RH</option><option>Branded Content</option></select></div><div class="field"><label>Status</label><select id="f-status"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
+  plano:{title:"Novo plano",html:'<div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field ff"><label class="req">Empresa</label><select id="f-ep"></select></div><div class="field"><label class="req">Seguradora</label><input id="f-seg"></div><div class="field"><label class="req">Plano contratado</label><input id="f-pla"></div><div class="field"><label>Apólice</label><input id="f-apo"></div><div class="field"><label class="req">Início vigência</label><input id="f-ini" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>Fim vigência</label><input id="f-fim" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>Acomodação</label><select id="f-acom"><option value="">Selecione</option><option>Enfermaria</option><option>Apartamento</option><option>Sem acomodação</option></select></div><div class="field"><label>Modelo de coparticipação</label><select id="f-cop"><option value="">Selecione</option><option>Sem coparticipação</option><option>Com coparticipação</option><option>Coparticipação parcial</option><option>Coparticipação total</option></select></div><div class="field"><label class="req">Boleto (R$)</label><input id="f-bol" type="number" step="0.01"></div><div class="field"><label>Status</label><select id="f-stp"><option>Ativo</option><option>Cancelado</option><option>Em renovação</option></select></div></div></div>'},
+  titular:{title:"Novo titular",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nome"></div><div class="field"><label class="req">CPF</label><input id="f-cpf"></div><div class="field"><label>Nascimento</label><input id="f-nasc" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>RG</label><input id="f-rg"></div><div class="field"><label>Expedição RG</label><input id="f-rgexp" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>Órgão expedidor</label><input id="f-orgao"></div><div class="field"><label>Nome da mãe</label><input id="f-mae"></div><div class="field"><label>Nome do pai</label><input id="f-pai"></div><div class="field"><label>Peso (kg)</label><input id="f-peso" type="number"></div><div class="field"><label>Altura (cm)</label><input id="f-alt" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ec"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option><option>União estável</option></select></div><div class="field"><label>Profissão</label><input id="f-prof"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doe"></textarea></div></div></div><div class="fs"><div class="ft">Endereço</div><div class="fg"><div class="field ff"><label>Endereço</label><input id="f-endt"></div><div class="field"><label>CEP</label><input id="f-cept"></div><div class="field"><label>Cidade</label><input id="f-cidadet"></div><div class="field"><label>Estado</label><input id="f-estadot" maxlength="2" placeholder="UF"></div></div></div><div class="fs"><div class="ft">Contrato</div><div class="fg"><div class="field"><label class="req">Empresa</label><select id="f-et"></select></div><div class="field"><label>Data de inclusão</label><input id="f-inc" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>Nº carteirinha</label><input id="f-cart"></div><div class="field"><label>Contato</label><input id="f-cont" placeholder="(00) 00000-0000"></div><div class="field"><label>Status</label><select id="f-stt"><option>Ativo</option><option>Cancelado</option></select></div></div></div><div class="fs"><div class="ft sens">Dados sensíveis</div><div class="fg"><div class="field"><label>Login seguradora</label><input id="f-log"></div><div class="field"><label>Senha seguradora</label><input id="f-sen" type="password"></div></div></div>'},
+  dependente:{title:"Novo dependente",html:'<div class="fs"><div class="ft">Dados pessoais</div><div class="fg"><div class="field ff"><label class="req">Nome completo</label><input id="f-nomd"></div><div class="field"><label>CPF (se houver)</label><input id="f-cpfd"></div><div class="field"><label>Nascimento</label><input id="f-nasd" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>RG</label><input id="f-rgd"></div><div class="field"><label>Nome da mãe</label><input id="f-maed"></div><div class="field"><label>Nome do pai</label><input id="f-paid"></div><div class="field"><label>Peso</label><input id="f-pesd" type="number"></div><div class="field"><label>Altura</label><input id="f-altd" type="number"></div><div class="field"><label>Estado civil</label><select id="f-ecd"><option>Solteiro</option><option>Casado</option><option>Divorciado</option><option>Viúvo</option></select></div><div class="field"><label>Profissão</label><input id="f-prod"></div><div class="field ff"><label>Doenças preexistentes</label><textarea id="f-doed"></textarea></div></div></div><div class="fs"><div class="ft">Endereço</div><div class="fg"><div class="field ff"><label>Endereço</label><input id="f-endd"></div><div class="field"><label>CEP</label><input id="f-cepd"></div><div class="field"><label>Cidade</label><input id="f-cidaded"></div><div class="field"><label>Estado</label><input id="f-estadod" maxlength="2" placeholder="UF"></div></div></div><div class="fs"><div class="ft">Vínculo</div><div class="fg"><div class="field"><label class="req">Titular</label><select id="f-td"></select></div><div class="field"><label class="req">Parentesco</label><select id="f-pard"><option>Cônjuge</option><option>Filho</option><option>Pai/Mãe</option><option>Irmão</option><option>Outro</option></select></div><div class="field"><label>Data de inclusão</label><input id="f-incd" type="date" placeholder="dd/mm/aaaa"></div><div class="field"><label>Nº carteirinha</label><input id="f-crtd"></div><div class="field"><label>Status</label><select id="f-std"><option>Ativo</option><option>Cancelado</option></select></div></div></div>'},
   historico:{title:"Registrar alteração",html:'<div class="fs"><div class="ft">Evento</div><div class="fg"><div class="field"><label class="req">Tipo</label><select id="f-tiph"><option>Inclusão</option><option>Exclusão</option><option>Reajuste</option></select></div><div class="field"><label class="req">Data</label><input id="f-dath" type="date"></div><div class="field ff"><label class="req">Titular relacionado</label><select id="f-vidh"></select></div><div class="field ff"><label class="req">Vida afetada (nome)</label><input id="f-vidan"></div><div class="field"><label>CPF da vida afetada</label><input id="f-cpfh"></div><div class="field"><label>Reajuste (%)</label><input id="f-rejh" type="number" step="0.01"></div><div class="field"><label>Valor atualizado (R$)</label><input id="f-valh" type="number" step="0.01"></div><div class="field"><label class="req">Responsável</label><input id="f-resh"></div><div class="field"><label>Motivo</label><input id="f-moth"></div><div class="field ff"><label>Observações</label><textarea id="f-obsh"></textarea></div></div></div>'}
 };
 
@@ -1339,13 +1379,13 @@ async function saveForm(){
     if(currentModal==="empresa"){
       const emailVal=g("f-email");
       if(emailVal && !validateEmail(emailVal)){toast("E-mail inválido.","err");document.getElementById("btn-save").textContent="Salvar";return;}
-      await apiCreate("Empresas",{"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"CEP":g("f-cep"),"Responsável do Contrato":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")});
+      await apiCreate("Empresas",{"Razão Social":g("f-razao"),"CNPJ":g("f-cnpj"),"Endereço":g("f-end"),"Cidade":g("f-cidade"),"Estado":g("f-estado"),"CEP":g("f-cep"),"Responsável do Contrato":g("f-resp"),"Telefone RH":g("f-tel"),"Email RH":g("f-email"),"Canal de Aquisição":g("f-canal"),"Status":g("f-status")});
     }else if(currentModal==="plano"){
-      await apiCreate("Planos",{"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Status":g("f-stp")});
+      await apiCreate("Planos",{"Empresa ID":g("f-ep"),"Seguradora":g("f-seg"),"Plano contratado":g("f-pla"),"Apólice":g("f-apo"),"Início vigência":g("f-ini"),"Fim vigência":g("f-fim"),"Valor do boleto":g("f-bol"),"Acomodação":g("f-acom"),"Modelo de coparticipação":g("f-cop"),"Status":g("f-stp")});
     }else if(currentModal==="titular"){
-      await apiCreate("Titulares",{"Empresa ID":g("f-et"),"Nome":g("f-nome"),"CPF":g("f-cpf"),"Nascimento":g("f-nasc"),"RG":g("f-rg"),"Exp RG":g("f-rgexp"),"Órgão exp":g("f-orgao"),"Mãe":g("f-mae"),"Pai":g("f-pai"),"Peso":g("f-peso"),"Altura":g("f-alt"),"Estado civil":g("f-ec"),"Profissão":g("f-prof"),"Doenças":g("f-doe"),"Inclusão":g("f-inc"),"Carteirinha":g("f-cart"),"Contato":g("f-cont"),"Login seg":g("f-log"),"Status":g("f-stt")});
+      await apiCreate("Titulares",{"Empresa ID":g("f-et"),"Nome":g("f-nome"),"CPF":g("f-cpf"),"Nascimento":g("f-nasc"),"RG":g("f-rg"),"Exp RG":g("f-rgexp"),"Órgão exp":g("f-orgao"),"Mãe":g("f-mae"),"Pai":g("f-pai"),"Peso":g("f-peso"),"Altura":g("f-alt"),"Estado civil":g("f-ec"),"Profissão":g("f-prof"),"Doenças":g("f-doe"),"Endereço":g("f-endt"),"CEP":g("f-cept"),"Cidade":g("f-cidadet"),"Estado":g("f-estadot"),"Inclusão":g("f-inc"),"Carteirinha":g("f-cart"),"Contato":g("f-cont"),"Login seg":g("f-log"),"Status":g("f-stt")});
     }else if(currentModal==="dependente"){
-      await apiCreate("Dependentes",{"Titular ID":g("f-td"),"Nome":g("f-nomd"),"CPF":g("f-cpfd"),"Nascimento":g("f-nasd"),"RG":g("f-rgd"),"Mãe":g("f-maed"),"Pai":g("f-paid"),"Peso":g("f-pesd"),"Altura":g("f-altd"),"Estado civil":g("f-ecd"),"Profissão":g("f-prod"),"Doenças":g("f-doed"),"Parentesco":g("f-pard"),"Inclusão":g("f-incd"),"Carteirinha":g("f-crtd"),"Status":g("f-std")});
+      await apiCreate("Dependentes",{"Titular ID":g("f-td"),"Nome":g("f-nomd"),"CPF":g("f-cpfd"),"Nascimento":g("f-nasd"),"RG":g("f-rgd"),"Mãe":g("f-maed"),"Pai":g("f-paid"),"Peso":g("f-pesd"),"Altura":g("f-altd"),"Estado civil":g("f-ecd"),"Profissão":g("f-prod"),"Doenças":g("f-doed"),"Endereço":g("f-endd"),"CEP":g("f-cepd"),"Cidade":g("f-cidaded"),"Estado":g("f-estadod"),"Parentesco":g("f-pard"),"Inclusão":g("f-incd"),"Carteirinha":g("f-crtd"),"Status":g("f-std")});
     }else if(currentModal==="historico"){
       const tid=g("f-vidh"),t=titById(tid);
       await apiCreate("Historico",{"Titular ID":tid,"Tipo":g("f-tiph"),"Vida afetada":g("f-vidan")||gp(t,"Nome"),"CPF vida":g("f-cpfh")||gp(t,"CPF"),"Data":g("f-dath"),"Responsável":g("f-resh"),"Motivo":g("f-moth"),"Reajuste %":g("f-rejh"),"Valor atualizado":g("f-valh"),"Observações":g("f-obsh")});
@@ -1385,12 +1425,32 @@ function maskRG(v){
   if(v.length<=8) return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5);
   return v.slice(0,2)+"."+v.slice(2,5)+"."+v.slice(5,8)+"-"+v.slice(8);
 }
+function normalizeDateValue(v){
+  v=(v||"").trim();
+  if(!v) return "";
+  const iso=v.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(iso) return v;
+  const br=v.match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{2,4})$/);
+  if(br){
+    let d=br[1].padStart(2,"0"), m=br[2].padStart(2,"0"), y=br[3];
+    if(y.length===2) y="20"+y;
+    return `${y}-${m}-${d}`;
+  }
+  return v;
+}
+function enableDatePaste(el){
+  if(!el) return;
+  const fix=()=>{ el.value=normalizeDateValue(el.value); };
+  el.addEventListener("paste",()=>setTimeout(fix,0));
+  el.addEventListener("blur",fix);
+}
 function applyMasks(){
   const cnpj=document.getElementById("f-cnpj");
   if(cnpj) cnpj.addEventListener("input",function(){this.value=maskCNPJ(this.value)});
   ["f-tel","f-cont"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("input",function(){this.value=maskPhone(this.value)})});
   ["f-cpf","f-cpfd"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("input",function(){this.value=maskCPF(this.value)})});
   ["f-rg","f-rgd"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("input",function(){this.value=maskRG(this.value)})});
+  ["f-nasc","f-nasd","f-rgexp","f-inc","f-incd","f-ini","f-fim","f-dath"].forEach(id=>enableDatePaste(document.getElementById(id)));
 }
 
 function validateEmail(email){
